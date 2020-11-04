@@ -17,7 +17,7 @@
       <input type="radio" name="selecttab" value="4" class="tab tab4" />
       <span class="tab accent-font">Gear</span>
       <input type="radio" name="selecttab" value="5" class="tab tab5" />
-      <span class="tab accent-font">Cyberwear</span>
+      <span class="tab accent-font">Cyberware</span>
       <input type="radio" name="selecttab" value="6" class="tab tab6" />
       <span class="tab accent-font">Background</span>
       <input type="radio" name="selecttab" value="7" class="tab tab7" />
@@ -25,14 +25,18 @@
 
       <div class="tab-content tab1">
         <div>
-          <%= require('../components/character-info/character-info.ejs')() %>
+          <%= require('../components/character-info/character-info.ejs')(require('../components/role/json/role.json')) %>
         </div>
         <div>
           <%=
           require('../components/attributes/attributes.ejs')(require('../components/attributes/json/attributes.json'))
           %>
         </div>
-        <div><%= require('../components/role/role.ejs')() %></div>
+        <div class="columns">
+          <div class="column"><%= require('../components/hit-points/hit-points.ejs')() %></div>
+          <div class="column"><%= require('../components/luck/luck.ejs')() %></div>
+        </div>
+        <div><%= require('../components/role/role.ejs')(require('../components/role/json/role.json')) %></div>
         <div><%= require('../components/dice-roller/dice-roller.ejs')() %></div>
       </div>
       <div class="tab-content tab2">

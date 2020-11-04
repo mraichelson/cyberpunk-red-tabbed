@@ -1,0 +1,6 @@
+input.sheet-show-next-div ~ div {
+  display: none;
+}
+input.sheet-show-next-div:checked ~ div {
+  display: block;
+}

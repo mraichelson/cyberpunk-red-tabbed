@@ -7,27 +7,88 @@
   </head>
 
   <body>
-    <div class="tabbed"><input type="radio" name="selecttab" value="1" class="tab tab1" checked="checked" /> <span class="tab accent-font">Character</span> <input type="radio" name="selecttab" value="2" class="tab tab2" /> <span class="tab accent-font">Skills</span> <input type="radio" name="selecttab" value="3" class="tab tab3" /> <span class="tab accent-font">Combat</span> <input type="radio" name="selecttab" value="4" class="tab tab4" /> <span class="tab accent-font">Gear</span> <input type="radio" name="selecttab" value="5" class="tab tab5" /> <span class="tab accent-font">Cyberwear</span> <input type="radio" name="selecttab" value="6" class="tab tab6" /> <span class="tab accent-font">Background</span> <input type="radio" name="selecttab" value="7" class="tab tab7" /> <span class="tab accent-font">Settings</span>
+    <div class="tabbed"><input type="radio" name="selecttab" value="1" class="tab tab1" checked="checked" /> <span class="tab accent-font">Character</span> <input type="radio" name="selecttab" value="2" class="tab tab2" /> <span class="tab accent-font">Skills</span> <input type="radio" name="selecttab" value="3" class="tab tab3" /> <span class="tab accent-font">Combat</span> <input type="radio" name="selecttab" value="4" class="tab tab4" /> <span class="tab accent-font">Gear</span> <input type="radio" name="selecttab" value="5" class="tab tab5" /> <span class="tab accent-font">Cyberware</span> <input type="radio" name="selecttab" value="6" class="tab tab6" /> <span class="tab accent-font">Background</span> <input type="radio" name="selecttab" value="7" class="tab tab7" /> <span class="tab accent-font">Settings</span>
       <div class="tab-content tab1">
         <div>
-          <div class="character-info">character info</div>
+          <div class="character-info">
+            <h3 class="accent-font">Character</h3>
+            <div class="columns">
+              <div class="column"><span class="accent-font">Character Name</span> <input name="attr_charactername"></div>
+              <div class="column"><span class="accent-font">Role</span> <select name="attr_role">
+                  <option value="Blank">Blank</option>
+                  <option value="Exec">Exec</option>
+                  <option value="Fixer">Fixer</option>
+                  <option value="Lawman">Lawman</option>
+                  <option value="Media">Media</option>
+                  <option value="Medtech">Medtech</option>
+                  <option value="Netrunner">Netrunner</option>
+                  <option value="Nomad">Nomad</option>
+                  <option value="Rockerboy">Rockerboy</option>
+                  <option value="Solo">Solo</option>
+                  <option value="Tech">Tech</option>
+                </select></div>
+              <div class="column"><span class="accent-font">Player Name</span> <input name="attr_playername"></div>
+            </div>
+          </div>
         </div>
         <div>
           <div class="section-attributes">
             <h3>Attributes</h3>
             <div class="sheet-columns">
-              <div class="sheet-column"><span class="accent-font">INT</span> <input type="number" name="attr_int" /></div>
-              <div class="sheet-column"><span class="accent-font">REF</span> <input type="number" name="attr_ref" /></div>
-              <div class="sheet-column"><span class="accent-font">DEX</span> <input type="number" name="attr_dex" /></div>
-              <div class="sheet-column"><span class="accent-font">TECH</span> <input type="number" name="attr_tech" /></div>
-              <div class="sheet-column"><span class="accent-font">COOL</span> <input type="number" name="attr_cool" /></div>
-              <div class="sheet-column"><span class="accent-font">WILL</span> <input type="number" name="attr_will" /></div>
-              <div class="sheet-column"><span class="accent-font">LUCK</span> <input type="number" name="attr_luck" /></div>
-              <div class="sheet-column"><span class="accent-font">MOVE</span> <input type="number" name="attr_move" /></div>
-              <div class="sheet-column"><span class="accent-font">BODY</span> <input type="number" name="attr_body" /></div>
-              <div class="sheet-column"><span class="accent-font">EMP</span> <input type="number" name="attr_emp" /></div>
+              <div class="sheet-column"><span class="accent-font">INT</span> <input type="number" name="attr_stat_int" /></div>
+              <div class="sheet-column"><span class="accent-font">REF</span> <input type="number" name="attr_stat_ref" /></div>
+              <div class="sheet-column"><span class="accent-font">DEX</span> <input type="number" name="attr_stat_dex" /></div>
+              <div class="sheet-column"><span class="accent-font">TECH</span> <input type="number" name="attr_stat_tech" /></div>
+              <div class="sheet-column"><span class="accent-font">COOL</span> <input type="number" name="attr_stat_cool" /></div>
+              <div class="sheet-column"><span class="accent-font">WILL</span> <input type="number" name="attr_stat_will" /></div>
+              <div class="sheet-column"><span class="accent-font">LUCK</span> <input type="number" name="attr_stat_luck" /></div>
+              <div class="sheet-column"><span class="accent-font">MOVE</span> <input type="number" name="attr_stat_move" /></div>
+              <div class="sheet-column"><span class="accent-font">BODY</span> <input type="number" name="attr_stat_body" /></div>
+              <div class="sheet-column"><span class="accent-font">EMP</span> <input type="number" name="attr_stat_emp" /></div>
             </div>
             <script></script>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <div class="section-hit-points">
+              <h3 class="accent-font">Hit Points</h3><input type="number" name="attr_hp"> (of <span name="attr_hp_max"></span>)
+            </div>
+            <script type="text/worker">function updateHitPoints() {
+  getAttrs(['stat_body', 'stat_will'], function (values) {
+    var body = Number(values.stat_body);
+    var will = Number(values.stat_will);
+    var maxHp = Math.floor(((body + will) / 2) * 5 + 10);
+    var halfHp = Math.floor(maxHp / 2);
+    var deathSave = Math.floor(body);
+    setAttrs({
+      hp: maxHp,
+      hp_max: maxHp,
+      seriouslywounded: halfHp,
+      deathsave: deathSave
+    });
+  });
+}
+on('change:stat_body change:stat_will', function() {
+  console.log('body or will stat changed...')
+  updateHitPoints();
+});</script>
+          </div>
+          <div class="column">
+            <div class="section-luck">
+              <h3 class="accent-font">Luck</h3><input type="number" name="attr_luck"> (of <span name="attr_luck_max"></span>)
+            </div>
+            <script type="text/worker">function updateLuck() {
+  getAttrs(['stat_luck'], function(values) {
+    var luck = Number(values.stat_luck);
+    setAttrs({
+      luck_max: luck
+    })
+  });
+}
+on('change:stat_luck', function() {
+  updateLuck();
+});</script>
           </div>
         </div>
         <div>

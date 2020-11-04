@@ -1,0 +1,58 @@
+/**
+ * Tab configuration variables.
+ */
+$tabHeight: 3rem;
+$tabWidth: 100px;
+$tabFontSize: 1.2rem;
+$tabPadding: 0.5rem;
+$tabColor: #6ec498;
+
+.sheet-tabbed {
+  text-align: center;
+  span.sheet-tab {
+    width: $tabWidth;
+    margin-left: -1 * $tabWidth;
+    font-size: 1.2rem;
+    height: $tabHeight;
+    padding: $tabPadding;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border: 1px solid $tabColor;
+    background-color: transparent;
+    border-bottom: none;
+    box-sizing: border-box;
+  }
+  input.sheet-tab {
+    width: $tabWidth;
+    position: relative;
+    opacity: 0;
+    z-index: 9999;
+    height: $tabHeight;
+    box-sizing: border-box;
+    padding: $tabPadding;
+  }
+  input.sheet-tab:checked + span.sheet-tab {
+    border-color: $tabColor;
+    color: #000;
+    background-color: $tabColor;
+  }
+  .sheet-tab-content {
+    display: none;
+    text-align: left;
+  }
+  input.sheet-tab1:checked ~ div.sheet-tab1,
+  input.sheet-tab2:checked ~ div.sheet-tab2,
+  input.sheet-tab3:checked ~ div.sheet-tab3,
+  input.sheet-tab4:checked ~ div.sheet-tab4,
+  input.sheet-tab5:checked ~ div.sheet-tab5,
+  input.sheet-tab6:checked ~ div.sheet-tab6,
+  input.sheet-tab7:checked ~ div.sheet-tab7,
+  input.sheet-tab8:checked ~ div.sheet-tab8,
+  input.sheet-tab9:checked ~ div.sheet-tab9,
+  input.sheet-tab10:checked ~ div.sheet-tab10 {
+    display: block;
+  }
+}

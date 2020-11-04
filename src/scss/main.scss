@@ -1,4 +1,10 @@
 /**
+ * Things that are broken out into easier to digest files...
+ */
+@import 'accordions';
+@import 'columns';
+@import 'tabs';
+/**
  * Import CSS specific to character sheet components.
  */
 @import '../components/attributes/attributes';
@@ -15,3 +21,9 @@
 @import '../components/rolltemplates/basic/basic';
 @import '../components/rolltemplates/damage/damage';
 @import '../components/rolltemplates/skill/skill';
+
+.charsheet {
+  margin: 0;
+  padding: 0;
+  width: 860px;
+}

@@ -1,0 +1,26 @@
+<div class="section-hit-points">
+  <h3 class="accent-font">Hit Points</h3>
+  <input type="number" name="attr_hp">
+  (of <span name="attr_hp_max"></span>)
+</div>
+<script type="text/worker">
+function updateHitPoints() {
+  getAttrs(['stat_body', 'stat_will'], function (values) {
+    var body = Number(values.stat_body);
+    var will = Number(values.stat_will);
+    var maxHp = Math.floor(((body + will) / 2) * 5 + 10);
+    var halfHp = Math.floor(maxHp / 2);
+    var deathSave = Math.floor(body);
+    setAttrs({
+      hp: maxHp,
+      hp_max: maxHp,
+      seriouslywounded: halfHp,
+      deathsave: deathSave
+    });
+  });
+}
+on('change:stat_body change:stat_will', function() {
+  console.log('body or will stat changed...')
+  updateHitPoints();
+});
+</script>

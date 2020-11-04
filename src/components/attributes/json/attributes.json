@@ -2,43 +2,43 @@
   "attributes": [
     {
       "name": "INT",
-      "field": "int"
+      "field": "stat_int"
     },
     {
       "name": "REF",
-      "field": "ref"
+      "field": "stat_ref"
     },
     {
       "name": "DEX",
-      "field": "dex"
+      "field": "stat_dex"
     },
     {
       "name": "TECH",
-      "field": "tech"
+      "field": "stat_tech"
     },
     {
       "name": "COOL",
-      "field": "cool"
+      "field": "stat_cool"
     },
     {
       "name": "WILL",
-      "field": "will"
+      "field": "stat_will"
     },
     {
       "name": "LUCK",
-      "field": "luck"
+      "field": "stat_luck"
     },
     {
       "name": "MOVE",
-      "field": "move"
+      "field": "stat_move"
     },
     {
       "name": "BODY",
-      "field": "body"
+      "field": "stat_body"
     },
     {
       "name": "EMP",
-      "field": "emp"
+      "field": "stat_emp"
     }
   ]
 }

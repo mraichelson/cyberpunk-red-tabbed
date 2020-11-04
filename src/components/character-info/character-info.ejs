@@ -1,1 +1,21 @@
-<div class="character-info">character info</div>
+<div class="character-info">
+  <h3 class="accent-font">Character</h3>
+  <div class="columns">
+    <div class="column">
+      <span class="accent-font">Character Name</span>
+      <input type="text" name="attr_charactername">
+    </div>
+    <div class="column">
+      <span class="accent-font">Role</span>
+      <select name="attr_role">
+        <% roles.forEach(function(role) { %>
+          <option value="<%= role.name %>"><%= role.name %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="column">
+      <span class="accent-font">Player Name</span>
+      <input type="text" name="attr_playername">
+    </div>
+  </div>
+</div>
