@@ -1,0 +1,44 @@
+{
+  "attributes": [
+    {
+      "name": "INT",
+      "field": "int"
+    },
+    {
+      "name": "REF",
+      "field": "ref"
+    },
+    {
+      "name": "DEX",
+      "field": "dex"
+    },
+    {
+      "name": "TECH",
+      "field": "tech"
+    },
+    {
+      "name": "COOL",
+      "field": "cool"
+    },
+    {
+      "name": "WILL",
+      "field": "will"
+    },
+    {
+      "name": "LUCK",
+      "field": "luck"
+    },
+    {
+      "name": "MOVE",
+      "field": "move"
+    },
+    {
+      "name": "BODY",
+      "field": "body"
+    },
+    {
+      "name": "EMP",
+      "field": "emp"
+    }
+  ]
+}

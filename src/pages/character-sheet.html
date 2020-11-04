@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cyberpunk Red Character Sheet</title>
+  </head>
+
+  <body>
+    <!-- Character sheet parts... -->
+    <div class="tabbed">
+      <!-- tab controls -->
+      <input type="radio" name="selecttab" value="1" class="tab tab1" checked />
+      <span class="tab accent-font">Character</span>
+      <input type="radio" name="selecttab" value="2" class="tab tab2" />
+      <span class="tab accent-font">Skills</span>
+      <input type="radio" name="selecttab" value="3" class="tab tab3" />
+      <span class="tab accent-font">Combat</span>
+      <input type="radio" name="selecttab" value="4" class="tab tab4" />
+      <span class="tab accent-font">Gear</span>
+      <input type="radio" name="selecttab" value="5" class="tab tab5" />
+      <span class="tab accent-font">Cyberwear</span>
+      <input type="radio" name="selecttab" value="6" class="tab tab6" />
+      <span class="tab accent-font">Background</span>
+      <input type="radio" name="selecttab" value="7" class="tab tab7" />
+      <span class="tab accent-font">Settings</span>
+
+      <div class="tab-content tab1">
+        <div>
+          <%= require('../components/character-info/character-info.ejs')() %>
+        </div>
+        <div>
+          <%=
+          require('../components/attributes/attributes.ejs')(require('../components/attributes/json/attributes.json'))
+          %>
+        </div>
+        <div><%= require('../components/role/role.ejs')() %></div>
+        <div><%= require('../components/dice-roller/dice-roller.ejs')() %></div>
+      </div>
+      <div class="tab-content tab2">
+        <%= require('../components/skills/skills.ejs')() %>
+      </div>
+      <div class="tab-content tab3">
+        <%= require('../components/combat/combat.ejs')() %>
+      </div>
+      <div class="tab-content tab4">
+        <%= require('../components/gear/gear.ejs')() %>
+      </div>
+      <div class="tab-content tab5">
+        <%= require('../components/cyberware/cyberware.ejs')() %>
+      </div>
+      <div class="tab-content tab6">
+        <%= require('../components/background/background.ejs')() %>
+      </div>
+      <div class="tab-content tab7">
+        <%= require('../components/settings/settings.ejs')() %>
+      </div>
+    </div>
+
+    <!-- Roll templates... -->
+    <!-- attack rolls -->
+    <%= require('../components/rolltemplates/attack/attack.ejs')() %>
+    <!-- basic rolls -->
+    <%= require('../components/rolltemplates/basic/basic.ejs')() %>
+    <!-- damage rolls -->
+    <%= require('../components/rolltemplates/damage/damage.ejs')() %>
+    <!-- skill rolls -->
+    <%= require('../components/rolltemplates/skill/skill.ejs')() %>
+
+    <!-- %= require('../components/_foo/foo.ejs')(require('../components/_foo/json/foo--bar.json'))
+		% -->
+  </body>
+</html>

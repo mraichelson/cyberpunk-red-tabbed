@@ -1,0 +1,12 @@
+<div class="section-attributes">
+  <h3>Attributes</h3>
+  <div class="sheet-columns">
+    <% attributes.forEach(function(attribute) { %>
+    <div class="sheet-column">
+      <span class="accent-font"><%= attribute.name %></span>
+      <input type="number" name="attr_<%= attribute.field %>" />
+    </div>
+    <% }) %>
+  </div>
+  <script></script>
+</div>

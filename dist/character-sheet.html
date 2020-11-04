@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Cyberpunk Red Character Sheet</title>
+    <link href="main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="tabbed"><input type="radio" name="selecttab" value="1" class="tab tab1" checked="checked" /> <span class="tab accent-font">Character</span> <input type="radio" name="selecttab" value="2" class="tab tab2" /> <span class="tab accent-font">Skills</span> <input type="radio" name="selecttab" value="3" class="tab tab3" /> <span class="tab accent-font">Combat</span> <input type="radio" name="selecttab" value="4" class="tab tab4" /> <span class="tab accent-font">Gear</span> <input type="radio" name="selecttab" value="5" class="tab tab5" /> <span class="tab accent-font">Cyberwear</span> <input type="radio" name="selecttab" value="6" class="tab tab6" /> <span class="tab accent-font">Background</span> <input type="radio" name="selecttab" value="7" class="tab tab7" /> <span class="tab accent-font">Settings</span>
+      <div class="tab-content tab1">
+        <div>
+          <div class="character-info">character info</div>
+        </div>
+        <div>
+          <div class="section-attributes">
+            <h3>Attributes</h3>
+            <div class="sheet-columns">
+              <div class="sheet-column"><span class="accent-font">INT</span> <input type="number" name="attr_int" /></div>
+              <div class="sheet-column"><span class="accent-font">REF</span> <input type="number" name="attr_ref" /></div>
+              <div class="sheet-column"><span class="accent-font">DEX</span> <input type="number" name="attr_dex" /></div>
+              <div class="sheet-column"><span class="accent-font">TECH</span> <input type="number" name="attr_tech" /></div>
+              <div class="sheet-column"><span class="accent-font">COOL</span> <input type="number" name="attr_cool" /></div>
+              <div class="sheet-column"><span class="accent-font">WILL</span> <input type="number" name="attr_will" /></div>
+              <div class="sheet-column"><span class="accent-font">LUCK</span> <input type="number" name="attr_luck" /></div>
+              <div class="sheet-column"><span class="accent-font">MOVE</span> <input type="number" name="attr_move" /></div>
+              <div class="sheet-column"><span class="accent-font">BODY</span> <input type="number" name="attr_body" /></div>
+              <div class="sheet-column"><span class="accent-font">EMP</span> <input type="number" name="attr_emp" /></div>
+            </div>
+            <script></script>
+          </div>
+        </div>
+        <div>
+          <div class="section-role">role</div>
+        </div>
+        <div>
+          <div class="section-dice-roller">dice roller</div>
+        </div>
+      </div>
+      <div class="tab-content tab2">
+        <div class="section-skills">skills</div>
+      </div>
+      <div class="tab-content tab3">
+        <div class="section-combat">
+          <h3>Combat</h3>
+        </div>
+      </div>
+      <div class="tab-content tab4">
+        <div class="section-gear">gear</div>
+      </div>
+      <div class="tab-content tab5">
+        <div class="section-cyberware">cyberware</div>
+      </div>
+      <div class="tab-content tab6"></div>
+      <div class="tab-content tab7">
+        <div class="section-settings">settings</div>
+      </div>
+    </div>
+    <rolltemplate class="sheet-rolltemplate-attack">
+      <div class="{{ templatecolor }}">
+        <div>(attack roll)</div>
+        <div class="character">{{#charactername}}{{ charactername }}{{/charactername}}</div>
+        <div class="header">{{#header}}{{ header }}{{/header}}</div>
+        <div class="roll">{{ roll }}</div>{{#rollWasCrit() roll}}
+          <div class="crit">CRITICAL SUCCESS!<br />Add {{ critroll }} to roll</div>
+        {{/rollWasCrit() roll}} {{#rollWasFumble() roll}}
+          <div class="fail">CRITICAL FAILURE!<br />Subtract {{ critroll }} from roll</div>
+        {{/rollWasFumble() roll}} {{#footer}}
+          <div class="footer">{{ footer }}</div>
+        {{/footer}}
+      </div>
+    </rolltemplate>
+    <rolltemplate class="sheet-rolltemplate-basic">
+      <div class="{{ templatecolor }}">
+        <div>(basic roll)</div>
+        <div class="character">{{#charactername}}{{ charactername }}{{/charactername}}</div>
+        <div class="header">{{#header}}{{ header }}{{/header}}</div>
+        <div class="roll">{{ roll }}</div>{{#footer}}
+          <div class="footer">{{ footer }}</div>
+        {{/footer}}
+      </div>
+    </rolltemplate>
+    <rolltemplate class="sheet-rolltemplate-damage">
+      <div class="{{ templatecolor }}">
+        <div>(damage roll)</div>
+        <div class="character">{{#charactername}}{{ charactername }}{{/charactername}}</div>
+        <div class="header">{{#header}}{{ header }}{{/header}}</div>
+        <div class="roll">{{ roll }}</div>{{#footer}}
+          <div class="footer">{{ footer }}</div>
+        {{/footer}}
+      </div>
+    </rolltemplate>
+    <rolltemplate class="sheet-rolltemplate-skill">
+      <div class="{{ templatecolor }}">
+        <div>(skill roll)</div>
+        <div class="character">{{#charactername}}{{ charactername }}{{/charactername}}</div>
+        <div class="header">{{#header}}{{ header }}{{/header}}</div>
+        <div class="roll">{{ roll }}</div>{{#rollWasCrit() roll}}
+          <div class="crit">CRITICAL SUCCESS! Add {{ critroll }} to roll</div>
+        {{/rollWasCrit() roll}} {{#rollWasFumble() roll}}
+          <div class="fail">CRITICAL FAILURE! Subtract {{ critroll }} from roll</div>
+        {{/rollWasFumble() roll}} {{#footer}}
+          <div class="footer">{{ footer }}</div>
+        {{/footer}}
+      </div>
+    </rolltemplate>
+    <script src="main.js"></script>
+  </body>
+
+</html>
