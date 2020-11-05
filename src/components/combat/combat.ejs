@@ -1,3 +1,86 @@
 <div class="section-combat">
   <h3 class="accent-font">Combat</h3>
+  <div class="combat-weapons">
+    <h3>Weapons</h3>
+    <fieldset class="repeating_weapons">
+      <div class="weapon">
+        <div class="columns">
+          <div class="column">
+            <div class="accent-font">Name</div>
+            <input type="text" name="attr_weaponname" />
+          </div>
+          <div class="column">
+            <div class="accent-font">Skill</div>
+            <select name="attr_weaponskill">
+              <optgroup label="Melee">
+                <option value="brawling">Brawling</option>
+                <option value="meleeweapon">Melee Weapon</option>
+                <option value="martialarts">Martial Arts</option>
+              </optgroup>
+              <optgroup label="Ranged">
+                <option value="archery">Archery</option>
+                <option value="handgun">Handgun</option>
+                <option value="heavyweapons">Heavy Weapons</option>
+                <option value="shoulderarms">Shoulder Arms</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="column">
+            <div class="accent-font">Damage</div>
+            <select name="attr_weapondamage">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>d6
+          </div>
+          <div class="column">
+            <div class="accent-font">Magazine</div>
+            <input type="text" name="attr_weaponmagazine" />
+          </div>
+          <div class="column">
+            <div class="accent-font">
+              <abbr title="Rate of Fire">RoF</abbr>
+            </div>
+            <select name="attr_weaponrof">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <div class="weapon-ammotype">
+              <span class="accent-font">Ammo Type</span>
+              <input type="text" name="attr_weaponammotype" />
+            </div>
+            <div class="weapon-concealable">
+              <span class="accent-font">
+                <input type="checkbox" name="attr_weaponconcealable" />
+                Concealable
+              </span>
+            </div>
+          </div>
+          <div class="column column-3">
+            <div class="accent-font">Notes</div>
+            <textarea name="attr_weaponnotes"></textarea>
+          </div>
+        </div>
+        <div class="actions">
+          <button type="roll" name="roll_1d10"
+            value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">
+            Attack
+          </button>
+          <button type="roll" name="roll_1d10"
+            value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">
+            Damage
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </div>
 </div>

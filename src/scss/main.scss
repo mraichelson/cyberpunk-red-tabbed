@@ -37,12 +37,40 @@
     margin-bottom: 1rem;
     text-transform: uppercase;
   }
+  select,
+  option {
+    max-width: 100%;
+    min-width: 5rem;
+  }
+  .sheet-faux-button {
+    background-color: #ddd;
+    border-radius: 0.25rem;
+    border: 1px solid #000;
+    display: inline-block;
+    font-size: 1rem !important;
+    padding: 0rem 0.5rem;
+    position: relative;
+    input[type='checkbox'] {
+      border-style: none;
+      bottom: 0;
+      display: block;
+      height: 100%;
+      left: 0;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100% !important;
+      z-index: 3;
+    }
+  }
 }
 
 .sheet-accent-font {
   font-family: 'Orbitron', Arial, Helvetica, sans-serif;
 }
-
 button.sheet-button-plain {
   background: transparent;
   border-style: none !important;

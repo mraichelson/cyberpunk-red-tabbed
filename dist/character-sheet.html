@@ -7,6 +7,17 @@
   </head>
 
   <body>
+    <script type="text/worker">function updateLuck() {
+  getAttrs(['stat_luck'], function(values) {
+    var luck = Number(values.stat_luck);
+    setAttrs({
+      luck_max: luck
+    })
+  });
+}
+on('change:stat_luck', function() {
+  updateLuck();
+});</script>
     <div class="tabbed"><input type="radio" name="selecttab" value="1" class="tab tab1" checked="checked" /> <span class="tab accent-font">Character</span> <input type="radio" name="selecttab" value="2" class="tab tab2" /> <span class="tab accent-font">Skills</span> <input type="radio" name="selecttab" value="3" class="tab tab3" /> <span class="tab accent-font">Combat</span> <input type="radio" name="selecttab" value="4" class="tab tab4" /> <span class="tab accent-font">Gear</span> <input type="radio" name="selecttab" value="5" class="tab tab5" /> <span class="tab accent-font">Cyberware</span> <input type="radio" name="selecttab" value="6" class="tab tab6" /> <span class="tab accent-font">Lifepath</span> <input type="radio" name="selecttab" value="7" class="tab tab7" /> <span class="tab accent-font">Settings</span>
       <div class="tab-content tab1">
         <div>
@@ -69,7 +80,6 @@
   });
 }
 on('change:stat_body change:stat_will', function() {
-  console.log('body or will stat changed...')
   updateHitPoints();
 });</script>
           </div>
@@ -77,27 +87,18 @@ on('change:stat_body change:stat_will', function() {
             <div class="section-luck">
               <h3 class="accent-font">Luck</h3><input type="number" name="attr_luck"> (of <span name="attr_luck_max"></span>)
             </div>
-            <script type="text/worker">function updateLuck() {
-  getAttrs(['stat_luck'], function(values) {
-    var luck = Number(values.stat_luck);
-    setAttrs({
-      luck_max: luck
-    })
-  });
-}
-on('change:stat_luck', function() {
-  updateLuck();
-});</script>
           </div>
         </div>
         <div>
-          <div class="section-role">
-            <h3 class="accent-font">Role</h3>
-          </div>
-        </div>
-        <div>
-          <div class="section-dice-roller">
-            <h3 class="accent-font">Dice roller</h3>
+          <div class="section-role" style="padding:50px;">
+            <h3 class="accent-font">Exact code taken from Kitchensink.</h3>
+            <fieldset class="repeating_kitchensinks"><select name="attr_dtype" class="dtype">
+                <option value="d4">d4</option>
+                <option value="d6">d6</option>
+                <option value="d8">d8</option>
+                <option value="d10">d10</option>
+                <option value="d12">d12</option>
+              </select> <input name="attr_skillname" /></fieldset>
           </div>
         </div>
       </div>
@@ -365,6 +366,64 @@ on('change:stat_luck', function() {
       <div class="tab-content tab3">
         <div class="section-combat">
           <h3 class="accent-font">Combat</h3>
+          <div class="combat-weapons">
+            <h3>Weapons</h3>
+            <fieldset class="repeating_weapons">
+              <div class="weapon">
+                <div class="columns">
+                  <div class="column">
+                    <div class="accent-font">Name</div><input name="attr_weaponname" />
+                  </div>
+                  <div class="column">
+                    <div class="accent-font">Skill</div><select name="attr_weaponskill">
+                      <optgroup label="Melee">
+                        <option value="brawling">Brawling</option>
+                        <option value="meleeweapon">Melee Weapon</option>
+                        <option value="martialarts">Martial Arts</option>
+                      </optgroup>
+                      <optgroup label="Ranged">
+                        <option value="archery">Archery</option>
+                        <option value="handgun">Handgun</option>
+                        <option value="heavyweapons">Heavy Weapons</option>
+                        <option value="shoulderarms">Shoulder Arms</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="column">
+                    <div class="accent-font">Damage</div><select name="attr_weapondamage">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                    </select>d6
+                  </div>
+                  <div class="column">
+                    <div class="accent-font">Magazine</div><input name="attr_weaponmagazine" />
+                  </div>
+                  <div class="column">
+                    <div class="accent-font"><abbr title="Rate of Fire">RoF</abbr></div><select name="attr_weaponrof">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="columns">
+                  <div class="column">
+                    <div class="weapon-ammotype"><span class="accent-font">Ammo Type</span> <input name="attr_weaponammotype" /></div>
+                    <div class="weapon-concealable"><span class="accent-font"><input type="checkbox" name="attr_weaponconcealable"/> Concealable</span></div>
+                  </div>
+                  <div class="column column-3">
+                    <div class="accent-font">Notes</div><textarea name="attr_weaponnotes"></textarea>
+                  </div>
+                </div>
+                <div class="actions"><button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">Attack</button> <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">Damage</button></div>
+              </div>
+            </fieldset>
+          </div>
         </div>
       </div>
       <div class="tab-content tab4">

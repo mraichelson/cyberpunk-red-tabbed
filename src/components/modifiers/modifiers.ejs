@@ -1,3 +1,91 @@
 <div class="section-modifiers">
-  <h3 class="accent-font">Modifiers</h3>
+  <div class="modifiers">
+    <input type="hidden" name="attr_finalmodifier" />
+    <h3 class="accent-font">
+      Modifiers
+      <span name="attr_finalmodifierdisplay"></span>
+      <span class="faux-button">
+        Reset
+        <input type="checkbox" name="attr_resetmodifiers" /></span>
+    </h3>
+    Show Modifiers?
+    <input type="checkbox" name="attr_hidemodifiers" class="show-next-div" />
+    <div class="toggle-container">
+      <div class="columns">
+        <div class="column">
+          <input type="checkbox" name="attr_damageserious" /> damage: serious
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_damagemortal" /> damage: mortal
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_understress" /> under stress
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_neverdonebefore" /> never done
+          before
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <input type="checkbox" name="attr_nightorlowlight" /> night or low
+          light
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_obscured" /> obscured by smoke or
+          darkness
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_complextask" /> complex task
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_wrongtoolsorparts" /> wrong tools
+          or parts
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <input type="checkbox" name="attr_drunkdrugged" /> drunk or drugged
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_secretly" /> attempting secretly
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_lostfacedown" /> lost facedown
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_aimedshot" /> aimed shot
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <input type="checkbox" name="attr_complimentaryskill" />
+          complimentary skill
+        </div>
+        <div class="column">
+          <input type="checkbox" name="attr_extratime" /> spend extra time
+        </div>
+        <div class="column">
+          Other/custom:
+          <input type="number" name="attr_custommod" />
+        </div>
+        <div class="column">
+          Luck points spent
+          <select name="attr_luckmod">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
