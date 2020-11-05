@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <div class="tabbed"><input type="radio" name="selecttab" value="1" class="tab tab1" checked="checked" /> <span class="tab accent-font">Character</span> <input type="radio" name="selecttab" value="2" class="tab tab2" /> <span class="tab accent-font">Skills</span> <input type="radio" name="selecttab" value="3" class="tab tab3" /> <span class="tab accent-font">Combat</span> <input type="radio" name="selecttab" value="4" class="tab tab4" /> <span class="tab accent-font">Gear</span> <input type="radio" name="selecttab" value="5" class="tab tab5" /> <span class="tab accent-font">Cyberware</span> <input type="radio" name="selecttab" value="6" class="tab tab6" /> <span class="tab accent-font">Background</span> <input type="radio" name="selecttab" value="7" class="tab tab7" /> <span class="tab accent-font">Settings</span>
+    <div class="tabbed"><input type="radio" name="selecttab" value="1" class="tab tab1" checked="checked" /> <span class="tab accent-font">Character</span> <input type="radio" name="selecttab" value="2" class="tab tab2" /> <span class="tab accent-font">Skills</span> <input type="radio" name="selecttab" value="3" class="tab tab3" /> <span class="tab accent-font">Combat</span> <input type="radio" name="selecttab" value="4" class="tab tab4" /> <span class="tab accent-font">Gear</span> <input type="radio" name="selecttab" value="5" class="tab tab5" /> <span class="tab accent-font">Cyberware</span> <input type="radio" name="selecttab" value="6" class="tab tab6" /> <span class="tab accent-font">Lifepath</span> <input type="radio" name="selecttab" value="7" class="tab tab7" /> <span class="tab accent-font">Settings</span>
       <div class="tab-content tab1">
         <div>
           <div class="character-info">
@@ -254,7 +254,10 @@ on('change:stat_luck', function() {
                   <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_acting"> <button class="button-plain" type="roll">Acting</button></div>
                 </li>
                 <li>
-                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_playinstrument"> <button class="button-plain" type="roll">Play Instrument</button></div>
+                  <h5 class="accent-font">Play Instrument</h5>
+                  <fieldset class="repeating_playinstrument">
+                    <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_playinstrument"> <button class="button-plain" type="roll"></button> <input class="skill-name" name="attr_playinstrument_name"></div>
+                  </fieldset>
                 </li>
               </ul>
             </div>
@@ -375,7 +378,60 @@ on('change:stat_luck', function() {
           <h3 class="accent-font">Cyberware</h3>
         </div>
       </div>
-      <div class="tab-content tab6"></div>
+      <div class="tab-content tab6">
+        <div class="section-lifepath">
+          <h3 class="accent-font">Lifepath</h3>
+          <div class="columns">
+            <div class="column">
+              <div><span class="accent-font">Cultural Origins</span><textarea name="attr_lp_culture"></textarea></div>
+              <div><span class="accent-font">Clothing Style</span><textarea name="attr_lp_clothing"></textarea></div>
+              <div><span class="accent-font">What do you value most?</span><textarea name="attr_lp_whatdoyouvalue"></textarea></div>
+              <div><span class="accent-font">Most valued person</span><textarea name="attr_lp_mostvaluedperson"></textarea></div>
+              <div><span class="accent-font">Family Background</span><textarea name="attr_lp_familybackground"></textarea></div>
+              <div><span class="accent-font">Family Crisis</span><textarea name="attr_lp_familycrisis"></textarea></div>
+            </div>
+            <div class="column">
+              <div><span class="accent-font">Personality</span><textarea name="attr_lp_personality"></textarea></div>
+              <div><span class="accent-font">Hairstyle</span><textarea name="attr_lp_hairstyle"></textarea></div>
+              <div><span class="accent-font">Feelings about people</span><textarea name="attr_lp_feelingsaboutpeople"></textarea></div>
+              <div><span class="accent-font">Most valued possession</span><textarea name="attr_lp_mostvaluedpossession"></textarea></div>
+              <div><span class="accent-font">Childhood environment</span><textarea name="attr_lp_childhoodenv"></textarea></div>
+              <div><span class="accent-font">Life Goals</span><textarea name="attr_lp_lifegoals"></textarea></div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <h4 class="accent-font">Friends</h4>
+              <fieldset class="repeating_friends">
+                <div><textarea name="attr_lp_friend"></textarea></div>
+              </fieldset>
+            </div>
+            <div class="column">
+              <h4 class="accent-font">Tragic Love Affairs</h4>
+              <fieldset class="repeating_loveaffairs">
+                <div><textarea name="attr_lp_loveaffair"></textarea></div>
+              </fieldset>
+            </div>
+          </div>
+          <div>
+            <h4 class="accent-font">Enemies</h4>
+            <div class="columns">
+              <div class="column">Who?</div>
+              <div class="column">What caused it?</div>
+              <div class="column">What can they throw at you?</div>
+              <div class="column">What's gonna happen?</div>
+            </div>
+            <fieldset class="repeating_enemies">
+              <div class="columns">
+                <div class="column"><textarea name="attr_lp_enemywho"></textarea></div>
+                <div class="column"><textarea name="attr_lp_enemycause"></textarea></div>
+                <div class="column"><textarea name="attr_lp_enemythrow"></textarea></div>
+                <div class="column"><textarea name="attr_lp_enemyhappen"></textarea></div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
       <div class="tab-content tab7">
         <div class="section-settings">
           <h3 class="accent-font">Settings</h3>

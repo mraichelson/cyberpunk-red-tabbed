@@ -5,39 +5,52 @@ $tabHeight: 3rem;
 $tabWidth: 100px;
 $tabFontSize: 1.2rem;
 $tabPadding: 0.5rem;
-$tabColor: #6ec498;
+$tabColor: #c00;
 
 .sheet-tabbed {
   text-align: center;
   span.sheet-tab {
-    width: $tabWidth;
-    margin-left: -1 * $tabWidth;
-    font-size: 1.2rem;
-    height: $tabHeight;
-    padding: $tabPadding;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
-    border: 1px solid $tabColor;
     background-color: transparent;
+    border: 1px solid $tabColor;
     border-bottom: none;
     box-sizing: border-box;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: $tabHeight;
+    margin-left: -1 * $tabWidth;
+    padding: $tabPadding;
+    text-align: center;
+    text-transform: uppercase;
+    width: $tabWidth;
   }
   input.sheet-tab {
-    width: $tabWidth;
-    position: relative;
-    opacity: 0;
-    z-index: 9999;
-    height: $tabHeight;
     box-sizing: border-box;
+    height: $tabHeight;
+    opacity: 0;
     padding: $tabPadding;
+    position: relative;
+    width: $tabWidth;
+    z-index: 9999;
   }
   input.sheet-tab:checked + span.sheet-tab {
     border-color: $tabColor;
-    color: #000;
+    color: #fff;
     background-color: $tabColor;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border: 5px solid transparent;
+      border-left-color: #fff;
+      border-top-color: #fff;
+    }
   }
   .sheet-tab-content {
     display: none;
