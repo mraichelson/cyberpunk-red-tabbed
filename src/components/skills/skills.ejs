@@ -1,5 +1,4 @@
 <div class="section-skills">
-  <h3 class="accent-font">Skills</h3>
   <div class="skills-list-grouped">
     <% skills.forEach(function(group) { %>
       <div class="skill-group">
@@ -11,9 +10,10 @@
               <h5 class="accent-font"><%= skill.name %></h5>
               <fieldset class="<%= skill.fieldset %>">
                 <div class="skill">
-                  <input class="skill-value" type="number" value="0" name="attr_<%= skill.field %>">
+                  <input class="skill-value" type="number" value="0" name="attr_skillvalue">
+                  <span class="skill-indent-icon">&#8627;</span>
                   <button class="button-plain" type="roll"></button>
-                  <input class="skill-name" type="text" name="attr_<%= skill.label %>">
+                  <input class="skill-name" type="text" name="attr_skillname">
                 </div>
               </fieldset>
             <% } else { %>

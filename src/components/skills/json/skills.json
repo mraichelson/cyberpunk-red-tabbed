@@ -192,7 +192,7 @@
           "stat"  : "stat_int",
           "type"  : "multiple",
           "fieldset": "repeating_languages",
-          "label" : "language_name"
+          "label" : "languagename"
         },
         {
           "name"  : "Local Expert",
@@ -200,7 +200,7 @@
           "stat"  : "stat_int",
           "type"  : "multiple",
           "fieldset" : "repeating_localexperts",
-          "label" : "localexpert_name"
+          "label" : "localexpertname"
         },
         {
           "name"  : "Science",
@@ -208,7 +208,7 @@
           "stat"  : "stat_int",
           "type"  : "multiple",
           "fieldset" : "repeating_sciences",
-          "label": "science_name"
+          "label": "sciencename"
         }
       ]
     },
@@ -239,7 +239,7 @@
           "stat"  : "stat_dex",
           "type"  : "multiple",
           "fieldset" : "repeating_martialarts",
-          "label" : "martialart_name"
+          "label" : "martialartname"
         }
       ]
     },
@@ -258,7 +258,7 @@
           "stat"  : "stat_tech",
           "type"  : "multiple",
           "fieldset" : "repeating_playinstrument",
-          "label" : "playinstrument_name"
+          "label" : "playinstrumentname"
         }
       ]
     },

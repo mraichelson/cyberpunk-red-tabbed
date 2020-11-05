@@ -4,16 +4,17 @@
 $tabHeight: 3rem;
 $tabWidth: 100px;
 $tabFontSize: 1.2rem;
-$tabPadding: 0.5rem;
-$tabColor: #c00;
+$tabPadding: 0.5rem 0.5rem 0;
+$tabColor: $cpRed;
 
 .sheet-tabbed {
   text-align: center;
   span.sheet-tab {
-    background-color: transparent;
-    border: 1px solid $tabColor;
+    background-color: black;
+    border: 3px solid $tabColor;
     border-bottom: none;
     box-sizing: border-box;
+    color: white;
     display: inline-block;
     font-size: 1.2rem;
     font-weight: bold;
@@ -35,8 +36,8 @@ $tabColor: #c00;
   }
   input.sheet-tab:checked + span.sheet-tab {
     border-color: $tabColor;
-    color: #fff;
-    background-color: $tabColor;
+    color: black;
+    background-color: white;
     position: relative;
     &:after {
       content: '';
@@ -48,12 +49,16 @@ $tabColor: #c00;
       height: 0;
       overflow: hidden;
       border: 5px solid transparent;
-      border-left-color: #fff;
-      border-top-color: #fff;
+      border-left-color: $tabColor;
+      border-top-color: $tabColor;
     }
   }
   .sheet-tab-content {
+    background-color: $tabColor;
+    border: 1px solid $tabColor;
     display: none;
+    margin-top: -1px; // This sucks and I hate it. -MR
+    padding: 1rem;
     text-align: left;
   }
   input.sheet-tab1:checked ~ div.sheet-tab1,
