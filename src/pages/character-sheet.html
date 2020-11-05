@@ -40,7 +40,7 @@
         <div><%= require('../components/dice-roller/dice-roller.ejs')() %></div>
       </div>
       <div class="tab-content tab2">
-        <%= require('../components/skills/skills.ejs')() %>
+        <%= require('../components/skills/skills.ejs')(require('../components/skills/json/skills.json')) %>
       </div>
       <div class="tab-content tab3">
         <%= require('../components/combat/combat.ejs')() %>

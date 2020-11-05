@@ -33,7 +33,7 @@
         </div>
         <div>
           <div class="section-attributes">
-            <h3>Attributes</h3>
+            <h3 class="accent-font">Attributes</h3>
             <div class="sheet-columns">
               <div class="sheet-column"><span class="accent-font">INT</span> <input type="number" name="attr_stat_int" /></div>
               <div class="sheet-column"><span class="accent-font">REF</span> <input type="number" name="attr_stat_ref" /></div>
@@ -46,7 +46,6 @@
               <div class="sheet-column"><span class="accent-font">BODY</span> <input type="number" name="attr_stat_body" /></div>
               <div class="sheet-column"><span class="accent-font">EMP</span> <input type="number" name="attr_stat_emp" /></div>
             </div>
-            <script></script>
           </div>
         </div>
         <div class="columns">
@@ -92,29 +91,295 @@ on('change:stat_luck', function() {
           </div>
         </div>
         <div>
-          <div class="section-role">role</div>
+          <div class="section-role">
+            <h3 class="accent-font">Role</h3>
+          </div>
         </div>
         <div>
-          <div class="section-dice-roller">dice roller</div>
+          <div class="section-dice-roller">
+            <h3 class="accent-font">Dice roller</h3>
+          </div>
         </div>
       </div>
       <div class="tab-content tab2">
-        <div class="section-skills">skills</div>
+        <div class="section-skills">
+          <h3 class="accent-font">Skills</h3>
+          <div class="skills-list-grouped">
+            <div class="skill-group">
+              <h4 class="accent-font">Awareness Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_concealrevealobject"> <button class="button-plain" type="roll">Conceal/Reveal Object</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_concentration"> <button class="button-plain" type="roll">Concentration</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_lipreading"> <button class="button-plain" type="roll">Lip Reading</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_perception"> <button class="button-plain" type="roll">Perception</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_tracking"> <button class="button-plain" type="roll">Tracking</button></div>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Body Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_athletics"> <button class="button-plain" type="roll">Athletics</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_contrortionist"> <button class="button-plain" type="roll">Contrortionist</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_dance"> <button class="button-plain" type="roll">Dance</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_endurance"> <button class="button-plain" type="roll">Endurance</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_resisttorturedrugs"> <button class="button-plain" type="roll">Resist Torture/Drugs</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_stealth"> <button class="button-plain" type="roll">Stealth</button></div>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Control Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_landvehicle"> <button class="button-plain" type="roll">Control Land Vehicle</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_airvehicle"> <button class="button-plain" type="roll">Pilot Air Vehicle (x2)</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_seavehicle"> <button class="button-plain" type="roll">Pilot Sea Vehicle</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_riding"> <button class="button-plain" type="roll">Riding</button></div>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Education Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_accounting"> <button class="button-plain" type="roll">Accounting</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_animalhandling"> <button class="button-plain" type="roll">Animal Handling</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_bureaucracy"> <button class="button-plain" type="roll">Bureaucracy</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_business"> <button class="button-plain" type="roll">Business</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_composition"> <button class="button-plain" type="roll">Composition</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_criminology"> <button class="button-plain" type="roll">Criminology</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_cryptography"> <button class="button-plain" type="roll">Cryptography</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_deduction"> <button class="button-plain" type="roll">Deduction</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_education"> <button class="button-plain" type="roll">Education</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_gamble"> <button class="button-plain" type="roll">Gamble</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_librarysearch"> <button class="button-plain" type="roll">Library Search</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_tactics"> <button class="button-plain" type="roll">Tactics</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_wildernesssurvival"> <button class="button-plain" type="roll">Wilderness Survival</button></div>
+                </li>
+                <li>
+                  <h5 class="accent-font">Languages</h5>
+                  <fieldset class="repeating_languages">
+                    <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_language"> <button class="button-plain" type="roll"></button> <input class="skill-name" name="attr_language_name"></div>
+                  </fieldset>
+                </li>
+                <li>
+                  <h5 class="accent-font">Local Expert</h5>
+                  <fieldset class="repeating_localexperts">
+                    <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_localexpert"> <button class="button-plain" type="roll"></button> <input class="skill-name" name="attr_localexpert_name"></div>
+                  </fieldset>
+                </li>
+                <li>
+                  <h5 class="accent-font">Science</h5>
+                  <fieldset class="repeating_sciences">
+                    <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_science"> <button class="button-plain" type="roll"></button> <input class="skill-name" name="attr_science_name"></div>
+                  </fieldset>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Fighting Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_brawling"> <button class="button-plain" type="roll">Brawling</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_evasion"> <button class="button-plain" type="roll">Evasion</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_meleeweapon"> <button class="button-plain" type="roll">Melee Weapon</button></div>
+                </li>
+                <li>
+                  <h5 class="accent-font">Martial Arts (x2)</h5>
+                  <fieldset class="repeating_martialarts">
+                    <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_martialarts"> <button class="button-plain" type="roll"></button> <input class="skill-name" name="attr_martialart_name"></div>
+                  </fieldset>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Performance Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_acting"> <button class="button-plain" type="roll">Acting</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_playinstrument"> <button class="button-plain" type="roll">Play Instrument</button></div>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Ranged Weapon Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_archery"> <button class="button-plain" type="roll">Archery</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_autofire"> <button class="button-plain" type="roll">Autofire (x2)</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_handgun"> <button class="button-plain" type="roll">Handgun</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_heavyweapons"> <button class="button-plain" type="roll">Heavy Weapons</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_shoulderarms"> <button class="button-plain" type="roll">Shoulder Arms</button></div>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Social Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_bribery"> <button class="button-plain" type="roll">Bribery</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_conversation"> <button class="button-plain" type="roll">Conversation</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_humanperception"> <button class="button-plain" type="roll">Human Perception</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_interrogation"> <button class="button-plain" type="roll">Interrogation</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_personalgrooming"> <button class="button-plain" type="roll">Personal Grooming</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_persuasion"> <button class="button-plain" type="roll">Persuasion</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_bribery"> <button class="button-plain" type="roll">Streetwise</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_bribery"> <button class="button-plain" type="roll">Trading</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_wardrobestyle"> <button class="button-plain" type="roll">Wardrobe & Style</button></div>
+                </li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h4 class="accent-font">Technique Skills</h4>
+              <ul class="list-plain">
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_airevehicletech"> <button class="button-plain" type="roll">Air Vehicle Tech</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_basictech"> <button class="button-plain" type="roll">Basic Tech</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_cybertech"> <button class="button-plain" type="roll">Cybertech</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_demolitions"> <button class="button-plain" type="roll">Demolitions (x2)</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_electronicssecurity"> <button class="button-plain" type="roll">Electronics/Security Tech (x2)</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_forgery"> <button class="button-plain" type="roll">Forgery</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_firstaid"> <button class="button-plain" type="roll">First Aid</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_landvehicletech"> <button class="button-plain" type="roll">Land Vehicle Tech</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_paintdrawsculpt"> <button class="button-plain" type="roll">Paint/Draw/Sculpt</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_paramedic"> <button class="button-plain" type="roll">Paramedic (x2)</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_photographyfilm"> <button class="button-plain" type="roll">Photography/Film</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_picklock"> <button class="button-plain" type="roll">Pick Lock</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_pickpocket"> <button class="button-plain" type="roll">Pick Pocket</button></div>
+                </li>
+                <li>
+                  <div class="skill"><input class="skill-value" type="number" value="0" name="attr_skill_weaponstech"> <button class="button-plain" type="roll">Weaponstech</button></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="tab-content tab3">
         <div class="section-combat">
-          <h3>Combat</h3>
+          <h3 class="accent-font">Combat</h3>
         </div>
       </div>
       <div class="tab-content tab4">
-        <div class="section-gear">gear</div>
+        <div class="section-gear">
+          <h3 class="accent-font">Gear</h3>
+        </div>
       </div>
       <div class="tab-content tab5">
-        <div class="section-cyberware">cyberware</div>
+        <div class="section-cyberware">
+          <h3 class="accent-font">Cyberware</h3>
+        </div>
       </div>
       <div class="tab-content tab6"></div>
       <div class="tab-content tab7">
-        <div class="section-settings">settings</div>
+        <div class="section-settings">
+          <h3 class="accent-font">Settings</h3>
+        </div>
       </div>
     </div>
     <rolltemplate class="sheet-rolltemplate-attack">

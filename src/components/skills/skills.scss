@@ -1,0 +1,20 @@
+div.sheet-skill {
+  clear: both;
+  display: block;
+  margin-bottom: 1rem;
+  input.sheet-skill-value {
+    float: right;
+    width: 5rem;
+  }
+}
+.sheet-section-skills {
+  h4 {
+    margin-bottom: 1rem;
+  }
+  h5 {
+    margin-bottom: 1rem;
+  }
+}
+.sheet-skills-list-grouped {
+  columns: 2;
+}

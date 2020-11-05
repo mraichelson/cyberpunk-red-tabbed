@@ -16,9 +16,9 @@ module.exports = (env, args) => {
       jsonpFunction: 'MyCustomWebpackNamespace',
       path: `${__dirname}/dist`
     },
-    optimization: {
-      minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()]
-    },
+    // optimization: {
+    //   minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()]
+    // },
     plugins: setWebpackConfigPlugins(),
     devServer: {
       host: '0.0.0.0',

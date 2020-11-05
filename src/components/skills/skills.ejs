@@ -1,1 +1,31 @@
-<div class="section-skills">skills</div>
+<div class="section-skills">
+  <h3 class="accent-font">Skills</h3>
+  <div class="skills-list-grouped">
+    <% skills.forEach(function(group) { %>
+      <div class="skill-group">
+        <h4 class="accent-font"><%= group.group %> Skills</h4>
+        <ul class="list-plain">
+          <% group.skills.forEach(function(skill) { %>
+          <li>
+            <% if (skill.type === 'multiple') { %>
+              <h5 class="accent-font"><%= skill.name %></h5>
+              <fieldset class="<%= skill.fieldset %>">
+                <div class="skill">
+                  <input class="skill-value" type="number" value="0" name="attr_<%= skill.field %>">
+                  <button class="button-plain" type="roll"></button>
+                  <input class="skill-name" type="text" name="attr_<%= skill.label %>">
+                </div>
+              </fieldset>
+            <% } else { %>
+              <div class="skill">
+                <input class="skill-value" type="number" value="0" name="attr_<%= skill.field %>">
+                <button class="button-plain" type="roll"><%= skill.name %></button>
+              </div>
+            <% } %>
+          </li>
+          <% })%>
+        </ul>
+      </div>
+    <% }) %>
+  </div>
+</div>

@@ -1,4 +1,8 @@
 /**
+ * Fonts...
+ */
+// @import url(https://fonts.googleapis.com/css?family=Orbitron&display=swap);
+/**
  * Things that are broken out into easier to digest files...
  */
 @import 'accordions';
@@ -26,4 +30,25 @@
   margin: 0;
   padding: 0;
   width: 860px;
+}
+
+.sheet-accent-font {
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+}
+
+button.sheet-button-plain {
+  background: transparent;
+  border-style: none !important;
+  box-shadow: none;
+  font-size: 1.3rem !important;
+  margin: 0;
+  padding: 0;
+  &:before {
+    margin-right: 0.5rem;
+  }
+}
+ul.sheet-list-plain {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
 }
