@@ -27,7 +27,7 @@
           </div>
           <div class="column">
             <div class="accent-font">Damage</div>
-            <select name="attr_weapondamage">
+            <select class="narrow" name="attr_weapondamage">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -36,17 +36,19 @@
               <option value="6">6</option>
               <option value="7">7</option>
               <option value="8">8</option>
-            </select>d6
+              <option value="9">9</option>
+              <option value="10">10</option></select
+            >d6
           </div>
           <div class="column">
             <div class="accent-font">Magazine</div>
-            <input type="text" name="attr_weaponmagazine" />
+            <input class="narrow" type="text" name="attr_weaponmagazine" />
           </div>
           <div class="column">
             <div class="accent-font">
               <abbr title="Rate of Fire">RoF</abbr>
             </div>
-            <select name="attr_weaponrof">
+            <select class="narrow" name="attr_weaponrof">
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
@@ -67,16 +69,22 @@
           </div>
           <div class="column column-3">
             <div class="accent-font">Notes</div>
-            <textarea name="attr_weaponnotes"></textarea>
+            <textarea name="attr_weaponnotes" rows="3"></textarea>
           </div>
         </div>
         <div class="actions">
-          <button type="roll" name="roll_1d10"
-            value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">
+          <button
+            type="roll"
+            name="roll_1d10"
+            value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}"
+          >
             Attack
           </button>
-          <button type="roll" name="roll_1d10"
-            value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">
+          <button
+            type="roll"
+            name="roll_1d10"
+            value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}"
+          >
             Damage
           </button>
         </div>

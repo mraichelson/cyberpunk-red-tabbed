@@ -38,13 +38,18 @@
     margin-bottom: 1rem;
     text-transform: uppercase;
   }
-  select,
-  option {
+  select {
     max-width: 100%;
     min-width: 5rem;
   }
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding:0.5rem;
+  }
+  .sheet-narrow { width:5rem; }
   .sheet-faux-button {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.25rem;
     border-style: none;
     display: inline-block;

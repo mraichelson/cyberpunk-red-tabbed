@@ -1,18 +1,19 @@
 <div class="section-luck">
   <h3 class="accent-font">Luck</h3>
-  <input type="number" name="attr_luck">
+  <input type="number" name="attr_luck" />
   (of <span name="attr_luck_max"></span>)
 </div>
 <script type="text/worker">
-function updateLuck() {
-  getAttrs(['stat_luck'], function(values) {
-    var luck = Number(values.stat_luck);
-    setAttrs({
-      luck_max: luck
-    })
+  function updateLuck() {
+    getAttrs(['stat_luck'], function(values) {
+      var luck = Number(values.stat_luck);
+      setAttrs({
+        luck: luck,
+        luck_max: luck
+      })
+    });
+  }
+  on('change:stat_luck', function() {
+    updateLuck();
   });
-}
-on('change:stat_luck', function() {
-  updateLuck();
-});
 </script>

@@ -1,7 +1,21 @@
 .sheet-weapon {
-  background-color: #fff;
-  padding: 0.5rem;
-  &:nth-of-type(even) {
-    background-color: $offWhite;
+  padding: 1rem;
+  .sheet-actions {
+    text-align: right;
+  }
+  button { font-size: 1.3rem; }
+}
+
+.sheet-combat-weapons {
+  .repcontainer {
+    & > div {
+      background-color: white;
+      &:nth-child(even) {
+        background-color: $offWhite;
+      }
+    }
+  }
+  .repcontrol {
+    padding-top: 1rem;
   }
 }

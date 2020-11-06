@@ -69,19 +69,20 @@ on('change:stat_body change:stat_will', function() {
         </div>
         <div class="column">
           <div class="section-luck">
-            <h3 class="accent-font">Luck</h3><input type="number" name="attr_luck"> (of <span name="attr_luck_max"></span>)
+            <h3 class="accent-font">Luck</h3><input type="number" name="attr_luck" /> (of <span name="attr_luck_max"></span>)
           </div>
           <script type="text/worker">function updateLuck() {
-  getAttrs(['stat_luck'], function(values) {
-    var luck = Number(values.stat_luck);
-    setAttrs({
-      luck_max: luck
-    })
-  });
-}
-on('change:stat_luck', function() {
-  updateLuck();
-});</script>
+    getAttrs(['stat_luck'], function(values) {
+      var luck = Number(values.stat_luck);
+      setAttrs({
+        luck: luck,
+        luck_max: luck
+      })
+    });
+  }
+  on('change:stat_luck', function() {
+    updateLuck();
+  });</script>
         </div>
       </div>
       <div>
@@ -776,7 +777,7 @@ on('change:stat_luck', function() {
                   </select>
                 </div>
                 <div class="column">
-                  <div class="accent-font">Damage</div><select name="attr_weapondamage">
+                  <div class="accent-font">Damage</div><select class="narrow" name="attr_weapondamage">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -785,13 +786,15 @@ on('change:stat_luck', function() {
                     <option value="6">6</option>
                     <option value="7">7</option>
                     <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
                   </select>d6
                 </div>
                 <div class="column">
-                  <div class="accent-font">Magazine</div><input name="attr_weaponmagazine" />
+                  <div class="accent-font">Magazine</div><input class="narrow" name="attr_weaponmagazine" />
                 </div>
                 <div class="column">
-                  <div class="accent-font"><abbr title="Rate of Fire">RoF</abbr></div><select name="attr_weaponrof">
+                  <div class="accent-font"><abbr title="Rate of Fire">RoF</abbr></div><select class="narrow" name="attr_weaponrof">
                     <option value="1">1</option>
                     <option value="2">2</option>
                   </select>
@@ -803,7 +806,7 @@ on('change:stat_luck', function() {
                   <div class="weapon-concealable"><span class="accent-font"><input type="checkbox" name="attr_weaponconcealable"/> Concealable</span></div>
                 </div>
                 <div class="column column-3">
-                  <div class="accent-font">Notes</div><textarea name="attr_weaponnotes"></textarea>
+                  <div class="accent-font">Notes</div><textarea name="attr_weaponnotes" rows="3"></textarea>
                 </div>
               </div>
               <div class="actions"><button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">Attack</button> <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">Damage</button></div>
