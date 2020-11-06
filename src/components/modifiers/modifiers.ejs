@@ -6,7 +6,8 @@
       <span name="attr_finalmodifierdisplay"></span>
       <span class="faux-button">
         Reset
-        <input type="checkbox" name="attr_resetmodifiers" /></span>
+        <input type="checkbox" name="attr_resetmodifiers"
+      /></span>
     </h3>
     Show Modifiers?
     <input type="checkbox" name="attr_hidemodifiers" class="show-next-div" />
@@ -39,8 +40,8 @@
           <input type="checkbox" name="attr_complextask" /> complex task
         </div>
         <div class="column">
-          <input type="checkbox" name="attr_wrongtoolsorparts" /> wrong tools
-          or parts
+          <input type="checkbox" name="attr_wrongtoolsorparts" /> wrong tools or
+          parts
         </div>
       </div>
       <div class="columns">
@@ -89,3 +90,146 @@
     </div>
   </div>
 </div>
+<script type="text/worker">
+  /**
+   * Convert from Roll20's handling of checkbox values to
+   * Boolean values for control flows.
+   */
+  function getCheckboxAsBoolean(val) {
+    // Additional logic to handle the custommod and luckmod fields
+    if (Number(val) && Number(val) !== 0) {
+      return true;
+    }
+    return val === 'on' ? true : false;
+  }
+  /**
+   * A list of modifiers that we can iterate through with a
+   * name that matches an ATTR value stored by the sheet and
+   * the actual numerical modifier to be applied to die rolls.
+   */
+  function modifiersList() {
+    return [
+      { name: 'nightorlowlight', value: -1 },
+      { name: 'neverdonebefore', value: -1 },
+      { name: 'complextask', value: -2 },
+      { name: 'wrongtoolsorparts', value: -2 },
+      { name: 'understress', value: -2 },
+      { name: 'drunkdrugged', value: -4 },
+      { name: 'secretly', value: -4 },
+      { name: 'obscured', value: -4 },
+      { name: 'damageserious', value: -2 },
+      { name: 'damagemortal', value: -4 },
+      { name: 'lostfacedown', value: -2 },
+      { name: 'complimentaryskill', value: 1 },
+      { name: 'extratime', value: 1 },
+      { name: 'aimedshot', value: -8 },
+      { name: 'luckmod', value: 'luckmod' },
+      { name: 'custommod', value: 'custommod' }
+    ];
+  }
+  /**
+   * Get modifiers as an array of names as Strings.
+   */
+  function getModifierNames() {
+    var modifiers = modifiersList();
+    var modifierNames = [];
+    modifiers.forEach((modifier) => {
+      modifierNames.push(modifier.name);
+    });
+    return modifierNames;
+  }
+  /**
+   * Given the namme of a modifier return the numerical modifier
+   * to be applied to die rolls.
+   */
+  function getModifierValueByName(name) {
+    // LUCK and CUSTOM are special cases that map directly
+    // to attr values stored in the sheet.
+    if (name === 'luckmod' || name === 'custommod') {
+      getAttrs([name], function (values) {
+        return values[name];
+      });
+    }
+    // MOST MODIFIERS are static numbers that have their values
+    // stored as part of the data structure in modifiersList().
+    var modifiers = modifiersList();
+    return modifiers.find((modifier) => modifier.name === name).value;
+  }
+  /**
+   * Calculate the final modifier...
+   */
+  function calculateFinalModifier() {
+    var calculatedFinalModifier = 0;
+    getAttrs(getModifierNames(), function (values) {
+      for (var [key, value] of Object.entries(values)) {
+        if (getCheckboxAsBoolean(value)) {
+          if (key === 'luckmod' || key === 'custommod') {
+            calculatedFinalModifier += Number(values[key]);
+          } else {
+            calculatedFinalModifier += Number(getModifierValueByName(key));
+          }
+        }
+      }
+      if (calculatedFinalModifier === 0) {
+        calculatedFinalModifier = '0';
+      }
+      setAttrs({
+        finalmodifier: calculatedFinalModifier
+      });
+    });
+  }
+  // Get the (formatted) list of modifier fields to monitor for changes
+  function eventsModifiers() {
+    var modifiers = getModifierNames();
+    var modifiersList = '';
+    modifiers.forEach((modifier) => {
+      modifiersList += 'change:' + modifier + ' ';
+    });
+    return modifiersList;
+  }
+  /**
+   * When a modifier checkbox changes, trigger the re-calculation of
+   * the finalmodifier.
+   */
+  on(eventsModifiers(), function () {
+    calculateFinalModifier();
+  });
+  /**
+   * When the finalmodifier changes re-write the display version of
+   * the calculated modifier
+   */
+  on('change:finalmodifier', function () {
+    getAttrs(['finalmodifier', 'finalmodifierdisplay'], function (values) {
+      var modifier = Number(values.finalmodifier);
+      var formattedmodifier = ' ';
+      if (modifier > 0) {
+        formattedmodifier = '(+' + modifier + ')';
+      }
+      if (modifier < 0) {
+        formattedmodifier = '(' + modifier + ')';
+      }
+      setAttrs({
+        finalmodifierdisplay: formattedmodifier
+      });
+    });
+  });
+  /**
+   * Single function to reset all modifiers
+   */
+  function resetAllModifiers() {
+    var modifiers = getModifierNames();
+    var attrsToSet = {};
+    getAttrs(modifiers, function (values) {
+      for (var [key, value] of Object.entries(values)) {
+        attrsToSet[key] = '0';
+      }
+      setAttrs(attrsToSet);
+    });
+  }
+  /**
+   * Event handler to trigger reset of all modifiers
+   */
+  on('change:resetmodifiers', function () {
+    resetAllModifiers();
+  });
+</script>

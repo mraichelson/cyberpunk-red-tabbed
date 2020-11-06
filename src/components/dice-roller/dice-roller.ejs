@@ -1,3 +1,54 @@
 <div class="section-dice-roller">
   <h3 class="accent-font">Dice roller</h3>
+  Show Dice Rollers?
+  <input
+    type="checkbox"
+    name="attr_hidedicerollers"
+    value="0"
+    class="show-next-div"
+  />
+  <div>
+    <div class="columns">
+      <div class="column">
+        <button
+          type="roll"
+          name="roll_1d10"
+          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d10}} {{roll=[[1d10]]}}"
+        >
+          Roll 1d10
+        </button>
+      </div>
+      <div class="column">
+        <button
+          type="roll"
+          name="roll_d6"
+          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll @{rollnd6}d6}} {{roll=[[@{rollnd6}d6]]}}"
+        >
+          Roll
+        </button>
+        <select name="attr_rollnd6" style="width: 5rem">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        d6
+      </div>
+      <div class="column">
+        <button
+          type="roll"
+          name="roll_1d100"
+          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d100}} {{roll=[[1d100]]}}"
+        >
+          Roll 1d100
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -28,8 +28,9 @@
 @import '../components/rolltemplates/skill/skill';
 
 .charsheet {
-  margin: 0;
-  padding: 0;
+  color: $text;
+  margin: 0 !important;
+  padding: 0 !important;
   width: 860px;
   h3 {
     color: white;
@@ -43,9 +44,9 @@
     min-width: 5rem;
   }
   .sheet-faux-button {
-    background-color: #ddd;
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 0.25rem;
-    border: 1px solid #000;
+    border-style: none;
     display: inline-block;
     font-size: 1rem !important;
     padding: 0rem 0.5rem;

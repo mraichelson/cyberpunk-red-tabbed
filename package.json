@@ -4,8 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"deploy": "webpack --mode=production",
-		"dev": "webpack-dev-server --mode=development --port=8080"
+		"build": "webpack --mode=production"
 	},
 	"author": "",
 	"license": "ISC",

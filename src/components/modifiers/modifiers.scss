@@ -1,0 +1,19 @@
+.sheet-section-modifiers {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+  .sheet-toggle-container {
+    background-color: #fff;
+    color: $text;
+    margin-top: 1rem;
+    .sheet-columns:nth-child(even) {
+      background-color: $offWhite;
+    }
+    .sheet-column {
+      line-height: 2rem;
+      padding: 1rem;
+      text-align: left;
+    }
+  }
+  select { width: 5rem; }
+}
