@@ -25,7 +25,7 @@
         <div class="character-info">
           <div class="columns">
             <div class="column">
-              <div class="accent-font">Character Name</div>
+              <div class="accent-font">Handle</div>
               <input type="text" name="attr_charactername" />
             </div>
             <div class="column">
@@ -125,7 +125,7 @@
       <div class="columns">
         <div class="column">
           <div class="section-empathy">
-            <h3 class="accent-font">Current Empathy</h3>
+            <h3 class="accent-font">Empathy</h3>
             <div>
               <span name="attr_empathy"></span> of
               <span name="attr_stat_emp"></span>
@@ -136,7 +136,8 @@
     getAttrs(['stat_emp'], function(values) {
       var empathy = Number(values.stat_emp);
       setAttrs({
-        empathy: empathy
+        empathy: empathy,
+        empathy_max: empathy
       })
     });
   }
@@ -244,7 +245,7 @@
       var threshold = Number(values.seriouslywounded);
       var damageserious = 0;
       var damagemortal = 0;
-      if (hp <= threshold) {
+      if (hp < threshold) {
         damageserious = 'on'
       }
       if (hp < 1) {
@@ -265,7 +266,91 @@
       </div>
       <div>
         <div class="section-role">
-          <h3 class="accent-font">Role</h3>
+          <input type="hidden" name="attr_role" />
+          <div class="role-pane role-exec">
+            <h4>Exec</h4>
+            Teamwork
+            <input type="number" name="attr_role_exec" />
+          </div>
+          <div class="role-pane role-fixer">
+            <h4>Fixer</h4>
+            Operator
+            <input type="number" name="attr_role_fixer" />
+          </div>
+          <div class="role-pane role-lawman">
+            <h4>Lawman</h4>
+            Backup
+            <input type="number" name="attr_role_lawman" />
+          </div>
+          <div class="role-pane role-media">
+            <h4>Media</h4>
+            Credibility
+            <input type="number" name="attr_role_media" />
+          </div>
+          <div class="role-pane role-medtech">
+            <h4>Medtech</h4>
+            Medicine
+            <input type="number" name="attr_role_medtech" />
+            <hr />
+            <div class="columns">
+              <div class="column">
+                Surgery<input type="number" name="attr_role_medtech_surgery" />
+              </div>
+              <div class="column">
+                Pharmaceuticals<input type="number" name="attr_role_medtech_pharmaceuticals" />
+              </div>
+              <div class="column">
+                Cryosystem Operation<input type="number" name="attr_role_medtech_cryosystem" />
+              </div>
+            </div>
+          </div>
+          <div class="role-pane role-netrunner">
+            <h4>Netrunner</h4>
+            Interface
+            <input type="number" name="attr_role_netrunner" />
+          </div>
+          <div class="role-pane role-nomad">
+            <h4>Nomad</h4>
+            Moto
+            <input type="number" name="attr_role_nomad" />
+          </div>
+          <div class="role-pane role-rockerboy">
+            <h4>Rockerboy</h4>
+            Charismatic Impact
+            <input type="number" name="attr_role_rocker" />
+          </div>
+          <div class="role-pane role-solo">
+            <h4>Solo</h4>
+            Combat Awareness
+            <input type="number" name="attr_role_solo" />
+            [reset]
+            <hr />
+            <div class="columns">
+              <div class="column">
+                Damage Deflection<input type="number" name="attr_role_solo_damagedeflection" />
+              </div>
+              <div class="column">
+                Fumble Recovery<input type="number" name="attr_role_solo_fumblerecovery" />
+              </div>
+              <div class="column">
+                Initiative Reaction<input type="number" name="attr_role_solo_initiativereaction" />
+              </div>
+              <div class="column">
+                Precision Attack<input type="number" name="attr_role_solo_precisionattack" />
+              </div>
+              <div class="column">
+                Spot Weakness<input type="number" name="attr_role_solo_spotweakness" />
+              </div>
+              <div class="column">
+                Threat Detection<input type="number" name="attr_role_solo_threatdetection" />
+              </div>
+            </div>
+          </div>
+          <div class="role-pane role-tech">
+            <h4>Tech</h4>
+            Maker
+            <input type="number" name="attr_role_tech" />
+          </div>
         </div>
 
       </div>
@@ -325,60 +410,62 @@
           <div class="toggle-container">
             <div class="columns">
               <div class="column">
-                <input type="checkbox" name="attr_damageserious" /> damage: serious
+                <input type="checkbox" name="attr_damageserious" /> Damage: Serious
+                <small>(HP &lt; <span name="attr_seriouslywounded"></span>)</small>
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_damagemortal" /> damage: mortal
+                <input type="checkbox" name="attr_damagemortal" /> Damage: Mortal
+                <small>(HP &lt; 1)</small>
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_understress" /> under stress
+                <input type="checkbox" name="attr_understress" /> Under stress
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_neverdonebefore" /> never done
+                <input type="checkbox" name="attr_neverdonebefore" /> Never done
                 before
               </div>
             </div>
             <div class="columns">
               <div class="column">
-                <input type="checkbox" name="attr_nightorlowlight" /> night or low
+                <input type="checkbox" name="attr_nightorlowlight" /> Night or low
                 light
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_obscured" /> obscured by smoke or
+                <input type="checkbox" name="attr_obscured" /> Obscured by smoke or
                 darkness
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_complextask" /> complex task
+                <input type="checkbox" name="attr_complextask" /> Complex task
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_wrongtoolsorparts" /> wrong tools or
+                <input type="checkbox" name="attr_wrongtoolsorparts" /> Wrong tools or
                 parts
               </div>
             </div>
             <div class="columns">
               <div class="column">
-                <input type="checkbox" name="attr_drunkdrugged" /> drunk or drugged
+                <input type="checkbox" name="attr_drunkdrugged" /> Drunk or Drugged
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_secretly" /> attempting secretly
+                <input type="checkbox" name="attr_secretly" /> Attempting secretly
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_lostfacedown" /> lost facedown
+                <input type="checkbox" name="attr_lostfacedown" /> Lost facedown
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_aimedshot" /> aimed shot
+                <input type="checkbox" name="attr_aimedshot" /> Aimed shot
               </div>
             </div>
             <div class="columns">
               <div class="column">
                 <input type="checkbox" name="attr_complimentaryskill" />
-                complimentary skill
+                Complimentary skill
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_extratime" /> spend extra time
+                <input type="checkbox" name="attr_extratime" /> Spend extra time
               </div>
               <div class="column">
-                Other/custom:
+                Other/custom
                 <input type="number" name="attr_custommod" />
               </div>
               <div class="column">
@@ -1569,60 +1656,62 @@
           <div class="toggle-container">
             <div class="columns">
               <div class="column">
-                <input type="checkbox" name="attr_damageserious" /> damage: serious
+                <input type="checkbox" name="attr_damageserious" /> Damage: Serious
+                <small>(HP &lt; <span name="attr_seriouslywounded"></span>)</small>
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_damagemortal" /> damage: mortal
+                <input type="checkbox" name="attr_damagemortal" /> Damage: Mortal
+                <small>(HP &lt; 1)</small>
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_understress" /> under stress
+                <input type="checkbox" name="attr_understress" /> Under stress
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_neverdonebefore" /> never done
+                <input type="checkbox" name="attr_neverdonebefore" /> Never done
                 before
               </div>
             </div>
             <div class="columns">
               <div class="column">
-                <input type="checkbox" name="attr_nightorlowlight" /> night or low
+                <input type="checkbox" name="attr_nightorlowlight" /> Night or low
                 light
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_obscured" /> obscured by smoke or
+                <input type="checkbox" name="attr_obscured" /> Obscured by smoke or
                 darkness
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_complextask" /> complex task
+                <input type="checkbox" name="attr_complextask" /> Complex task
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_wrongtoolsorparts" /> wrong tools or
+                <input type="checkbox" name="attr_wrongtoolsorparts" /> Wrong tools or
                 parts
               </div>
             </div>
             <div class="columns">
               <div class="column">
-                <input type="checkbox" name="attr_drunkdrugged" /> drunk or drugged
+                <input type="checkbox" name="attr_drunkdrugged" /> Drunk or Drugged
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_secretly" /> attempting secretly
+                <input type="checkbox" name="attr_secretly" /> Attempting secretly
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_lostfacedown" /> lost facedown
+                <input type="checkbox" name="attr_lostfacedown" /> Lost facedown
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_aimedshot" /> aimed shot
+                <input type="checkbox" name="attr_aimedshot" /> Aimed shot
               </div>
             </div>
             <div class="columns">
               <div class="column">
                 <input type="checkbox" name="attr_complimentaryskill" />
-                complimentary skill
+                Complimentary skill
               </div>
               <div class="column">
-                <input type="checkbox" name="attr_extratime" /> spend extra time
+                <input type="checkbox" name="attr_extratime" /> Spend extra time
               </div>
               <div class="column">
-                Other/custom:
+                Other/custom
                 <input type="number" name="attr_custommod" />
               </div>
               <div class="column">
@@ -1885,7 +1974,168 @@
     </div>
     <div class="tab-content tab5">
       <div class="section-cyberware">
-        <h3 class="accent-font">Cyberware</h3>
+        <div class="columns">
+          <div class="column">
+            <div class="cyberware-group">
+              <h4>Cyberaudio</h4>
+              <fieldset class="repeating_cyberaudio">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Right Cybereye</h4>
+              <fieldset class="repeating_cybereyeright">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Left Cybereye</h4>
+              <fieldset class="repeating_cybereyeleft">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Right Cyberarm</h4>
+              <fieldset class="repeating_cyberarmright">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Left Cyberarm</h4>
+              <fieldset class="repeating_cyberarmleft">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Neural Link</h4>
+              <fieldset class="repeating_cyberneurallink">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Right Cyberleg</h4>
+              <fieldset class="repeating_cyberlegright">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Left Cyberleg</h4>
+              <fieldset class="repeating_cyberlefleft">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="column">
+            <div class="cyberware-group">
+              <h4>Internal Cyberware</h4>
+              <fieldset class="repeating_cyberinternal">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>External Cyberware</h4>
+              <fieldset class="repeating_cyberexternal">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Fashionware</h4>
+              <fieldset class="repeating_cyberfashion">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cyberware-group">
+              <h4>Borgware</h4>
+              <fieldset class="repeating_cyberborg">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_cyberwarename" />
+                  </div>
+                  <div class="column column-3">
+                    <textarea name="attr_cyberwaredesc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1974,6 +2224,10 @@
               </div>
             </div>
           </fieldset>
+        </div>
+        <div>
+          <span name="attr_role"></span> role specific lifepath goes here.
+          <input type="hidden" name="attr_role" />
         </div>
       </div>
 

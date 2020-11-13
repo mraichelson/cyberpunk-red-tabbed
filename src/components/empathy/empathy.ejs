@@ -1,5 +1,5 @@
 <div class="section-empathy">
-  <h3 class="accent-font">Current Empathy</h3>
+  <h3 class="accent-font">Empathy</h3>
   <div>
     <span name="attr_empathy"></span> of
     <span name="attr_stat_emp"></span>
@@ -10,7 +10,8 @@
     getAttrs(['stat_emp'], function(values) {
       var empathy = Number(values.stat_emp);
       setAttrs({
-        empathy: empathy
+        empathy: empathy,
+        empathy_max: empathy
       })
     });
   }

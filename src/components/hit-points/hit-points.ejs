@@ -38,7 +38,7 @@
       var threshold = Number(values.seriouslywounded);
       var damageserious = 0;
       var damagemortal = 0;
-      if (hp <= threshold) {
+      if (hp < threshold) {
         damageserious = 'on'
       }
       if (hp < 1) {

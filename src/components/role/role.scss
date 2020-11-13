@@ -1,0 +1,27 @@
+.sheet-section-role {
+  margin-bottom: 1rem;
+  .sheet-role-pane {
+    display: none;
+    background-color: #fff;
+    padding: 1rem;
+    h4 {
+      margin: -1rem -1rem 1rem;
+    }
+    &.sheet-role-blank {
+      text-align: center;
+    }
+  }
+  // input[value='Blank'] ~ .sheet-role-blank,
+  input[value='Exec'] ~ .sheet-role-exec,
+  input[value='Fixer'] ~ .sheet-role-fixer,
+  input[value='Lawman'] ~ .sheet-role-lawman,
+  input[value='Media'] ~ .sheet-role-media,
+  input[value='Medtech'] ~ .sheet-role-medtech,
+  input[value='Netrunner'] ~ .sheet-role-netrunner,
+  input[value='Nomad'] ~ .sheet-role-nomad,
+  input[value='Rockerboy'] ~ .sheet-role-rockerboy,
+  input[value='Solo'] ~ .sheet-role-solo,
+  input[value='Tech'] ~ .sheet-role-tech {
+    display: block;
+  }
+}
