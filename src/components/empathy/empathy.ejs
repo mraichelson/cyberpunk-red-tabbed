@@ -1,0 +1,20 @@
+<div class="section-empathy">
+  <h3 class="accent-font">Current Empathy</h3>
+  <div>
+    <span name="attr_empathy"></span> of
+    <span name="attr_stat_emp"></span>
+  </div>
+</div>
+<script type="text/worker">
+  function updateEmpathy() {
+    getAttrs(['stat_emp'], function(values) {
+      var empathy = Number(values.stat_emp);
+      setAttrs({
+        empathy: empathy
+      })
+    });
+  }
+  on('change:stat_emp', function() {
+    updateEmpathy();
+  });
+</script>

@@ -28,4 +28,29 @@
   on('change:stat_body change:stat_will', function() {
     updateHitPoints();
   });
+  /**
+   * Automatically apply "seriously wounded" and "mortally wounded"
+   * modifiers based on HP value.
+   */
+  function updateHpModifiers() {
+    getAttrs(['hp', 'seriouslywounded'], function (values) {
+      var hp = Number(values.hp);
+      var threshold = Number(values.seriouslywounded);
+      var damageserious = 0;
+      var damagemortal = 0;
+      if (hp <= threshold) {
+        damageserious = 'on'
+      }
+      if (hp < 1) {
+        damagemortal = 'on'
+      }
+      setAttrs({
+        damageserious: damageserious,
+        damagemortal: damagemortal
+      });
+    });
+  }
+  on('change:hp', function() {
+    updateHpModifiers();
+  });
 </script>

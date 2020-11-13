@@ -126,6 +126,86 @@
       </div>
       <div class="columns">
         <div class="column">
+          <div class="section-empathy">
+            <h3 class="accent-font">Current Empathy</h3>
+            <div>
+              <span name="attr_empathy"></span> of
+              <span name="attr_stat_emp"></span>
+            </div>
+          </div>
+          <script type="text/worker">
+            function updateEmpathy() {
+    getAttrs(['stat_emp'], function(values) {
+      var empathy = Number(values.stat_emp);
+      setAttrs({
+        empathy: empathy
+      })
+    });
+  }
+  on('change:stat_emp', function() {
+    updateEmpathy();
+  });
+</script>
+
+        </div>
+        <div class="column">
+          <div class="section-humanity">
+            <h3>humanity</h3>
+            Current Humanity:
+            <input type="number" name="attr_humanity" />
+            Maximum Humanity:
+            <span name="attr_humanity_max"></span>
+          </div>
+          <script type="text/worker">
+            function updateHumanity() {
+    getAttrs(['stat_emp'], function(values) {
+      var empathy = Number(values.stat_emp);
+      setAttrs({
+        humanity: empathy * 10,
+        humanity_max: empathy * 10
+      })
+    });
+  }
+  on('change:stat_emp', function() {
+    updateHumanity();
+  });
+  function updateEmpathyFromHumanity() {
+    getAttrs(['humanity'], function(values){
+      var humanity = Number(values.humanity);
+      setAttrs({
+        empathy: Math.floor(humanity / 10)
+      });
+    });
+  }
+  on('change:humanity', function() {
+    updateEmpathyFromHumanity();
+  });
+</script>
+
+        </div>
+        <div class="column">
+          <div class="section-luck">
+            <h3 class="accent-font">Luck</h3>
+            <input type="number" name="attr_luck" />
+            (of <span name="attr_luck_max"></span>)
+          </div>
+          <script type="text/worker">
+            function updateLuck() {
+    getAttrs(['stat_luck'], function(values) {
+      var luck = Number(values.stat_luck);
+      setAttrs({
+        luck: luck,
+        luck_max: luck
+      })
+    });
+  }
+  on('change:stat_luck', function() {
+    updateLuck();
+  });
+</script>
+
+        </div>
+        <div class="column">
           <div class="section-hit-points">
             <h3 class="accent-font">Hit Points</h3>
             <input type="number" name="attr_hp" />
@@ -156,45 +236,34 @@
   on('change:stat_body change:stat_will', function() {
     updateHitPoints();
   });
-</script>
-
-        </div>
-        <div class="column">
-          <div class="section-luck">
-            <h3 class="accent-font">Luck</h3>
-            <input type="number" name="attr_luck" />
-            (of <span name="attr_luck_max"></span>)
-          </div>
-          <script type="text/worker">
-            function updateLuck() {
-    getAttrs(['stat_luck'], function(values) {
-      var luck = Number(values.stat_luck);
+  function updateHpModifiers() {
+    getAttrs(['hp', 'seriouslywounded'], function (values) {
+      var hp = Number(values.hp);
+      var threshold = Number(values.seriouslywounded);
+      var damageserious = 0;
+      var damagemortal = 0;
+      if (hp <= threshold) {
+        damageserious = 'on'
+      }
+      if (hp < 1) {
+        damagemortal = 'on'
+      }
       setAttrs({
-        luck: luck,
-        luck_max: luck
-      })
+        damageserious: damageserious,
+        damagemortal: damagemortal
+      });
     });
   }
-  on('change:stat_luck', function() {
-    updateLuck();
+  on('change:hp', function() {
+    updateHpModifiers();
   });
 </script>
 
         </div>
       </div>
       <div>
-        <div class="section-role" style="padding:50px;">
-          <h3 class="accent-font">Exact code taken from Kitchensink.</h3>
-          <fieldset class="repeating_kitchensinks">
-            <select name="attr_dtype" class="dtype">
-              <option value="d4">d4</option>
-              <option value="d6">d6</option>
-              <option value="d8">d8</option>
-              <option value="d10">d10</option>
-              <option value="d12">d12</option>
-            </select>
-            <input type="text" name="attr_skillname" />
-          </fieldset>
+        <div class="section-role">
+          <h3 class="accent-font">Role</h3>
         </div>
 
       </div>
@@ -491,9 +560,8 @@
                   <button class="button-plain" type="roll">
                     Conceal/Reveal Object
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -506,9 +574,8 @@
                   <button class="button-plain" type="roll">
                     Concentration
                     <span class="skill-meta"
-                >(will:<span
-                  name="attr_stat_will"
-                ></span>)</span>
+                >(will
+                <span name="attr_stat_will"></span>)</span>
                   </button>
                 </div>
 
@@ -521,9 +588,8 @@
                   <button class="button-plain" type="roll">
                     Lip Reading
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -536,9 +602,8 @@
                   <button class="button-plain" type="roll">
                     Perception
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -551,9 +616,8 @@
                   <button class="button-plain" type="roll">
                     Tracking
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -573,9 +637,8 @@
                   <button class="button-plain" type="roll">
                     Athletics
                     <span class="skill-meta"
-                >(dex:<span
-                  name="attr_stat_dex"
-                ></span>)</span>
+                >(dex
+                <span name="attr_stat_dex"></span>)</span>
                   </button>
                 </div>
 
@@ -588,9 +651,8 @@
                   <button class="button-plain" type="roll">
                     Contrortionist
                     <span class="skill-meta"
-                >(dex:<span
-                  name="attr_stat_dex"
-                ></span>)</span>
+                >(dex
+                <span name="attr_stat_dex"></span>)</span>
                   </button>
                 </div>
 
@@ -603,9 +665,8 @@
                   <button class="button-plain" type="roll">
                     Dance
                     <span class="skill-meta"
-                >(dex:<span
-                  name="attr_stat_dex"
-                ></span>)</span>
+                >(dex
+                <span name="attr_stat_dex"></span>)</span>
                   </button>
                 </div>
 
@@ -618,9 +679,8 @@
                   <button class="button-plain" type="roll">
                     Endurance
                     <span class="skill-meta"
-                >(will:<span
-                  name="attr_stat_will"
-                ></span>)</span>
+                >(will
+                <span name="attr_stat_will"></span>)</span>
                   </button>
                 </div>
 
@@ -633,9 +693,8 @@
                   <button class="button-plain" type="roll">
                     Resist Torture/Drugs
                     <span class="skill-meta"
-                >(will:<span
-                  name="attr_stat_will"
-                ></span>)</span>
+                >(will
+                <span name="attr_stat_will"></span>)</span>
                   </button>
                 </div>
 
@@ -648,9 +707,8 @@
                   <button class="button-plain" type="roll">
                     Stealth
                     <span class="skill-meta"
-                >(dex:<span
-                  name="attr_stat_dex"
-                ></span>)</span>
+                >(dex
+                <span name="attr_stat_dex"></span>)</span>
                   </button>
                 </div>
 
@@ -670,9 +728,8 @@
                   <button class="button-plain" type="roll">
                     Control Land Vehicle
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -685,9 +742,8 @@
                   <button class="button-plain" type="roll">
                     Pilot Air Vehicle (x2)
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -700,9 +756,8 @@
                   <button class="button-plain" type="roll">
                     Pilot Sea Vehicle
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -715,9 +770,8 @@
                   <button class="button-plain" type="roll">
                     Riding
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -737,9 +791,8 @@
                   <button class="button-plain" type="roll">
                     Accounting
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -752,9 +805,8 @@
                   <button class="button-plain" type="roll">
                     Animal Handling
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -767,9 +819,8 @@
                   <button class="button-plain" type="roll">
                     Bureaucracy
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -782,9 +833,8 @@
                   <button class="button-plain" type="roll">
                     Business
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -797,9 +847,8 @@
                   <button class="button-plain" type="roll">
                     Composition
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -812,9 +861,8 @@
                   <button class="button-plain" type="roll">
                     Criminology
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -827,9 +875,8 @@
                   <button class="button-plain" type="roll">
                     Cryptography
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -842,9 +889,8 @@
                   <button class="button-plain" type="roll">
                     Deduction
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -857,9 +903,8 @@
                   <button class="button-plain" type="roll">
                     Education
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -872,9 +917,8 @@
                   <button class="button-plain" type="roll">
                     Gamble
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -887,9 +931,8 @@
                   <button class="button-plain" type="roll">
                     Library Search
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -902,9 +945,8 @@
                   <button class="button-plain" type="roll">
                     Tactics
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -917,9 +959,8 @@
                   <button class="button-plain" type="roll">
                     Wilderness Survival
                     <span class="skill-meta"
-                >(int:<span
-                  name="attr_stat_int"
-                ></span>)</span>
+                >(int
+                <span name="attr_stat_int"></span>)</span>
                   </button>
                 </div>
 
@@ -930,9 +971,8 @@
                 <h5 class="accent-font">
                   Languages
                   <span class="skill-meta"
-              >(int:<span
-                name="attr_stat_int"
-              ></span>)</span>
+              >(int
+              <span name="attr_stat_int"></span>)</span>
                 </h5>
                 <fieldset class="repeating_languages">
                   <div class="skill">
@@ -950,9 +990,8 @@
                 <h5 class="accent-font">
                   Local Expert
                   <span class="skill-meta"
-              >(int:<span
-                name="attr_stat_int"
-              ></span>)</span>
+              >(int
+              <span name="attr_stat_int"></span>)</span>
                 </h5>
                 <fieldset class="repeating_localexperts">
                   <div class="skill">
@@ -970,9 +1009,8 @@
                 <h5 class="accent-font">
                   Science
                   <span class="skill-meta"
-              >(int:<span
-                name="attr_stat_int"
-              ></span>)</span>
+              >(int
+              <span name="attr_stat_int"></span>)</span>
                 </h5>
                 <fieldset class="repeating_sciences">
                   <div class="skill">
@@ -999,9 +1037,8 @@
                   <button class="button-plain" type="roll">
                     Brawling
                     <span class="skill-meta"
-                >(dex:<span
-                  name="attr_stat_dex"
-                ></span>)</span>
+                >(dex
+                <span name="attr_stat_dex"></span>)</span>
                   </button>
                 </div>
 
@@ -1014,9 +1051,8 @@
                   <button class="button-plain" type="roll">
                     Evasion
                     <span class="skill-meta"
-                >(dex:<span
-                  name="attr_stat_dex"
-                ></span>)</span>
+                >(dex
+                <span name="attr_stat_dex"></span>)</span>
                   </button>
                 </div>
 
@@ -1029,9 +1065,8 @@
                   <button class="button-plain" type="roll">
                     Melee Weapon
                     <span class="skill-meta"
-                >(dex:<span
-                  name="attr_stat_dex"
-                ></span>)</span>
+                >(dex
+                <span name="attr_stat_dex"></span>)</span>
                   </button>
                 </div>
 
@@ -1042,9 +1077,8 @@
                 <h5 class="accent-font">
                   Martial Arts (x2)
                   <span class="skill-meta"
-              >(dex:<span
-                name="attr_stat_dex"
-              ></span>)</span>
+              >(dex
+              <span name="attr_stat_dex"></span>)</span>
                 </h5>
                 <fieldset class="repeating_martialarts">
                   <div class="skill">
@@ -1071,9 +1105,8 @@
                   <button class="button-plain" type="roll">
                     Acting
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1084,9 +1117,8 @@
                 <h5 class="accent-font">
                   Play Instrument
                   <span class="skill-meta"
-              >(tech:<span
-                name="attr_stat_tech"
-              ></span>)</span>
+              >(tech
+              <span name="attr_stat_tech"></span>)</span>
                 </h5>
                 <fieldset class="repeating_playinstrument">
                   <div class="skill">
@@ -1113,9 +1145,8 @@
                   <button class="button-plain" type="roll">
                     Archery
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -1128,9 +1159,8 @@
                   <button class="button-plain" type="roll">
                     Autofire (x2)
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -1143,9 +1173,8 @@
                   <button class="button-plain" type="roll">
                     Handgun
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -1158,9 +1187,8 @@
                   <button class="button-plain" type="roll">
                     Heavy Weapons
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -1173,9 +1201,8 @@
                   <button class="button-plain" type="roll">
                     Shoulder Arms
                     <span class="skill-meta"
-                >(ref:<span
-                  name="attr_stat_ref"
-                ></span>)</span>
+                >(ref
+                <span name="attr_stat_ref"></span>)</span>
                   </button>
                 </div>
 
@@ -1195,9 +1222,8 @@
                   <button class="button-plain" type="roll">
                     Bribery
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1210,9 +1236,8 @@
                   <button class="button-plain" type="roll">
                     Conversation
                     <span class="skill-meta"
-                >(emp:<span
-                  name="attr_stat_emp"
-                ></span>)</span>
+                >(emp
+                <span name="attr_stat_emp"></span>)</span>
                   </button>
                 </div>
 
@@ -1225,9 +1250,8 @@
                   <button class="button-plain" type="roll">
                     Human Perception
                     <span class="skill-meta"
-                >(emp:<span
-                  name="attr_stat_emp"
-                ></span>)</span>
+                >(emp
+                <span name="attr_stat_emp"></span>)</span>
                   </button>
                 </div>
 
@@ -1240,9 +1264,8 @@
                   <button class="button-plain" type="roll">
                     Interrogation
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1255,9 +1278,8 @@
                   <button class="button-plain" type="roll">
                     Personal Grooming
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1270,9 +1292,8 @@
                   <button class="button-plain" type="roll">
                     Persuasion
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1285,9 +1306,8 @@
                   <button class="button-plain" type="roll">
                     Streetwise
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1300,9 +1320,8 @@
                   <button class="button-plain" type="roll">
                     Trading
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1315,9 +1334,8 @@
                   <button class="button-plain" type="roll">
                     Wardrobe & Style
                     <span class="skill-meta"
-                >(cool:<span
-                  name="attr_stat_cool"
-                ></span>)</span>
+                >(cool
+                <span name="attr_stat_cool"></span>)</span>
                   </button>
                 </div>
 
@@ -1337,9 +1355,8 @@
                   <button class="button-plain" type="roll">
                     Air Vehicle Tech
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1352,9 +1369,8 @@
                   <button class="button-plain" type="roll">
                     Basic Tech
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1367,9 +1383,8 @@
                   <button class="button-plain" type="roll">
                     Cybertech
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1382,9 +1397,8 @@
                   <button class="button-plain" type="roll">
                     Demolitions (x2)
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1397,9 +1411,8 @@
                   <button class="button-plain" type="roll">
                     Electronics/Security Tech (x2)
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1412,9 +1425,8 @@
                   <button class="button-plain" type="roll">
                     Forgery
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1427,9 +1439,8 @@
                   <button class="button-plain" type="roll">
                     First Aid
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1442,9 +1453,8 @@
                   <button class="button-plain" type="roll">
                     Land Vehicle Tech
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1457,9 +1467,8 @@
                   <button class="button-plain" type="roll">
                     Paint/Draw/Sculpt
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1472,9 +1481,8 @@
                   <button class="button-plain" type="roll">
                     Paramedic (x2)
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1487,9 +1495,8 @@
                   <button class="button-plain" type="roll">
                     Photography/Film
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1502,9 +1509,8 @@
                   <button class="button-plain" type="roll">
                     Pick Lock
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1517,9 +1523,8 @@
                   <button class="button-plain" type="roll">
                     Pick Pocket
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1532,9 +1537,8 @@
                   <button class="button-plain" type="roll">
                     Weaponstech
                     <span class="skill-meta"
-                >(tech:<span
-                  name="attr_stat_tech"
-                ></span>)</span>
+                >(tech
+                <span name="attr_stat_tech"></span>)</span>
                   </button>
                 </div>
 
@@ -1861,10 +1865,10 @@
                 </div>
               </div>
               <div class="actions">
-                <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">
+                <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
                   Attack
                 </button>
-                <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weapon_name}}} {{roll=[[1d10]]}}">
+                <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
                   Damage
                 </button>
               </div>
@@ -1891,20 +1895,44 @@
         <h3 class="accent-font">Lifepath</h3>
         <div class="columns">
           <div class="column">
-            <div><span class="accent-font">Cultural Origins</span><textarea name="attr_lp_culture"></textarea></div>
-            <div><span class="accent-font">Clothing Style</span><textarea name="attr_lp_clothing"></textarea></div>
-            <div><span class="accent-font">What do you value most?</span><textarea name="attr_lp_whatdoyouvalue"></textarea></div>
-            <div><span class="accent-font">Most valued person</span><textarea name="attr_lp_mostvaluedperson"></textarea></div>
-            <div><span class="accent-font">Family Background</span><textarea name="attr_lp_familybackground"></textarea></div>
-            <div><span class="accent-font">Family Crisis</span><textarea name="attr_lp_familycrisis"></textarea></div>
+            <div>
+              <span class="accent-font">Cultural Origins</span><textarea name="attr_lp_culture"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Clothing Style</span><textarea name="attr_lp_clothing"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">What do you value most?</span><textarea name="attr_lp_whatdoyouvalue"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Most valued person</span><textarea name="attr_lp_mostvaluedperson"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Family Background</span><textarea name="attr_lp_familybackground"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Family Crisis</span><textarea name="attr_lp_familycrisis"></textarea>
+            </div>
           </div>
           <div class="column">
-            <div><span class="accent-font">Personality</span><textarea name="attr_lp_personality"></textarea></div>
-            <div><span class="accent-font">Hairstyle</span><textarea name="attr_lp_hairstyle"></textarea></div>
-            <div><span class="accent-font">Feelings about people</span><textarea name="attr_lp_feelingsaboutpeople"></textarea></div>
-            <div><span class="accent-font">Most valued possession</span><textarea name="attr_lp_mostvaluedpossession"></textarea></div>
-            <div><span class="accent-font">Childhood environment</span><textarea name="attr_lp_childhoodenv"></textarea></div>
-            <div><span class="accent-font">Life Goals</span><textarea name="attr_lp_lifegoals"></textarea></div>
+            <div>
+              <span class="accent-font">Personality</span><textarea name="attr_lp_personality"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Hairstyle</span><textarea name="attr_lp_hairstyle"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Feelings about people</span><textarea name="attr_lp_feelingsaboutpeople"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Most valued possession</span><textarea name="attr_lp_mostvaluedpossession"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Childhood environment</span><textarea name="attr_lp_childhoodenv"></textarea>
+            </div>
+            <div>
+              <span class="accent-font">Life Goals</span><textarea name="attr_lp_lifegoals"></textarea>
+            </div>
           </div>
         </div>
         <div class="columns">
@@ -1936,13 +1964,20 @@
           <fieldset class="repeating_enemies">
             <div class="columns">
               <div class="column"><textarea name="attr_lp_enemywho"></textarea></div>
-              <div class="column"><textarea name="attr_lp_enemycause"></textarea></div>
-              <div class="column"><textarea name="attr_lp_enemythrow"></textarea></div>
-              <div class="column"><textarea name="attr_lp_enemyhappen"></textarea></div>
+              <div class="column">
+                <textarea name="attr_lp_enemycause"></textarea>
+              </div>
+              <div class="column">
+                <textarea name="attr_lp_enemythrow"></textarea>
+              </div>
+              <div class="column">
+                <textarea name="attr_lp_enemyhappen"></textarea>
+              </div>
             </div>
           </fieldset>
         </div>
       </div>
+
     </div>
     <div class="tab-content tab7">
       <div class="section-settings">

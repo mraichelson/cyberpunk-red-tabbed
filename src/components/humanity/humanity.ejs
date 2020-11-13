@@ -1,0 +1,32 @@
+<div class="section-humanity">
+  <h3>humanity</h3>
+  Current Humanity:
+  <input type="number" name="attr_humanity" />
+  Maximum Humanity:
+  <span name="attr_humanity_max"></span>
+</div>
+<script type="text/worker">
+  function updateHumanity() {
+    getAttrs(['stat_emp'], function(values) {
+      var empathy = Number(values.stat_emp);
+      setAttrs({
+        humanity: empathy * 10,
+        humanity_max: empathy * 10
+      })
+    });
+  }
+  on('change:stat_emp', function() {
+    updateHumanity();
+  });
+  function updateEmpathyFromHumanity() {
+    getAttrs(['humanity'], function(values){
+      var humanity = Number(values.humanity);
+      setAttrs({
+        empathy: Math.floor(humanity / 10)
+      });
+    });
+  }
+  on('change:humanity', function() {
+    updateEmpathyFromHumanity();
+  });
+</script>

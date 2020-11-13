@@ -3,7 +3,12 @@
   .sheet-actions {
     text-align: right;
   }
-  button { font-size: 1.3rem; }
+  button {
+    font-size: 1.1rem;
+  }
+  textarea {
+    height: 4em;
+  }
 }
 
 .sheet-combat-weapons {

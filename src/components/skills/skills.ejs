@@ -10,10 +10,8 @@
           <h5 class="accent-font">
             <%= skill.name %>
             <span class="skill-meta"
-              >(<%= skill.stat.replace('stat_', '') %>:<span
-                name="attr_<%= skill.stat %>"
-              ></span
-              >)</span
+              >(<%= skill.stat.replace('stat_', '') %>
+              <span name="attr_<%= skill.stat %>"></span>)</span
             >
           </h5>
           <fieldset class="<%= skill.fieldset %>">
@@ -40,10 +38,8 @@
             <button class="button-plain" type="roll">
               <%= skill.name %>
               <span class="skill-meta"
-                >(<%= skill.stat.replace('stat_', '') %>:<span
-                  name="attr_<%= skill.stat %>"
-                ></span
-                >)</span
+                >(<%= skill.stat.replace('stat_', '') %>
+                <span name="attr_<%= skill.stat %>"></span>)</span
               >
             </button>
           </div>
