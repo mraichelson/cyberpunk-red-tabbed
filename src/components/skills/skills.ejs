@@ -1,31 +1,57 @@
 <div class="section-skills">
   <div class="skills-list-grouped">
     <% skills.forEach(function(group) { %>
-      <div class="skill-group">
-        <h4 class="accent-font"><%= group.group %> Skills</h4>
-        <ul class="list-plain">
-          <% group.skills.forEach(function(skill) { %>
-          <li>
-            <% if (skill.type === 'multiple') { %>
-              <h5 class="accent-font"><%= skill.name %></h5>
-              <fieldset class="<%= skill.fieldset %>">
-                <div class="skill">
-                  <input class="skill-value" type="number" value="0" name="attr_skillvalue">
-                  <span class="skill-indent-icon">&#8627;</span>
-                  <button class="button-plain" type="roll"></button>
-                  <input class="skill-name" type="text" name="attr_skillname">
-                </div>
-              </fieldset>
-            <% } else { %>
-              <div class="skill">
-                <input class="skill-value" type="number" value="0" name="attr_<%= skill.field %>">
-                <button class="button-plain" type="roll"><%= skill.name %></button>
-              </div>
-            <% } %>
-          </li>
-          <% })%>
-        </ul>
-      </div>
+    <div class="skill-group">
+      <h4 class="accent-font"><%= group.group %> Skills</h4>
+      <ul class="list-plain">
+        <% group.skills.forEach(function(skill) { %>
+        <li>
+          <% if (skill.type === 'multiple') { %>
+          <h5 class="accent-font">
+            <%= skill.name %>
+            <span class="skill-meta"
+              >(<%= skill.stat.replace('stat_', '') %>:<span
+                name="attr_<%= skill.stat %>"
+              ></span
+              >)</span
+            >
+          </h5>
+          <fieldset class="<%= skill.fieldset %>">
+            <div class="skill">
+              <input
+                class="skill-value"
+                type="number"
+                value="0"
+                name="attr_skillvalue"
+              />
+              <span class="skill-indent-icon">&#8627;</span>
+              <button class="button-plain" type="roll"></button>
+              <input class="skill-name" type="text" name="attr_skillname" />
+            </div>
+          </fieldset>
+          <% } else { %>
+          <div class="skill">
+            <input
+              class="skill-value"
+              type="number"
+              value="0"
+              name="attr_<%= skill.field %>"
+            />
+            <button class="button-plain" type="roll">
+              <%= skill.name %>
+              <span class="skill-meta"
+                >(<%= skill.stat.replace('stat_', '') %>:<span
+                  name="attr_<%= skill.stat %>"
+                ></span
+                >)</span
+              >
+            </button>
+          </div>
+          <% } %>
+        </li>
+        <% })%>
+      </ul>
+    </div>
     <% }) %>
   </div>
 </div>
