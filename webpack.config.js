@@ -80,7 +80,8 @@ function setWebpackConfigPlugins() {
   const pagesToPublish = [
     {
       template: './src/pages/character-sheet.html',
-      filename: 'character-sheet.html'
+      filename: 'character-sheet.html',
+      minify: false
     }
   ];
 
