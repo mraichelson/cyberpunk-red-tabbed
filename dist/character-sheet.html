@@ -23,14 +23,13 @@
     <div class="tab-content tab1">
       <div>
         <div class="character-info">
-          <h3 class="accent-font">Character</h3>
           <div class="columns">
             <div class="column">
-              <span class="accent-font">Character Name</span>
-              <input type="text" name="attr_charactername">
+              <div class="accent-font">Character Name</div>
+              <input type="text" name="attr_charactername" />
             </div>
             <div class="column">
-              <span class="accent-font">Role</span>
+              <div class="accent-font">Role</div>
               <select name="attr_role">
 
                 <option value="Blank">Blank</option>
@@ -58,8 +57,8 @@
               </select>
             </div>
             <div class="column">
-              <span class="accent-font">Player Name</span>
-              <input type="text" name="attr_playername">
+              <div class="accent-font">Player Name</div>
+              <input type="text" name="attr_playername" />
             </div>
           </div>
         </div>
@@ -67,7 +66,6 @@
       </div>
       <div>
         <div class="section-attributes">
-          <h3 class="accent-font">Attributes</h3>
           <div class="sheet-columns">
 
             <div class="sheet-column">
@@ -236,6 +234,10 @@
   on('change:stat_body change:stat_will', function() {
     updateHitPoints();
   });
+  /**
+   * Automatically apply "seriously wounded" and "mortally wounded"
+   * modifiers based on HP value.
+   */
   function updateHpModifiers() {
     getAttrs(['hp', 'seriouslywounded'], function (values) {
       var hp = Number(values.hp);
@@ -269,10 +271,9 @@
       </div>
       <div>
         <div class="section-dice-roller">
-          <h3 class="accent-font">Dice roller</h3>
           Show Dice Rollers?
           <input type="checkbox" name="attr_hidedicerollers" value="0" class="show-next-div" />
-          <div>
+          <div class="dice-roller-pane">
             <div class="columns">
               <div class="column">
                 <button type="roll" name="roll_1d10" value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d10}} {{roll=[[1d10]]}}">
@@ -280,9 +281,6 @@
                 </button>
               </div>
               <div class="column">
-                <button type="roll" name="roll_d6" value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll @{rollnd6}d6}} {{roll=[[@{rollnd6}d6]]}}">
-                  Roll
-                </button>
                 <select name="attr_rollnd6" style="width: 5rem">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -295,7 +293,9 @@
                   <option value="9">9</option>
                   <option value="10">10</option>
                 </select>
-                d6
+                <button type="roll" name="roll_d6" value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll @{rollnd6}d6}} {{roll=[[@{rollnd6}d6]]}}">
+                  Roll d6
+                </button>
               </div>
               <div class="column">
                 <button type="roll" name="roll_1d100" value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d100}} {{roll=[[1d100]]}}">
@@ -1791,9 +1791,8 @@
 
       <!-- main combat component (weapons and attacks/damage) -->
       <div class="section-combat">
-        <h3 class="accent-font">Combat</h3>
         <div class="combat-weapons">
-          <h3>Weapons</h3>
+          <h4 class="accent-font">Weapons</h4>
           <fieldset class="repeating_weapons">
             <div class="weapon">
               <div class="columns">

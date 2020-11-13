@@ -1,5 +1,4 @@
 <div class="section-dice-roller">
-  <h3 class="accent-font">Dice roller</h3>
   Show Dice Rollers?
   <input
     type="checkbox"
@@ -7,7 +6,7 @@
     value="0"
     class="show-next-div"
   />
-  <div>
+  <div class="dice-roller-pane">
     <div class="columns">
       <div class="column">
         <button
@@ -19,13 +18,6 @@
         </button>
       </div>
       <div class="column">
-        <button
-          type="roll"
-          name="roll_d6"
-          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll @{rollnd6}d6}} {{roll=[[@{rollnd6}d6]]}}"
-        >
-          Roll
-        </button>
         <select name="attr_rollnd6" style="width: 5rem">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -38,7 +30,13 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-        d6
+        <button
+          type="roll"
+          name="roll_d6"
+          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll @{rollnd6}d6}} {{roll=[[@{rollnd6}d6]]}}"
+        >
+          Roll d6
+        </button>
       </div>
       <div class="column">
         <button

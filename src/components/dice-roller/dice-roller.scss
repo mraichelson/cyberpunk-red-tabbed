@@ -1,0 +1,16 @@
+.sheet-section-dice-roller {
+  color: white;
+  text-align: center;
+  .sheet-dice-roller-pane {
+    background-color: white;
+    color: $text;
+    border-top: 1rem solid $cpRed;
+    padding: 0 1rem 0;
+  }
+  .sheet-column {
+    padding-top: 1rem;
+    &:nth-child(even) {
+      background-color: $offWhite;
+    }
+  }
+}

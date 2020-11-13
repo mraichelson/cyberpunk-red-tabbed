@@ -1,0 +1,17 @@
+.sheet-section-attributes {
+  margin-bottom: 1rem;
+  .sheet-column {
+    background-color: white;
+    border: 0.5rem solid $cpRed;
+    border-top-style: none;
+    border-bottom-style: none;
+    padding: 1rem !important;
+    text-align: center;
+    &:first-child {
+      border-left-style: none;
+    }
+    &:last-child {
+      border-right-style: none;
+    }
+  }
+}
