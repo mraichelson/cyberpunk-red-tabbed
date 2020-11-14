@@ -96,7 +96,13 @@
     }
   }
 }
-
+.sheet-center {
+  text-align: center;
+}
+.sheet-field-wrapper {
+  background-color: white;
+  padding: 1rem;
+}
 .sheet-accent-font {
   font-family: 'Orbitron', Arial, Helvetica, sans-serif;
 }
