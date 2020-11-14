@@ -2,8 +2,16 @@
   background-color: white;
   margin-bottom: 1rem;
   .sheet-column {
-    padding: 1rem;
+    border-left: 0.5rem solid $cpRed;
+    border-right: 0.5rem solid $cpRed;
+    padding: 0.5rem;
     text-align: center;
+    &:first-child {
+      border-left-style: none;
+    }
+    &:last-child {
+      border-right-style: none;
+    }
   }
   span.sheet-accent-font {
     font-size: 1.3rem;

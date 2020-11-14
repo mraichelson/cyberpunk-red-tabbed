@@ -19,6 +19,8 @@
 @import '../components/modifiers/modifiers';
 @import '../components/role/role';
 @import '../components/skills/skills';
+@import '../components/cyberware/cyberware';
+@import '../components/lifepath/lifepath';
 /**
  * Import CSS for roll templates
  */
@@ -52,8 +54,11 @@
   }
   textarea {
     box-sizing: border-box;
-    width: 100%;
+    height: 5em;
+    margin: 0;
     padding: 0.5rem;
+    resize: none;
+    width: 100%;
   }
   .sheet-narrow {
     width: 5rem;

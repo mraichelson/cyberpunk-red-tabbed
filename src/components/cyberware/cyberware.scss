@@ -1,0 +1,26 @@
+.sheet-section-cyberware {
+  .repcontainer {
+    background-color: white;
+    margin-bottom: 0.5rem;
+    .repitem {
+      padding: 1rem 1rem 0;
+      &:nth-child(even) {
+        background-color: $offWhite;
+      }
+    }
+    .sheet-columns {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .repcontrol {
+    margin-bottom: 1rem;
+  }
+  input[type='text'],
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  textarea {
+    height: 5em;
+  }
+}

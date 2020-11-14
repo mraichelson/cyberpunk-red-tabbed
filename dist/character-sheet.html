@@ -212,8 +212,9 @@
             <div class="hit-points-meta">
               Seriously Wounded:
               <span class="hit-points-meta-value" name="attr_seriouslywounded"></span>
-              | Death Save:
-              <span class="hit-points-meta-value" name="attr_deathsave"></span>
+              <button class="death-save" type="roll">
+                Death Save (<span name="attr_deathsave"></span>)
+              </button>
             </div>
           </div>
           <script type="text/worker">
@@ -1908,17 +1909,17 @@
                 <div class="column">
                   <div class="accent-font">Damage</div>
                   <select class="narrow" name="attr_weapondamage">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>d6
+                    <option value="1">1d6</option>
+                    <option value="2">2d6</option>
+                    <option value="3">3d6</option>
+                    <option value="4">4d6</option>
+                    <option value="5">5d6</option>
+                    <option value="6">6d6</option>
+                    <option value="7">7d6</option>
+                    <option value="8">8d6</option>
+                    <option value="9">9d6</option>
+                    <option value="10">10d6</option>
+                  </select>
                 </div>
                 <div class="column">
                   <div class="accent-font">Magazine</div>
@@ -1980,10 +1981,14 @@
               <h4>Cyberaudio</h4>
               <fieldset class="repeating_cyberaudio">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -1993,10 +1998,14 @@
               <h4>Right Cybereye</h4>
               <fieldset class="repeating_cybereyeright">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2006,10 +2015,14 @@
               <h4>Left Cybereye</h4>
               <fieldset class="repeating_cybereyeleft">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2019,10 +2032,14 @@
               <h4>Right Cyberarm</h4>
               <fieldset class="repeating_cyberarmright">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2032,10 +2049,14 @@
               <h4>Left Cyberarm</h4>
               <fieldset class="repeating_cyberarmleft">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2045,10 +2066,14 @@
               <h4>Neural Link</h4>
               <fieldset class="repeating_cyberneurallink">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2058,10 +2083,14 @@
               <h4>Right Cyberleg</h4>
               <fieldset class="repeating_cyberlegright">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2071,10 +2100,14 @@
               <h4>Left Cyberleg</h4>
               <fieldset class="repeating_cyberlefleft">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2086,10 +2119,14 @@
               <h4>Internal Cyberware</h4>
               <fieldset class="repeating_cyberinternal">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2099,10 +2136,14 @@
               <h4>External Cyberware</h4>
               <fieldset class="repeating_cyberexternal">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2112,10 +2153,14 @@
               <h4>Fashionware</h4>
               <fieldset class="repeating_cyberfashion">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2125,10 +2170,14 @@
               <h4>Borgware</h4>
               <fieldset class="repeating_cyberborg">
                 <div class="columns">
-                  <div class="column column-2">
+                  <div class="column label">Name</div>
+                  <div class="column column-5">
                     <input type="text" name="attr_cyberwarename" />
                   </div>
-                  <div class="column column-3">
+                </div>
+                <div class="columns">
+                  <div class="column label">Data</div>
+                  <div class="column column-5">
                     <textarea name="attr_cyberwaredesc"></textarea>
                   </div>
                 </div>
@@ -2141,46 +2190,57 @@
     </div>
     <div class="tab-content tab6">
       <div class="section-lifepath">
-        <h3 class="accent-font">Lifepath</h3>
         <div class="columns">
           <div class="column">
-            <div>
-              <span class="accent-font">Cultural Origins</span><textarea name="attr_lp_culture"></textarea>
+            <div class="lifepath-group">
+              <h4>Cultural Origins</h4>
+              <textarea name="attr_lp_culture"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Clothing Style</span><textarea name="attr_lp_clothing"></textarea>
+            <div class="lifepath-group">
+              <h4>Clothing Style</h4>
+              <textarea name="attr_lp_clothing"></textarea>
             </div>
-            <div>
-              <span class="accent-font">What do you value most?</span><textarea name="attr_lp_whatdoyouvalue"></textarea>
+            <div class="lifepath-group">
+              <h4>What do you value most?</h4>
+              <textarea name="attr_lp_whatdoyouvalue"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Most valued person</span><textarea name="attr_lp_mostvaluedperson"></textarea>
+            <div class="lifepath-group">
+              <h4>Most valued person</h4>
+              <textarea name="attr_lp_mostvaluedperson"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Family Background</span><textarea name="attr_lp_familybackground"></textarea>
+            <div class="lifepath-group">
+              <h4>Family Background</h4>
+              <textarea name="attr_lp_familybackground"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Family Crisis</span><textarea name="attr_lp_familycrisis"></textarea>
+            <div class="lifepath-group">
+              <h4>Family Crisis</h4>
+              <textarea name="attr_lp_familycrisis"></textarea>
             </div>
           </div>
           <div class="column">
-            <div>
-              <span class="accent-font">Personality</span><textarea name="attr_lp_personality"></textarea>
+            <div class="lifepath-group">
+              <h4>Personality</h4>
+              <textarea name="attr_lp_personality"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Hairstyle</span><textarea name="attr_lp_hairstyle"></textarea>
+            <div class="lifepath-group">
+              <h4>Hairstyle</h4>
+              <textarea name="attr_lp_hairstyle"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Feelings about people</span><textarea name="attr_lp_feelingsaboutpeople"></textarea>
+            <div class="lifepath-group">
+              <h4>Feelings about people</h4>
+              <textarea name="attr_lp_feelingsaboutpeople"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Most valued possession</span><textarea name="attr_lp_mostvaluedpossession"></textarea>
+            <div class="lifepath-group">
+              <h4>Most valued possession</h4>
+              <textarea name="attr_lp_mostvaluedpossession"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Childhood environment</span><textarea name="attr_lp_childhoodenv"></textarea>
+            <div class="lifepath-group">
+              <h4>Childhood environment</h4>
+              <textarea name="attr_lp_childhoodenv"></textarea>
             </div>
-            <div>
-              <span class="accent-font">Life Goals</span><textarea name="attr_lp_lifegoals"></textarea>
+            <div class="lifepath-group">
+              <h4>Life Goals</h4>
+              <textarea name="attr_lp_lifegoals"></textarea>
             </div>
           </div>
         </div>
@@ -2188,21 +2248,17 @@
           <div class="column">
             <h4 class="accent-font">Friends</h4>
             <fieldset class="repeating_friends">
-              <div>
-                <textarea name="attr_lp_friend"></textarea>
-              </div>
+              <textarea name="attr_lp_friend"></textarea>
             </fieldset>
           </div>
           <div class="column">
             <h4 class="accent-font">Tragic Love Affairs</h4>
             <fieldset class="repeating_loveaffairs">
-              <div>
-                <textarea name="attr_lp_loveaffair"></textarea>
-              </div>
+              <textarea name="attr_lp_loveaffair"></textarea>
             </fieldset>
           </div>
         </div>
-        <div>
+        <div class="lifepath-group">
           <h4 class="accent-font">Enemies</h4>
           <div class="columns">
             <div class="column">Who?</div>
@@ -2211,21 +2267,25 @@
             <div class="column">What's gonna happen?</div>
           </div>
           <fieldset class="repeating_enemies">
-            <div class="columns">
-              <div class="column"><textarea name="attr_lp_enemywho"></textarea></div>
-              <div class="column">
-                <textarea name="attr_lp_enemycause"></textarea>
-              </div>
-              <div class="column">
-                <textarea name="attr_lp_enemythrow"></textarea>
-              </div>
-              <div class="column">
-                <textarea name="attr_lp_enemyhappen"></textarea>
+            <div class="enemy">
+              <div class="columns">
+                <div class="column">
+                  <textarea name="attr_lp_enemywho"></textarea>
+                </div>
+                <div class="column">
+                  <textarea name="attr_lp_enemycause"></textarea>
+                </div>
+                <div class="column">
+                  <textarea name="attr_lp_enemythrow"></textarea>
+                </div>
+                <div class="column">
+                  <textarea name="attr_lp_enemyhappen"></textarea>
+                </div>
               </div>
             </div>
           </fieldset>
         </div>
-        <div>
+        <div class="lifepath-group">
           <span name="attr_role"></span> role specific lifepath goes here.
           <input type="hidden" name="attr_role" />
         </div>

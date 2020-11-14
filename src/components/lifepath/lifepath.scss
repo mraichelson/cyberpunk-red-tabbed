@@ -1,0 +1,23 @@
+.sheet-section-lifepath {
+  .sheet-lifepath-group {
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.5rem 0;
+    h4 {
+      margin: -0.5rem -0.5rem 0.5rem;
+    }
+  }
+  .repcontainer {
+    margin-bottom: 0.5rem;
+    .repitem {
+      background-color: white;
+      padding: 0.5rem 0.5rem 0;
+      &:nth-child(even) {
+        background-color: $offWhite;
+      }
+    }
+  }
+  .repcontrol {
+    margin-bottom: 1rem;
+  }
+}
