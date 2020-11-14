@@ -1,0 +1,28 @@
+.sheet-section-gear {
+  .sheet-armor {
+    .sheet-column {
+      padding: 0.5rem 0.5rem 0 !important;
+      text-align: center;
+    }
+    input[type='text'],
+    input[type='number'] {
+      width: 100%;
+    }
+    select {
+      width: 5rem;
+    }
+    .sheet-columns.sheet-armor-headers {
+      .sheet-column {
+        padding: 0 !important;
+      }
+    }
+    .sheet-armor-items {
+      .sheet-columns {
+        background-color: white;
+        &:nth-child(even) {
+          background-color: $offWhite;
+        }
+      }
+    }
+  }
+}
