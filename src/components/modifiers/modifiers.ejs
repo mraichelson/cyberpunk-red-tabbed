@@ -1,92 +1,94 @@
 <div class="section-modifiers">
   <div class="modifiers">
     <input type="hidden" name="attr_finalmodifier" />
-    <h3 class="accent-font">
+    <h4>
       Modifiers
       <span name="attr_finalmodifierdisplay"></span>
       <span class="faux-button">
         Reset
         <input type="checkbox" name="attr_resetmodifiers"
       /></span>
-    </h3>
-    Show Modifiers?
-    <input type="checkbox" name="attr_hidemodifiers" class="show-next-div" />
-    <div class="toggle-container">
-      <div class="columns">
-        <div class="column">
-          <input type="checkbox" name="attr_damageserious" /> Damage: Serious
-          <small>(HP &lt; <span name="attr_seriouslywounded"></span>)</small>
+    </h4>
+    <div class="modifiers-body">
+      Show Modifiers?
+      <input type="checkbox" name="attr_hidemodifiers" class="show-next-div" />
+      <div class="toggle-container">
+        <div class="columns">
+          <div class="column">
+            <input type="checkbox" name="attr_damageserious" /> Damage: Serious
+            <small>(HP &lt; <span name="attr_seriouslywounded"></span>)</small>
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_damagemortal" /> Damage: Mortal
+            <small>(HP &lt; 1)</small>
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_understress" /> Under stress
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_neverdonebefore" /> Never done
+            before
+          </div>
         </div>
-        <div class="column">
-          <input type="checkbox" name="attr_damagemortal" /> Damage: Mortal
-          <small>(HP &lt; 1)</small>
+        <div class="columns">
+          <div class="column">
+            <input type="checkbox" name="attr_nightorlowlight" /> Night or low
+            light
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_obscured" /> Obscured by smoke or
+            darkness
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_complextask" /> Complex task
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_wrongtoolsorparts" /> Wrong tools
+            or parts
+          </div>
         </div>
-        <div class="column">
-          <input type="checkbox" name="attr_understress" /> Under stress
+        <div class="columns">
+          <div class="column">
+            <input type="checkbox" name="attr_drunkdrugged" /> Drunk or Drugged
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_secretly" /> Attempting secretly
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_lostfacedown" /> Lost facedown
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_aimedshot" /> Aimed shot
+          </div>
         </div>
-        <div class="column">
-          <input type="checkbox" name="attr_neverdonebefore" /> Never done
-          before
-        </div>
-      </div>
-      <div class="columns">
-        <div class="column">
-          <input type="checkbox" name="attr_nightorlowlight" /> Night or low
-          light
-        </div>
-        <div class="column">
-          <input type="checkbox" name="attr_obscured" /> Obscured by smoke or
-          darkness
-        </div>
-        <div class="column">
-          <input type="checkbox" name="attr_complextask" /> Complex task
-        </div>
-        <div class="column">
-          <input type="checkbox" name="attr_wrongtoolsorparts" /> Wrong tools or
-          parts
-        </div>
-      </div>
-      <div class="columns">
-        <div class="column">
-          <input type="checkbox" name="attr_drunkdrugged" /> Drunk or Drugged
-        </div>
-        <div class="column">
-          <input type="checkbox" name="attr_secretly" /> Attempting secretly
-        </div>
-        <div class="column">
-          <input type="checkbox" name="attr_lostfacedown" /> Lost facedown
-        </div>
-        <div class="column">
-          <input type="checkbox" name="attr_aimedshot" /> Aimed shot
-        </div>
-      </div>
-      <div class="columns">
-        <div class="column">
-          <input type="checkbox" name="attr_complimentaryskill" />
-          Complimentary skill
-        </div>
-        <div class="column">
-          <input type="checkbox" name="attr_extratime" /> Spend extra time
-        </div>
-        <div class="column">
-          Other/custom
-          <input type="number" name="attr_custommod" />
-        </div>
-        <div class="column">
-          Luck points spent
-          <select name="attr_luckmod">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
+        <div class="columns">
+          <div class="column">
+            <input type="checkbox" name="attr_complimentaryskill" />
+            Complimentary skill
+          </div>
+          <div class="column">
+            <input type="checkbox" name="attr_extratime" /> Spend extra time
+          </div>
+          <div class="column">
+            Other/custom
+            <input type="number" name="attr_custommod" />
+          </div>
+          <div class="column">
+            Luck points spent
+            <select name="attr_luckmod">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>

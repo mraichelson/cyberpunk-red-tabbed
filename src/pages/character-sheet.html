@@ -14,8 +14,8 @@
     <span class="tab accent-font">Cyberware</span>
     <input type="radio" name="selecttab" value="6" class="tab tab6" />
     <span class="tab accent-font">Lifepath</span>
-    <input type="radio" name="selecttab" value="7" class="tab tab7" />
-    <span class="tab accent-font">Settings</span>
+    <!-- <input type="radio" name="selecttab" value="7" class="tab tab7" />
+    <span class="tab accent-font">Settings</span> -->
 
     <div class="tab-content tab1">
       <div>
@@ -84,9 +84,9 @@
     <div class="tab-content tab6">
       <%= require('../components/lifepath/lifepath.ejs')() %>
     </div>
-    <div class="tab-content tab7">
+    <!-- <div class="tab-content tab7">
       <%= require('../components/settings/settings.ejs')() %>
-    </div>
+    </div> -->
   </div>
 
   <!-- Roll templates... -->
@@ -98,7 +98,4 @@
   <%= require('../components/rolltemplates/damage/damage.ejs')() %>
   <!-- skill rolls -->
   <%= require('../components/rolltemplates/skill/skill.ejs')() %>
-
-  <!-- %= require('../components/_foo/foo.ejs')(require('../components/_foo/json/foo--bar.json'))
-    % -->
 </div>
