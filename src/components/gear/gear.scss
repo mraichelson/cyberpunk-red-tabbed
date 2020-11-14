@@ -1,5 +1,6 @@
 .sheet-section-gear {
   .sheet-armor {
+    margin-bottom: 1rem;
     .sheet-column {
       padding: 0.5rem 0.5rem 0 !important;
       text-align: center;
@@ -22,7 +23,29 @@
         &:nth-child(even) {
           background-color: $offWhite;
         }
+        .sheet-column:first-child {
+          padding-top: 1rem !important;
+        }
       }
+    }
+  }
+  .sheet-gear {
+    .sheet-columns.sheet-gear-headers {
+      .sheet-column {
+        padding: 0 !important;
+      }
+    }
+    .repcontainer {
+      .repitem {
+        background-color: white;
+        padding: 0.5rem;
+        &:nth-child(even) {
+          background-color: $offWhite;
+        }
+      }
+    }
+    .repcontrol {
+      padding-top: 0.5rem;
     }
   }
 }
