@@ -15,13 +15,20 @@
 @import '../components/attributes/attributes';
 @import '../components/character-info/character-info';
 @import '../components/combat/combat';
-@import '../components/dice-roller/dice-roller';
-@import '../components/modifiers/modifiers';
-@import '../components/role/role';
-@import '../components/skills/skills';
 @import '../components/cyberware/cyberware';
-@import '../components/lifepath/lifepath';
+@import '../components/dice-roller/dice-roller';
+@import '../components/empathy/empathy';
 @import '../components/gear/gear';
+@import '../components/hit-points/hit-points';
+@import '../components/humanity/humanity';
+@import '../components/improvement-points/improvement-points';
+@import '../components/lifepath/lifepath';
+@import '../components/luck/luck';
+@import '../components/modifiers/modifiers';
+@import '../components/reputation/reputation';
+@import '../components/role/role';
+@import '../components/settings/settings';
+@import '../components/skills/skills';
 /**
  * Import CSS for roll templates
  */

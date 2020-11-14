@@ -47,6 +47,18 @@
         require('../components/role/role.ejs')(require('../components/role/json/role.json'))
         %>
       </div>
+      <div>
+        <div class="columns">
+          <div class="column">
+            <%=
+            require('../components/improvement-points/improvement-points.ejs')()
+            %>
+          </div>
+          <div class="column">
+            <%= require('../components/reputation/reputation.ejs')() %>
+          </div>
+        </div>
+      </div>
       <div><%= require('../components/dice-roller/dice-roller.ejs')() %></div>
     </div>
     <div class="tab-content tab2">
