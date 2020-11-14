@@ -4,34 +4,34 @@
       "group": "Awareness",
       "skills": [
         {
-          "name"  : "Conceal/Reveal Object",
-          "field" : "skill_concealrevealobject",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Conceal/Reveal Object",
+          "field": "skill_concealrevealobject",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Concentration",
-          "field" : "skill_concentration",
-          "stat"  : "stat_will",
-          "type"  : "standard"
+          "name": "Concentration",
+          "field": "skill_concentration",
+          "stat": "stat_will",
+          "type": "standard"
         },
         {
-          "name"  : "Lip Reading",
-          "field" : "skill_lipreading",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Lip Reading",
+          "field": "skill_lipreading",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Perception",
-          "field" : "skill_perception",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Perception",
+          "field": "skill_perception",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Tracking",
-          "field" : "skill_tracking",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Tracking",
+          "field": "skill_tracking",
+          "stat": "stat_int",
+          "type": "standard"
         }
       ]
     },
@@ -39,40 +39,40 @@
       "group": "Body",
       "skills": [
         {
-          "name"  : "Athletics",
-          "field" : "skill_athletics",
-          "stat"  : "stat_dex",
-          "type"  : "standard"
+          "name": "Athletics",
+          "field": "skill_athletics",
+          "stat": "stat_dex",
+          "type": "standard"
         },
         {
-          "name"  : "Contrortionist",
-          "field" : "skill_contrortionist",
-          "stat"  : "stat_dex",
-          "type"  : "standard"
+          "name": "Contrortionist",
+          "field": "skill_contrortionist",
+          "stat": "stat_dex",
+          "type": "standard"
         },
         {
-          "name"  : "Dance",
-          "field" : "skill_dance",
-          "stat"  : "stat_dex",
-          "type"  : "standard"
+          "name": "Dance",
+          "field": "skill_dance",
+          "stat": "stat_dex",
+          "type": "standard"
         },
         {
-          "name"  : "Endurance",
-          "field" : "skill_endurance",
-          "stat"  : "stat_will",
-          "type"  : "standard"
+          "name": "Endurance",
+          "field": "skill_endurance",
+          "stat": "stat_will",
+          "type": "standard"
         },
         {
-          "name"  : "Resist Torture/Drugs",
-          "field" : "skill_resisttorturedrugs",
-          "stat"  : "stat_will",
-          "type"  : "standard"
+          "name": "Resist Torture/Drugs",
+          "field": "skill_resisttorturedrugs",
+          "stat": "stat_will",
+          "type": "standard"
         },
         {
-          "name"  : "Stealth",
-          "field" : "skill_stealth",
-          "stat"  : "stat_dex",
-          "type"  : "standard"
+          "name": "Stealth",
+          "field": "skill_stealth",
+          "stat": "stat_dex",
+          "type": "standard"
         }
       ]
     },
@@ -80,28 +80,28 @@
       "group": "Control",
       "skills": [
         {
-          "name"  : "Control Land Vehicle",
-          "field" : "skill_landvehicle",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Control Land Vehicle",
+          "field": "skill_landvehicle",
+          "stat": "stat_ref",
+          "type": "standard"
         },
         {
-          "name"  : "Pilot Air Vehicle (x2)",
-          "field" : "skill_airvehicle",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Pilot Air Vehicle (x2)",
+          "field": "skill_airvehicle",
+          "stat": "stat_ref",
+          "type": "standard"
         },
         {
-          "name"  : "Pilot Sea Vehicle",
-          "field" : "skill_seavehicle",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Pilot Sea Vehicle",
+          "field": "skill_seavehicle",
+          "stat": "stat_ref",
+          "type": "standard"
         },
         {
-          "name"  : "Riding",
-          "field" : "skill_riding",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Riding",
+          "field": "skill_riding",
+          "stat": "stat_ref",
+          "type": "standard"
         }
       ]
     },
@@ -109,105 +109,105 @@
       "group": "Education",
       "skills": [
         {
-          "name"  : "Accounting",
-          "field" : "skill_accounting",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Accounting",
+          "field": "skill_accounting",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Animal Handling",
-          "field" : "skill_animalhandling",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Animal Handling",
+          "field": "skill_animalhandling",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Bureaucracy",
-          "field" : "skill_bureaucracy",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Bureaucracy",
+          "field": "skill_bureaucracy",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Business",
-          "field" : "skill_business",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Business",
+          "field": "skill_business",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Composition",
-          "field" : "skill_composition",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Composition",
+          "field": "skill_composition",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Criminology",
-          "field" : "skill_criminology",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Criminology",
+          "field": "skill_criminology",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Cryptography",
-          "field" : "skill_cryptography",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Cryptography",
+          "field": "skill_cryptography",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Deduction",
-          "field" : "skill_deduction",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Deduction",
+          "field": "skill_deduction",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Education",
-          "field" : "skill_education",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Education",
+          "field": "skill_education",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Gamble",
-          "field" : "skill_gamble",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Gamble",
+          "field": "skill_gamble",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Library Search",
-          "field" : "skill_librarysearch",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Library Search",
+          "field": "skill_librarysearch",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Tactics",
-          "field" : "skill_tactics",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Tactics",
+          "field": "skill_tactics",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Wilderness Survival",
-          "field" : "skill_wildernesssurvival",
-          "stat"  : "stat_int",
-          "type"  : "standard"
+          "name": "Wilderness Survival",
+          "field": "skill_wildernesssurvival",
+          "stat": "stat_int",
+          "type": "standard"
         },
         {
-          "name"  : "Languages",
-          "field" : "skill_language",
-          "stat"  : "stat_int",
-          "type"  : "multiple",
+          "name": "Languages",
+          "field": "skill_language",
+          "stat": "stat_int",
+          "type": "multiple",
           "fieldset": "repeating_languages",
-          "label" : "languagename"
+          "label": "languagename"
         },
         {
-          "name"  : "Local Expert",
-          "field" : "skill_localexpert",
-          "stat"  : "stat_int",
-          "type"  : "multiple",
-          "fieldset" : "repeating_localexperts",
-          "label" : "localexpertname"
+          "name": "Local Expert",
+          "field": "skill_localexpert",
+          "stat": "stat_int",
+          "type": "multiple",
+          "fieldset": "repeating_localexperts",
+          "label": "localexpertname"
         },
         {
-          "name"  : "Science",
-          "field" : "skill_science",
-          "stat"  : "stat_int",
-          "type"  : "multiple",
-          "fieldset" : "repeating_sciences",
+          "name": "Science",
+          "field": "skill_science",
+          "stat": "stat_int",
+          "type": "multiple",
+          "fieldset": "repeating_sciences",
           "label": "sciencename"
         }
       ]
@@ -216,30 +216,30 @@
       "group": "Fighting",
       "skills": [
         {
-          "name"  : "Brawling",
-          "field" : "skill_brawling",
-          "stat"  : "stat_dex",
-          "type"  : "standard"
+          "name": "Brawling",
+          "field": "skill_brawling",
+          "stat": "stat_dex",
+          "type": "standard"
         },
         {
-          "name"  : "Evasion",
-          "field" : "skill_evasion",
-          "stat"  : "stat_dex",
-          "type"  : "standard"
+          "name": "Evasion",
+          "field": "skill_evasion",
+          "stat": "stat_dex",
+          "type": "standard"
         },
         {
-          "name"  : "Melee Weapon",
-          "field" : "skill_meleeweapon",
-          "stat"  : "stat_dex",
-          "type"  : "standard"
+          "name": "Melee Weapon",
+          "field": "skill_meleeweapon",
+          "stat": "stat_dex",
+          "type": "standard"
         },
         {
-          "name"  : "Martial Arts (x2)",
-          "field" : "skill_martialarts",
-          "stat"  : "stat_dex",
-          "type"  : "multiple",
-          "fieldset" : "repeating_martialarts",
-          "label" : "martialartname"
+          "name": "Martial Arts (x2)",
+          "field": "skill_martialarts",
+          "stat": "stat_dex",
+          "type": "multiple",
+          "fieldset": "repeating_martialarts",
+          "label": "martialartname"
         }
       ]
     },
@@ -247,18 +247,18 @@
       "group": "Performance",
       "skills": [
         {
-          "name"  : "Acting",
-          "field" : "skill_acting",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Acting",
+          "field": "skill_acting",
+          "stat": "stat_cool",
+          "type": "standard"
         },
         {
-          "name"  : "Play Instrument",
-          "field" : "skill_playinstrument",
-          "stat"  : "stat_tech",
-          "type"  : "multiple",
-          "fieldset" : "repeating_playinstrument",
-          "label" : "playinstrumentname"
+          "name": "Play Instrument",
+          "field": "skill_playinstrument",
+          "stat": "stat_tech",
+          "type": "multiple",
+          "fieldset": "repeating_playinstrument",
+          "label": "playinstrumentname"
         }
       ]
     },
@@ -266,34 +266,34 @@
       "group": "Ranged Weapon",
       "skills": [
         {
-          "name"  : "Archery",
-          "field" : "skill_archery",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Archery",
+          "field": "skill_archery",
+          "stat": "stat_ref",
+          "type": "standard"
         },
         {
-          "name"  : "Autofire (x2)",
-          "field" : "skill_autofire",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Autofire (x2)",
+          "field": "skill_autofire",
+          "stat": "stat_ref",
+          "type": "standard"
         },
         {
-          "name"  : "Handgun",
-          "field" : "skill_handgun",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Handgun",
+          "field": "skill_handgun",
+          "stat": "stat_ref",
+          "type": "standard"
         },
         {
-          "name"  : "Heavy Weapons",
-          "field" : "skill_heavyweapons",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Heavy Weapons",
+          "field": "skill_heavyweapons",
+          "stat": "stat_ref",
+          "type": "standard"
         },
         {
-          "name"  : "Shoulder Arms",
-          "field" : "skill_shoulderarms",
-          "stat"  : "stat_ref",
-          "type"  : "standard"
+          "name": "Shoulder Arms",
+          "field": "skill_shoulderarms",
+          "stat": "stat_ref",
+          "type": "standard"
         }
       ]
     },
@@ -301,58 +301,58 @@
       "group": "Social",
       "skills": [
         {
-          "name"  : "Bribery",
-          "field" : "skill_bribery",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Bribery",
+          "field": "skill_bribery",
+          "stat": "stat_cool",
+          "type": "standard"
         },
         {
-          "name"  : "Conversation",
-          "field" : "skill_conversation",
-          "stat"  : "stat_emp",
-          "type"  : "standard"
+          "name": "Conversation",
+          "field": "skill_conversation",
+          "stat": "stat_emp",
+          "type": "standard"
         },
         {
-          "name"  : "Human Perception",
-          "field" : "skill_humanperception",
-          "stat"  : "stat_emp",
-          "type"  : "standard"
+          "name": "Human Perception",
+          "field": "skill_humanperception",
+          "stat": "stat_emp",
+          "type": "standard"
         },
         {
-          "name"  : "Interrogation",
-          "field" : "skill_interrogation",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Interrogation",
+          "field": "skill_interrogation",
+          "stat": "stat_cool",
+          "type": "standard"
         },
         {
-          "name"  : "Personal Grooming",
-          "field" : "skill_personalgrooming",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Personal Grooming",
+          "field": "skill_personalgrooming",
+          "stat": "stat_cool",
+          "type": "standard"
         },
         {
-          "name"  : "Persuasion",
-          "field" : "skill_persuasion",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Persuasion",
+          "field": "skill_persuasion",
+          "stat": "stat_cool",
+          "type": "standard"
         },
         {
-          "name"  : "Streetwise",
-          "field" : "skill_bribery",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Streetwise",
+          "field": "skill_bribery",
+          "stat": "stat_cool",
+          "type": "standard"
         },
         {
-          "name"  : "Trading",
-          "field" : "skill_bribery",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Trading",
+          "field": "skill_bribery",
+          "stat": "stat_cool",
+          "type": "standard"
         },
         {
-          "name"  : "Wardrobe & Style",
-          "field" : "skill_wardrobestyle",
-          "stat"  : "stat_cool",
-          "type"  : "standard"
+          "name": "Wardrobe & Style",
+          "field": "skill_wardrobestyle",
+          "stat": "stat_cool",
+          "type": "standard"
         }
       ]
     },
@@ -360,88 +360,94 @@
       "group": "Technique",
       "skills": [
         {
-          "name"  : "Air Vehicle Tech",
-          "field" : "skill_airevehicletech",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Air Vehicle Tech",
+          "field": "skill_airevehicletech",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Basic Tech",
-          "field" : "skill_basictech",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Basic Tech",
+          "field": "skill_basictech",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Cybertech",
-          "field" : "skill_cybertech",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Cybertech",
+          "field": "skill_cybertech",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Demolitions (x2)",
-          "field" : "skill_demolitions",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Demolitions (x2)",
+          "field": "skill_demolitions",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Electronics/Security Tech (x2)",
-          "field" : "skill_electronicssecurity",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Electronics/Security Tech (x2)",
+          "field": "skill_electronicssecurity",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Forgery",
-          "field" : "skill_forgery",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Forgery",
+          "field": "skill_forgery",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "First Aid",
-          "field" : "skill_firstaid",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "First Aid",
+          "field": "skill_firstaid",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Land Vehicle Tech",
-          "field" : "skill_landvehicletech",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Land Vehicle Tech",
+          "field": "skill_landvehicletech",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Paint/Draw/Sculpt",
-          "field" : "skill_paintdrawsculpt",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Paint/Draw/Sculpt",
+          "field": "skill_paintdrawsculpt",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Paramedic (x2)",
-          "field" : "skill_paramedic",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Paramedic (x2)",
+          "field": "skill_paramedic",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Photography/Film",
-          "field" : "skill_photographyfilm",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Photography/Film",
+          "field": "skill_photographyfilm",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Pick Lock",
-          "field" : "skill_picklock",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Pick Lock",
+          "field": "skill_picklock",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Pick Pocket",
-          "field" : "skill_pickpocket",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Pick Pocket",
+          "field": "skill_pickpocket",
+          "stat": "stat_tech",
+          "type": "standard"
         },
         {
-          "name"  : "Weaponstech",
-          "field" : "skill_weaponstech",
-          "stat"  : "stat_tech",
-          "type"  : "standard"
+          "name": "Sea Vehicle Tech",
+          "field": "skill_seavehicletech",
+          "stat": "stat_tech",
+          "type": "standard"
+        },
+        {
+          "name": "Weaponstech",
+          "field": "skill_weaponstech",
+          "stat": "stat_tech",
+          "type": "standard"
         }
       ]
     }

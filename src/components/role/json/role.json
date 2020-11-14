@@ -1,15 +1,15 @@
 {
-    "roles": [
-        { "name": "Blank" },
-        { "name": "Exec" },
-        { "name": "Fixer" },
-        { "name": "Lawman" },
-        { "name": "Media" },
-        { "name": "Medtech" },
-        { "name": "Netrunner" },
-        { "name": "Nomad" },
-        { "name": "Rockerboy" },
-        { "name": "Solo" },
-        { "name": "Tech" }
-    ]
+  "roles": [
+    { "name": "Blank" },
+    { "name": "Exec" },
+    { "name": "Fixer" },
+    { "name": "Lawman" },
+    { "name": "Media" },
+    { "name": "Medtech" },
+    { "name": "Netrunner" },
+    { "name": "Nomad" },
+    { "name": "Rockerboy" },
+    { "name": "Solo" },
+    { "name": "Tech" }
+  ]
 }
