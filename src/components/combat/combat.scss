@@ -1,19 +1,80 @@
-.sheet-weapon {
-  padding: 1rem;
-  .sheet-actions {
-    text-align: right;
+.sheet-section-combat {
+  .sheet-weapon {
+    padding: 1rem;
+    .sheet-actions {
+      text-align: right;
+    }
   }
-}
-.sheet-combat-weapons {
-  .repcontainer {
-    & > div {
-      background-color: white;
-      &:nth-child(even) {
-        background-color: $offWhite;
+  .sheet-combat-weapons {
+    .repcontainer {
+      & > div {
+        background-color: white;
+        &:nth-child(even) {
+          background-color: $offWhite;
+        }
+      }
+    }
+    .repcontrol {
+      margin-bottom: 1rem;
+      padding-top: 1rem;
+    }
+  }
+  .sheet-armor {
+    margin-bottom: 1rem;
+    .sheet-column {
+      padding: 0.5rem 0.5rem 0 !important;
+      text-align: center;
+    }
+    input[type='text'],
+    input[type='number'] {
+      width: 100%;
+    }
+    select {
+      width: 5rem;
+    }
+    .sheet-columns.sheet-armor-headers {
+      .sheet-column {
+        padding: 0 !important;
+      }
+    }
+    .sheet-armor-items {
+      .sheet-columns {
+        background-color: white;
+        &:nth-child(even) {
+          background-color: $offWhite;
+        }
+        .sheet-column:first-child {
+          padding-top: 1rem !important;
+        }
       }
     }
   }
-  .repcontrol {
-    padding-top: 1rem;
+  .sheet-ammo {
+    input[type='text'],
+    input[type='number'] {
+      width: 100%;
+    }
+    .sheet-columns.sheet-ammo-headers {
+      .sheet-column {
+        padding: 0 !important;
+      }
+    }
+    .sheet-ammo-items {
+      .sheet-column {
+        padding: 0.5rem !important;
+      }
+      .repcontainer {
+        & > div {
+          background-color: white;
+          &:nth-child(even) {
+            background-color: $offWhite;
+          }
+        }
+      }
+      .repcontrol {
+        margin-bottom: 1rem;
+        padding-top: 1rem;
+      }
+    }
   }
 }

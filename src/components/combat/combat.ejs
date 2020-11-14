@@ -90,4 +90,94 @@
       </div>
     </fieldset>
   </div>
+  <div class="columns">
+    <div class="column">
+      <div class="armor">
+        <div class="columns armor-headers">
+          <div class="column"><h4>Armor</h4></div>
+          <div class="column column-7"><h4>&nbsp;</h4></div>
+          <div class="column"><h4>SP</h4></div>
+          <div class="column"><h4>(Max)</h4></div>
+          <div class="column"><h4>Penalty</h4></div>
+        </div>
+        <div class="armor-items">
+          <div class="columns">
+            <div class="column">Body</div>
+            <div class="column column-7">
+              <input type="text" name="attr_armorname" />
+            </div>
+            <div class="column"><input type="number" name="attr_armor" /></div>
+            <div class="column">
+              <input type="number" name="attr_armor_max" />
+            </div>
+            <div class="column">
+              <select name="attr_armor_penalty">
+                <option value="0">0</option>
+                <option value="-2">-2</option>
+                <option value="-4">-4</option>
+              </select>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">Head</div>
+            <div class="column column-7">
+              <input type="text" name="attr_armorheadname" />
+            </div>
+            <div class="column">
+              <input type="number" name="attr_armorhead" />
+            </div>
+            <div class="column">
+              <input type="number" name="attr_armorhead_max" />
+            </div>
+            <div class="column">
+              <select name="attr_armorhead_penalty">
+                <option value="0">0</option>
+                <option value="-2">-2</option>
+                <option value="-4">-4</option>
+              </select>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">Shield</div>
+            <div class="column column-7">
+              <input type="text" name="attr_armorshieldname" />
+            </div>
+            <div class="column">
+              <input type="number" name="attr_armorshield" />
+            </div>
+            <div class="column">
+              <input type="number" name="attr_armorshield_max" />
+            </div>
+            <div class="column">
+              <select name="attr_armorshield_penalty">
+                <option value="0">0</option>
+                <option value="-2">-2</option>
+                <option value="-4">-4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ammo">
+        <div class="columns ammo-headers">
+          <div class="column column-5"><h4>Ammo</h4></div>
+          <div class="column"><h4>Qty</h4></div>
+        </div>
+        <div class="ammo-items">
+          <fieldset class="repeating_ammo">
+            <div class="columns">
+              <div class="column column-5">
+                <input type="text" name="attr_ammoname" />
+              </div>
+              <div class="column">
+                <input type="number" name="attr_ammoquantity" />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

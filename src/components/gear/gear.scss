@@ -1,32 +1,10 @@
 .sheet-section-gear {
-  .sheet-armor {
+  .sheet-gear-meta-wrapper {
+    background-color: white;
     margin-bottom: 1rem;
-    .sheet-column {
-      padding: 0.5rem 0.5rem 0 !important;
-      text-align: center;
-    }
-    input[type='text'],
-    input[type='number'] {
+    padding: 0.5rem 0.5rem 0;
+    input {
       width: 100%;
-    }
-    select {
-      width: 5rem;
-    }
-    .sheet-columns.sheet-armor-headers {
-      .sheet-column {
-        padding: 0 !important;
-      }
-    }
-    .sheet-armor-items {
-      .sheet-columns {
-        background-color: white;
-        &:nth-child(even) {
-          background-color: $offWhite;
-        }
-        .sheet-column:first-child {
-          padding-top: 1rem !important;
-        }
-      }
     }
   }
   .sheet-gear {
@@ -45,7 +23,8 @@
       }
     }
     .repcontrol {
-      padding-top: 0.5rem;
+      margin-bottom: 1rem;
+      padding-top: 1rem;
     }
   }
 }
