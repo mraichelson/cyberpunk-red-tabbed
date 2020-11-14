@@ -1,0 +1,16 @@
+.sheet-clipped-corner {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 5px solid transparent;
+    border-left-color: $tabColor;
+    border-top-color: $tabColor;
+  }
+}

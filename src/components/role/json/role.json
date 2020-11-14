@@ -1,6 +1,6 @@
 {
   "roles": [
-    { "name": "Blank" },
+    { "name": "--Choose One--" },
     { "name": "Exec" },
     { "name": "Fixer" },
     { "name": "Lawman" },
