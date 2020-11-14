@@ -25,11 +25,11 @@
         <div class="character-info">
           <div class="columns">
             <div class="column">
-              <div class="accent-font">Handle</div>
+              <h4>Handle</h4>
               <input type="text" name="attr_charactername" />
             </div>
             <div class="column">
-              <div class="accent-font">Role</div>
+              <h4>Role</h4>
               <select name="attr_role">
 
                 <option value="Blank">Blank</option>
@@ -2382,6 +2382,19 @@
     </div>
     <div class="tab-content tab6">
       <div class="section-lifepath">
+        <div class="lifepath-role">
+          <input type="hidden" name="attr_role" />
+          <div class="lp lp-exec">Exec</div>
+          <div class="lp lp-fixer">Fixer</div>
+          <div class="lp lp-lawman">Lawman</div>
+          <div class="lp lp-media">Media</div>
+          <div class="lp lp-medtech">Medtech</div>
+          <div class="lp lp-netrunner">Netrunner</div>
+          <div class="lp lp-nomad">Nomad</div>
+          <div class="lp lp-rockerboy">Rockerboy</div>
+          <div class="lp lp-solo">Solo</div>
+          <div class="lp lp-tech">Tech</div>
+        </div>
         <div class="columns">
           <div class="column">
             <div class="lifepath-group">
@@ -2476,10 +2489,6 @@
               </div>
             </div>
           </fieldset>
-        </div>
-        <div class="lifepath-group">
-          <span name="attr_role"></span> role specific lifepath goes here.
-          <input type="hidden" name="attr_role" />
         </div>
       </div>
 

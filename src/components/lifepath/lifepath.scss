@@ -1,4 +1,20 @@
 .sheet-section-lifepath {
+  .sheet-lp {
+    display: none;
+    margin-bottom: 1rem;
+  }
+  input[value='Exec'] ~ .sheet-lp-exec,
+  input[value='Fixer'] ~ .sheet-lp-fixer,
+  input[value='Lawman'] ~ .sheet-lp-lawman,
+  input[value='Media'] ~ .sheet-lp-media,
+  input[value='Medtech'] ~ .sheet-lp-medtech,
+  input[value='Netrunner'] ~ .sheet-lp-netrunner,
+  input[value='Nomad'] ~ .sheet-lp-nomad,
+  input[value='Rockerboy'] ~ .sheet-lp-rockerboy,
+  input[value='Solo'] ~ .sheet-lp-solo,
+  input[value='Tech'] ~ .sheet-lp-tech {
+    display: block;
+  }
   .sheet-lifepath-group {
     background-color: white;
     margin-bottom: 1rem;

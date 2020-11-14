@@ -4,7 +4,7 @@
   .sheet-column {
     border-left: 0.5rem solid $cpRed;
     border-right: 0.5rem solid $cpRed;
-    padding: 0.5rem;
+    padding: 1rem 1rem 0 !important;
     text-align: center;
     &:first-child {
       border-left-style: none;
@@ -13,8 +13,11 @@
       border-right-style: none;
     }
   }
-  span.sheet-accent-font {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+  h4 {
+    margin: -1rem -1rem 1rem;
+  }
+  input[type='text'],
+  select {
+    width: 100%;
   }
 }
