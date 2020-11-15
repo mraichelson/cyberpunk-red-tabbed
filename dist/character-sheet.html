@@ -495,10 +495,7 @@
           <h4>
             Modifiers
             <span name="attr_finalmodifierdisplay"></span>
-            <span class="faux-button">
-        Reset
-        <input type="checkbox" name="attr_resetmodifiers"
-      /></span>
+            <button type="action" name="act_resetmodifiers">Reset</button>
           </h4>
           <div class="modifiers-body">
             Show Modifiers?
@@ -724,7 +721,7 @@
   /**
    * Event handler to trigger reset of all modifiers
    */
-  on('change:resetmodifiers', function () {
+  on('clicked:resetmodifiers', function () {
     resetAllModifiers();
   });
 </script>
@@ -1757,10 +1754,7 @@
           <h4>
             Modifiers
             <span name="attr_finalmodifierdisplay"></span>
-            <span class="faux-button">
-        Reset
-        <input type="checkbox" name="attr_resetmodifiers"
-      /></span>
+            <button type="action" name="act_resetmodifiers">Reset</button>
           </h4>
           <div class="modifiers-body">
             Show Modifiers?
@@ -1986,7 +1980,7 @@
   /**
    * Event handler to trigger reset of all modifiers
    */
-  on('change:resetmodifiers', function () {
+  on('clicked:resetmodifiers', function () {
     resetAllModifiers();
   });
 </script>
@@ -2021,16 +2015,16 @@
                 <div class="column">
                   <div class="accent-font">Damage</div>
                   <select class="narrow" name="attr_weapondamage">
-                    <option value="1d6cs6cf0">1d6</option>
-                    <option value="2d6cs12cf0">2d6</option>
-                    <option value="3d6cs18cf0">3d6</option>
-                    <option value="4d6cs24cf0">4d6</option>
-                    <option value="5d6cs30cf0">5d6</option>
-                    <option value="6d6cs36cf0">6d6</option>
-                    <option value="7d6cs42cf0">7d6</option>
-                    <option value="8d6cs48cf0">8d6</option>
-                    <option value="9d6cs54cf0">9d6</option>
-                    <option value="10d6cs60cf0">10d6</option>
+                    <option value="1">1d6</option>
+                    <option value="2">2d6</option>
+                    <option value="3">3d6</option>
+                    <option value="4">4d6</option>
+                    <option value="5">5d6</option>
+                    <option value="6">6d6</option>
+                    <option value="7">7d6</option>
+                    <option value="8">8d6</option>
+                    <option value="9">9d6</option>
+                    <option value="10">10d6</option>
                   </select>
                 </div>
                 <div class="column">
@@ -2066,10 +2060,10 @@
                 </div>
               </div>
               <div class="actions">
-                <button type="roll" name="roll_attack" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
+                <button type="roll" name="roll_attack" value="&{template:attack}{{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
                   Attack
                 </button>
-                <button type="roll" name="roll_damage" value="&{template:damage}{{templatecolor=@{templatecolor}}}{{charactername=@{charactername}}}{{header=Attack: @{weaponname}}}{{roll=[[@{weapondamage}]]}}">
+                <button type="roll" name="roll_damage" value="&{template:damage}{{charactername=@{charactername}}}{{header=Attack: @{weaponname}}}{{roll=[[@{weapondamage}d6s]]}}">
                   Damage
                 </button>
               </div>
@@ -2786,14 +2780,16 @@
   <!-- Roll template: Combat - Damage -->
   <rolltemplate class="sheet-rolltemplate-damage">
     <div class="{{ templatecolor }}">
-      <div class="character">
-        {{#charactername}}{{ charactername }}{{/charactername}}
+      <div class="cpredroll cpredroll-damage clipped-corner">
+        <div class="character">
+          {{#charactername}}{{ charactername }}{{/charactername}}
+        </div>
+        <div class="header">{{#header}}{{ header }}{{/header}}</div>
+        <div class="roll">{{ roll }}</div>
+        {{#footer}}
+          <div class="footer">{{ footer }}</div>
+        {{/footer}}
       </div>
-      <div class="header">{{#header}}{{ header }}{{/header}}</div>
-      <div class="roll">{{ roll }}</div>
-      {{#footer}}
-        <div class="footer">{{ footer }}</div>
-      {{/footer}}
     </div>
   </rolltemplate>
 
