@@ -2021,16 +2021,16 @@
                 <div class="column">
                   <div class="accent-font">Damage</div>
                   <select class="narrow" name="attr_weapondamage">
-                    <option value="1d6cs>6">1d6</option>
-                    <option value="2d6cs>12">2d6</option>
-                    <option value="3d6cs>18">3d6</option>
-                    <option value="4d6cs>24">4d6</option>
-                    <option value="5d6cs>30">5d6</option>
-                    <option value="6d6cs>36">6d6</option>
-                    <option value="7d6cs>42">7d6</option>
-                    <option value="8d6cs>48">8d6</option>
-                    <option value="9d6cs>54">9d6</option>
-                    <option value="10d6cs>60">10d6</option>
+                    <option value="1d6cs6cf0">1d6</option>
+                    <option value="2d6cs12cf0">2d6</option>
+                    <option value="3d6cs18cf0">3d6</option>
+                    <option value="4d6cs24cf0">4d6</option>
+                    <option value="5d6cs30cf0">5d6</option>
+                    <option value="6d6cs36cf0">6d6</option>
+                    <option value="7d6cs42cf0">7d6</option>
+                    <option value="8d6cs48cf0">8d6</option>
+                    <option value="9d6cs54cf0">9d6</option>
+                    <option value="10d6cs60cf0">10d6</option>
                   </select>
                 </div>
                 <div class="column">
@@ -2069,7 +2069,7 @@
                 <button type="roll" name="roll_attack" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
                   Attack
                 </button>
-                <button type="roll" name="roll_damage" value="&{template:damage}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[@{weapondamage}]]}}">
+                <button type="roll" name="roll_damage" value="&{template:damage}{{templatecolor=@{templatecolor}}}{{charactername=@{charactername}}}{{header=Attack: @{weaponname}}}{{roll=[[@{weapondamage}]]}}">
                   Damage
                 </button>
               </div>
