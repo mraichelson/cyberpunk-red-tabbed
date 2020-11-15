@@ -4,10 +4,7 @@
     <h4>
       Modifiers
       <span name="attr_finalmodifierdisplay"></span>
-      <span class="faux-button">
-        Reset
-        <input type="checkbox" name="attr_resetmodifiers"
-      /></span>
+      <button type="action" name="act_resetmodifiers">Reset</button>
     </h4>
     <div class="modifiers-body">
       Show Modifiers?
@@ -233,7 +230,7 @@
   /**
    * Event handler to trigger reset of all modifiers
    */
-  on('change:resetmodifiers', function () {
+  on('clicked:resetmodifiers', function () {
     resetAllModifiers();
   });
 </script>
