@@ -56,10 +56,6 @@
 
               </select>
             </div>
-            <!-- <div class="column">
-      <div class="accent-font">Player Name</div>
-      <input type="text" name="attr_playername" />
-    </div> -->
           </div>
         </div>
 
@@ -2025,16 +2021,16 @@
                 <div class="column">
                   <div class="accent-font">Damage</div>
                   <select class="narrow" name="attr_weapondamage">
-                    <option value="1">1d6</option>
-                    <option value="2">2d6</option>
-                    <option value="3">3d6</option>
-                    <option value="4">4d6</option>
-                    <option value="5">5d6</option>
-                    <option value="6">6d6</option>
-                    <option value="7">7d6</option>
-                    <option value="8">8d6</option>
-                    <option value="9">9d6</option>
-                    <option value="10">10d6</option>
+                    <option value="1d6cs>6">1d6</option>
+                    <option value="2d6cs>12">2d6</option>
+                    <option value="3d6cs>18">3d6</option>
+                    <option value="4d6cs>24">4d6</option>
+                    <option value="5d6cs>30">5d6</option>
+                    <option value="6d6cs>36">6d6</option>
+                    <option value="7d6cs>42">7d6</option>
+                    <option value="8d6cs>48">8d6</option>
+                    <option value="9d6cs>54">9d6</option>
+                    <option value="10d6cs>60">10d6</option>
                   </select>
                 </div>
                 <div class="column">
@@ -2070,10 +2066,10 @@
                 </div>
               </div>
               <div class="actions">
-                <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
+                <button type="roll" name="roll_attack" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
                   Attack
                 </button>
-                <button type="roll" name="roll_1d10" value="&{template:attack}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}">
+                <button type="roll" name="roll_damage" value="&{template:damage}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[@{weapondamage}]]}}">
                   Damage
                 </button>
               </div>
@@ -2214,6 +2210,109 @@
                 </div>
               </div>
             </fieldset>
+          </div>
+        </div>
+        <div class="gear-cyberdeck gear-toggle">
+          Show Cyberdeck?
+          <input type="checkbox" name="attr_showcyberdeck" value="0" class="show-next-div" />
+          <div class="gear-cyberdeck-pane gear-toggle-pane">
+            <h4>Cyberdeck</h4>
+            <div class="cyberdeck-wrapper">
+              <div class="columns cyberdeck-main">
+                <div class="column">
+                  <div>Name</div>
+                  <input type="text" name="attr_cyberdeck_name" />
+                </div>
+                <div class="column">
+                  <div>Type</div>
+                  <select name="attr_cyberdeck_type">
+                    <option value="poor">Poor Quality (5 slots)</option>
+                    <option value="standard">Standard Quality (7 slots)</option>
+                    <option value="excellent">Excellent Quality (9 slots)</option>
+                  </select>
+                </div>
+              </div>
+              <h5>Programs and Hardware</h5>
+              <div class="cyberdeck-slots">
+                <fieldset class="repeating_cyberdeck">
+                  <div class="columns">
+                    <div class="column">
+                      Name:
+                      <input type="text" name="attr_cyberdeck_program" />
+                    </div>
+                    <div class="column">
+                      Type:
+                      <select name="attr_cyberdeck_class">
+                        <option value="booster">Booster</option>
+                        <option value="attack">Attack</option>
+                        <option value="defender">Defender</option>
+                      </select>
+                    </div>
+                    <div class="column">
+                      ATK:
+                      <input type="number" name="attr_cyberdeck_atk" />
+                    </div>
+                    <div class="column">
+                      DEF:
+                      <input type="number" name="attr_cyberdeck_def" />
+                    </div>
+                    <div class="column">
+                      REZ:
+                      <input type="number" name="attr_cyberdeck_rez" />
+                    </div>
+                    <div class="column column-3">
+                      Icon:
+                      <input type="text" name="attr_cyberdeck_icon" />
+                    </div>
+                  </div>
+                  <div class="columns">
+                    <div class="column">
+                      Effect:
+                      <textarea name="attr_cyberdeck_effect"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gear-vehicles gear-toggle">
+          Show Vehicles?
+          <input type="checkbox" name="attr_showvehicles" value="0" class="show-next-div" />
+          <div class="gear-vehicle-pane gear-toggle-pane">
+            <h4>Vehicles</h4>
+            <div class="field-wrapper">
+              <fieldset class="repeating_vehicles">
+                <div class="columns">
+                  <div class="column">
+                    Vehicle:
+                    <input type="text" name="attr_vehicle_name" />
+                  </div>
+                  <div class="column">
+                    SDP:
+                    <input type="text" name="attr_vehicle_sdp" />
+                  </div>
+                  <div class="column">
+                    Seats:
+                    <input type="number" name="attr_vehicle_seats" />
+                  </div>
+                  <div class="column">
+                    Speed (Move in combat):
+                    <input type="number" name="attr_vehicle_speed" />
+                  </div>
+                  <div class="column">
+                    Speed (Narrative):
+                    <input type="text" name="attr_vehicle_narrative" />
+                  </div>
+                </div>
+                <div class="columns">
+                  <div class="column">
+                    Description/Notes:
+                    <textarea name="attr_vehicle_desc"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
         </div>
         <div class="gear-meta">

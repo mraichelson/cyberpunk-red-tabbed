@@ -7,6 +7,18 @@
       width: 100%;
     }
   }
+  .sheet-gear-toggle {
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+    .sheet-gear-toggle-pane {
+      color: $text;
+      text-align: left;
+    }
+    h4 {
+      margin-top: 0.5rem;
+    }
+  }
   .sheet-gear {
     .sheet-columns.sheet-gear-headers {
       .sheet-column {
@@ -25,6 +37,32 @@
     .repcontrol {
       margin-bottom: 1rem;
       padding-top: 1rem;
+    }
+  }
+  .sheet-gear-cyberdeck {
+    .sheet-cyberdeck-wrapper {
+      background-color: white;
+      padding: 0.5rem;
+    }
+    h5 {
+      border-top: 0.5rem solid $cpRed;
+      font-size: 1.3rem;
+      margin: 1rem -0.5rem;
+      padding-top: 0.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .sheet-cyberdeck-actions {
+      text-align: right;
+    }
+    .repcontainer {
+      .repitem {
+        margin: 0 -0.5rem;
+        padding: 0.5rem;
+        &:nth-child(odd) {
+          background-color: $offWhite;
+        }
+      }
     }
   }
 }
