@@ -1,15 +1,24 @@
 <!-- Roll template: Combat - Damage -->
 <rolltemplate class="sheet-rolltemplate-damage">
-  <div class="{{ templatecolor }}">
-    <div class="cpredroll cpredroll-damage clipped-corner">
-      <div class="character">
-        {{#charactername}}{{ charactername }}{{/charactername}}
-      </div>
-      <div class="header">{{#header}}{{ header }}{{/header}}</div>
-      <div class="roll">{{ roll }}</div>
-      {{#footer}}
-      <div class="footer">{{ footer }}</div>
-      {{/footer}}
-    </div>
+  <div class="cpredroll">
+    <h4>{{ charactername }}</h4>
+    <table>
+      <tbody>
+        <tr>
+          <th>Weapon</th>
+          <td>{{ weaponname }}</td>
+        </tr>
+        <tr>
+          <th>Damage</th>
+          <td>{{ weapondamage }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Damage</th>
+          <td>{{ roll }}</td>
+        </tr>
+      </tfoot>
+    </table>
   </div>
 </rolltemplate>

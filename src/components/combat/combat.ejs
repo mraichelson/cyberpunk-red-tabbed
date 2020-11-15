@@ -82,7 +82,7 @@
           <button
             type="roll"
             name="roll_damage"
-            value="&{template:damage}{{charactername=@{charactername}}}{{header=Attack: @{weaponname}}}{{roll=[[@{weapondamage}d6s]]}}"
+            value="&{template:damage}{{charactername=@{charactername}}}{{weaponname=@{weaponname}}}{{weapondamage=@{weapondamage}d6}}{{roll=[[@{weapondamage}d6s]]}}"
           >
             Damage
           </button>
