@@ -33,6 +33,7 @@
 /**
  * Import CSS for roll templates
  */
+@import 'rolltemplates';
 @import '../components/rolltemplates/attack/attack';
 @import '../components/rolltemplates/basic/basic';
 @import '../components/rolltemplates/damage/damage';
@@ -56,6 +57,13 @@
     padding: 0.5rem;
     text-align: center;
     text-transform: uppercase;
+    button {
+      background: $text;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 1em !important;
+    }
   }
   select {
     max-width: 100%;
