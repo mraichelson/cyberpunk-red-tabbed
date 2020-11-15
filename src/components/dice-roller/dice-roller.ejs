@@ -7,7 +7,7 @@
         <button
           type="roll"
           name="roll_1d10"
-          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d10}} {{roll=[[1d10]]}}"
+          value="&{template:basic}{{charactername=@{charactername}}}{{dice=1d10}}{{roll=[[1d10]]}}"
         >
           Roll 1d10
         </button>
@@ -28,16 +28,16 @@
         <button
           type="roll"
           name="roll_d6"
-          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll @{rollnd6}d6}} {{roll=[[@{rollnd6}d6]]}}"
+          value="&{template:basic}{{charactername=@{charactername}}}{{dice=@{rollnd6}d6}}{{roll=[[@{rollnd6}d6]]}}"
         >
-          Roll d6
+          Roll <span name="attr_rollnd6"></span>d6
         </button>
       </div>
       <div class="column">
         <button
           type="roll"
           name="roll_1d100"
-          value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d100}} {{roll=[[1d100]]}}"
+          value="&{template:basic}{{charactername=@{charactername}}}{{dice=1d100}}{{roll=[[1d100]]}}"
         >
           Roll 1d100
         </button>

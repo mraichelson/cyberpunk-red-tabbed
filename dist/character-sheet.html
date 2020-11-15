@@ -456,7 +456,7 @@
           <div class="dice-roller-pane">
             <div class="columns">
               <div class="column">
-                <button type="roll" name="roll_1d10" value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d10}} {{roll=[[1d10]]}}">
+                <button type="roll" name="roll_1d10" value="&{template:basic}{{charactername=@{charactername}}}{{dice=1d10}}{{roll=[[1d10]]}}">
                   Roll 1d10
                 </button>
               </div>
@@ -473,12 +473,12 @@
                   <option value="9">9</option>
                   <option value="10">10</option>
                 </select>
-                <button type="roll" name="roll_d6" value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll @{rollnd6}d6}} {{roll=[[@{rollnd6}d6]]}}">
-                  Roll d6
+                <button type="roll" name="roll_d6" value="&{template:basic}{{charactername=@{charactername}}}{{dice=@{rollnd6}d6}}{{roll=[[@{rollnd6}d6]]}}">
+                  Roll <span name="attr_rollnd6"></span>d6
                 </button>
               </div>
               <div class="column">
-                <button type="roll" name="roll_1d100" value="&{template:basic}{{templatecolor=@{templatecolor}}} {{charactername=@{charactername}}} {{header=Roll 1d100}} {{roll=[[1d100]]}}">
+                <button type="roll" name="roll_1d100" value="&{template:basic}{{charactername=@{charactername}}}{{dice=1d100}}{{roll=[[1d100]]}}">
                   Roll 1d100
                 </button>
               </div>
@@ -2762,17 +2762,16 @@
   <!-- basic rolls -->
   <!-- Roll template: Basic -->
   <rolltemplate class="sheet-rolltemplate-basic">
-    <input type="hidden" name="attr_templatecolor" />
-    <div class="sheet-templatecolor-wrapper">
-      <div>(basic roll)</div>
-      <div class="character">
-        {{#charactername}}{{ charactername }}{{/charactername}}
-      </div>
-      <div class="header">{{#header}}{{ header }}{{/header}}</div>
-      <div class="roll">{{ roll }}</div>
-      {{#footer}}
-        <div class="footer">{{ footer }}</div>
-      {{/footer}}
+    <div class="cpredroll">
+      <h4>{{ charactername }}</h4>
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">{{ dice }}</th>
+            <td>{{ roll }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </rolltemplate>
 
@@ -2796,7 +2795,7 @@
   <!-- skill rolls -->
   <rolltemplate class="sheet-rolltemplate-skill">
     <div class="cpredroll">
-      <h4 class="clipped-corner">{{ charactername }}</h4>
+      <h4>{{ charactername }}</h4>
       <table>
         <tbody>
           <!-- skill -->

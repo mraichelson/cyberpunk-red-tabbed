@@ -1,15 +1,14 @@
 <!-- Roll template: Basic -->
 <rolltemplate class="sheet-rolltemplate-basic">
-  <input type="hidden" name="attr_templatecolor" />
-  <div class="sheet-templatecolor-wrapper">
-    <div>(basic roll)</div>
-    <div class="character">
-      {{#charactername}}{{ charactername }}{{/charactername}}
-    </div>
-    <div class="header">{{#header}}{{ header }}{{/header}}</div>
-    <div class="roll">{{ roll }}</div>
-    {{#footer}}
-    <div class="footer">{{ footer }}</div>
-    {{/footer}}
+  <div class="cpredroll">
+    <h4>{{ charactername }}</h4>
+    <table>
+      <tbody>
+        <tr>
+          <th scope="row">{{ dice }}</th>
+          <td>{{ roll }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </rolltemplate>
