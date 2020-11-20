@@ -121,7 +121,7 @@
       <div class="columns">
         <div class="column">
           <div class="section-empathy">
-            <h4 class="clipped-corner">Empathy</h4>
+            <h4 class="clipped-corner">Effective Empathy</h4>
             <div class="field-wrapper center">
               <strong><span name="attr_empathy"></span></strong> of
               <span name="attr_stat_emp"></span>
@@ -148,7 +148,8 @@
             <h4 class="clipped-corner">Humanity</h4>
             <div class="field-wrapper center">
               <input type="number" name="attr_humanity" /> of
-              <span name="attr_humanity_max"></span>
+              <input type="number" name="attr_humanity_max" />
+              <span style="font-size: 1rem">MAX</span>
             </div>
           </div>
           <script type="text/worker">
@@ -944,7 +945,7 @@
 
                 <div class="skill">
                   <input class="skill-value" type="number" value="0" name="attr_skill_airvehicle" />
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Air Vehicle (x2)}} {{skillname=Pilot Air Vehicle (x2)}} {{skillvalue=@{skill_airvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicle} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Air Vehicle (x2)}} {{skillname=Pilot Air Vehicle}} {{skillvalue=@{skill_airvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicle} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pilot Air Vehicle (x2)
                     <span class="skill-meta"
                 >(ref
@@ -1413,7 +1414,7 @@
 
                 <div class="skill">
                   <input class="skill-value" type="number" value="0" name="attr_skill_autofire" />
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Autofire (x2)}} {{skillname=Autofire (x2)}} {{skillvalue=@{skill_autofire}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_autofire} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Autofire (x2)}} {{skillname=Autofire}} {{skillvalue=@{skill_autofire}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_autofire} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Autofire (x2)
                     <span class="skill-meta"
                 >(ref
@@ -1683,7 +1684,7 @@
 
                 <div class="skill">
                   <input class="skill-value" type="number" value="0" name="attr_skill_demolitions" />
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Demolitions (x2)}} {{skillname=Demolitions (x2)}} {{skillvalue=@{skill_demolitions}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_demolitions} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Demolitions (x2)}} {{skillname=Demolitions}} {{skillvalue=@{skill_demolitions}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_demolitions} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Demolitions (x2)
                     <span class="skill-meta"
                 >(tech
@@ -1699,7 +1700,7 @@
 
                 <div class="skill">
                   <input class="skill-value" type="number" value="0" name="attr_skill_electronicssecurity" />
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Electronics/Security Tech (x2)}} {{skillname=Electronics/Security Tech (x2)}} {{skillvalue=@{skill_electronicssecurity}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_electronicssecurity} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Electronics/Security Tech (x2)}} {{skillname=Electronics/Security Tech}} {{skillvalue=@{skill_electronicssecurity}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_electronicssecurity} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Electronics/Security Tech (x2)
                     <span class="skill-meta"
                 >(tech
@@ -1779,7 +1780,7 @@
 
                 <div class="skill">
                   <input class="skill-value" type="number" value="0" name="attr_skill_paramedic" />
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Paramedic (x2)}} {{skillname=Paramedic (x2)}} {{skillvalue=@{skill_paramedic}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_paramedic} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Paramedic (x2)}} {{skillname=Paramedic}} {{skillvalue=@{skill_paramedic}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_paramedic} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Paramedic (x2)
                     <span class="skill-meta"
                 >(tech
@@ -2899,7 +2900,7 @@
       <table>
         <tbody>
           <tr>
-            <th scope="row">{{ dice }}</th>
+            <th scope="row">Rolls {{ dice }}</th>
             <td>{{ roll }}</td>
           </tr>
         </tbody>

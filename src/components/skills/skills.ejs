@@ -45,7 +45,7 @@
             <button
               class="button-plain"
               type="roll"
-              value="&{template:skill}{{charactername=@{charactername}}} {{header=<%= skill.name %>}} {{skillname=<%= skill.name %>}} {{skillvalue=@{<%= skill.field %>}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{<%= skill.field %>} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+              value="&{template:skill}{{charactername=@{charactername}}} {{header=<%= skill.name %>}} {{skillname=<%= skill.name.replace(' (x2)', '') %>}} {{skillvalue=@{<%= skill.field %>}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{<%= skill.field %>} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
             >
               <%= skill.name %>
               <span class="skill-meta"
