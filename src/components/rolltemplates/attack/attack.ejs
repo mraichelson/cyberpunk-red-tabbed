@@ -1,24 +1,48 @@
-<!-- Roll template: Combat - Attack -->
 <rolltemplate class="sheet-rolltemplate-attack">
-  <div class="{{ templatecolor }}">
-    <div>(attack roll)</div>
-    <div class="character">
-      {{#charactername}}{{ charactername }}{{/charactername}}
-    </div>
-    <div class="header">{{#header}}{{ header }}{{/header}}</div>
-    <div class="roll">{{ roll }}</div>
-    {{#rollWasCrit() roll}}
-    <div class="crit">
-      CRITICAL SUCCESS! <br />
-      Add {{ critroll }} to roll
-    </div>
-    {{/rollWasCrit() roll}} {{#rollWasFumble() roll}}
-    <div class="fail">
-      CRITICAL FAILURE! <br />
-      Subtract {{ critroll }} from roll
-    </div>
-    {{/rollWasFumble() roll}} {{#footer}}
-    <div class="footer">{{ footer }}</div>
-    {{/footer}}
+  <div class="cpredroll">
+    <h4>{{ charactername }}</h4>
+    <table>
+      <tbody>
+        <tr>
+          <th scope="row">Weapon</th>
+          <td>{{ weapon }}</td>
+        </tr>
+        <!-- Special stuff -->
+        {{#specialmodifier}}
+        <tr>
+          <th scope="row">{{ specialname }}</th>
+          <td>{{ specialmodifier }}</td>
+        </tr>
+        {{/specialmodifier}}
+        <!-- modifiers -->
+        {{#finalmodifier}}
+        <tr>
+          <th scope="row">Modifiers</th>
+          <td>{{ finalmodifier }}</td>
+        </tr>
+        {{/finalmodifier}}
+      </tbody>
+      <tfoot>
+        <!-- Roll -->
+        <tr class="outcome">
+          <th scope="row">Outcome</th>
+          <td>{{ roll }}</td>
+        </tr>
+        <!-- CRIT Success -->
+        {{#rollWasCrit() roll}}
+        <tr class="crit">
+          <th scope="row">Critical Success</th>
+          <td>Add {{ critroll }} to roll</td>
+        </tr>
+        {{/rollWasCrit() roll}}
+        <!-- CRIT Fail -->
+        {{#rollWasFumble() roll}}
+        <tr class="crit">
+          <th scope="row">Critical Failure</th>
+          <td>Subtract {{ critroll }} from roll</td>
+        </tr>
+        {{/rollWasFumble() roll}}
+      </tfoot>
+    </table>
   </div>
 </rolltemplate>

@@ -12,15 +12,20 @@
             <div class="accent-font">Skill</div>
             <select name="attr_weaponskill">
               <optgroup label="Melee">
-                <option value="brawling">Brawling</option>
-                <option value="meleeweapon">Melee Weapon</option>
-                <option value="martialarts">Martial Arts</option>
+                <option value="@{skill_brawling}+@{stat_dex}">Brawling</option>
+                <option value="@{skill_meleeweapon}+@{stat_dex}">
+                  Melee Weapon
+                </option>
               </optgroup>
               <optgroup label="Ranged">
-                <option value="archery">Archery</option>
-                <option value="handgun">Handgun</option>
-                <option value="heavyweapons">Heavy Weapons</option>
-                <option value="shoulderarms">Shoulder Arms</option>
+                <option value="@{skill_archery}+@{stat_ref}">Archery</option>
+                <option value="@{skill_handgun}+@{stat_ref}">Handgun</option>
+                <option value="@{skill_heavyweapons}+@{stat_ref}">
+                  Heavy Weapons
+                </option>
+                <option value="@{skill_shoulderarms}+@{stat_ref}">
+                  Shoulder Arms
+                </option>
               </optgroup>
             </select>
           </div>
@@ -59,30 +64,95 @@
               <span class="accent-font">Ammo Type</span>
               <input type="text" name="attr_weaponammotype" />
             </div>
-            <div class="weapon-concealable">
-              <span class="accent-font">
-                <input type="checkbox" name="attr_weaponconcealable" />
-                Concealable
-              </span>
+            <div class="weapon-custommods">
+              <div>
+                <input
+                  name="attr_weaponshowmodifiers"
+                  type="checkbox"
+                  class="show-next-div"
+                />
+                Custom Modifiers
+                <div>
+                  <div class="columns">
+                    <div class="column">
+                      <div class="accent-font">Attack Modifier</div>
+                      <input
+                        type="number"
+                        name="attr_weaponmodifier"
+                        value="0"
+                      />
+                    </div>
+                    <div class="column">
+                      <div class="accent-font">Damage Modifier</div>
+                      <input
+                        type="number"
+                        name="attr_weapondamagemod"
+                        class="narrow"
+                        value="0"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="column column-3">
+          <div class="column column-3" style="margin-bottom: 1rem">
             <div class="accent-font">Notes</div>
             <textarea name="attr_weaponnotes" rows="3"></textarea>
+            <div class="columns">
+              <div class="column">
+                <input type="checkbox" name="attr_weaponconcealable" />
+                Concealable
+              </div>
+              <div class="column">
+                <input type="checkbox" name="attr_weaponautofire" />
+                Autofire
+              </div>
+              <div class="column">
+                <input type="checkbox" name="attr_weaponsuppress" />
+                Suppressing Fire
+              </div>
+            </div>
           </div>
         </div>
         <div class="actions">
+          <input
+            class="autofiretoggle"
+            type="hidden"
+            name="attr_weaponautofire"
+          />
+          <button
+            class="autofirebutton"
+            type="roll"
+            name="roll_autofire"
+            value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{roll=[[1d10+@{skill_autofire}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
+          >
+            Autofire
+          </button>
+          <input
+            class="suppfiretoggle"
+            type="hidden"
+            name="attr_weaponsuppress"
+          />
+          <button
+            class="suppfirebutton"
+            type="roll"
+            name="roll_suppfire"
+            value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Suppressing Fire)}}{{roll=[[1d10+@{skill_autofire}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
+          >
+            Suppressing Fire
+          </button>
           <button
             type="roll"
             name="roll_attack"
-            value="&{template:attack}{{charactername=@{charactername}}} {{header=Attack: @{weaponname}}} {{roll=[[1d10]]}}"
+            value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname}}}{{roll=[[1d10+@{weaponskill}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
           >
             Attack
           </button>
           <button
             type="roll"
             name="roll_damage"
-            value="&{template:damage}{{charactername=@{charactername}}}{{weaponname=@{weaponname}}}{{weapondamage=@{weapondamage}d6}}{{roll=[[@{weapondamage}d6s]]}}"
+            value="&{template:damage}{{charactername=@{charactername}}}{{weaponname=@{weaponname}}}{{weapondamage=@{weapondamage}d6+@{weapondamagemod}}}{{roll=[[@{weapondamage}d6s+@{weapondamagemod}]]}}"
           >
             Damage
           </button>
