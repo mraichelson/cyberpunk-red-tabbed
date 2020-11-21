@@ -125,7 +125,7 @@
             class="autofirebutton"
             type="roll"
             name="roll_autofire"
-            value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{roll=[[1d10+@{skill_autofire}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
+            value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
           >
             Autofire
           </button>
@@ -138,7 +138,7 @@
             class="suppfirebutton"
             type="roll"
             name="roll_suppfire"
-            value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Suppressing Fire)}}{{roll=[[1d10+@{skill_autofire}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
+            value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Suppressing Fire)}}{{specialrule=Opponents need to make a Concentration check. (See p.174)}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
           >
             Suppressing Fire
           </button>

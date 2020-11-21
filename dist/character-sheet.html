@@ -2225,14 +2225,14 @@
               </div>
               <div class="actions">
                 <input class="autofiretoggle" type="hidden" name="attr_weaponautofire" />
-                <button class="autofirebutton" type="roll" name="roll_autofire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{roll=[[1d10+@{skill_autofire}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
+                <button class="autofirebutton" type="roll" name="roll_autofire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
                   Autofire
                 </button>
                 <input class="suppfiretoggle" type="hidden" name="attr_weaponsuppress" />
-                <button class="suppfirebutton" type="roll" name="roll_suppfire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Suppressing Fire)}}{{roll=[[1d10+@{skill_autofire}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
+                <button class="suppfirebutton" type="roll" name="roll_suppfire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Suppressing Fire)}}{{specialrule=Opponents need to make a Concentration check. (See p.174)}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
                   Suppressing Fire
                 </button>
-                <button type="roll" name="roll_attack" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname}}}{{roll=[[1d10+@{weaponskill}+@{weaponmodifier}]]}}{{critroll=[[1d10]]}}">
+                <button type="roll" name="roll_attack" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname}}}{{roll=[[1d10+@{weaponskill}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
                   Attack
                 </button>
                 <button type="roll" name="roll_damage" value="&{template:damage}{{charactername=@{charactername}}}{{weaponname=@{weaponname}}}{{weapondamage=@{weapondamage}d6+@{weapondamagemod}}}{{roll=[[@{weapondamage}d6s+@{weapondamagemod}]]}}">
@@ -2950,6 +2950,11 @@
               <td>Subtract {{ critroll }} from roll</td>
             </tr>
           {{/rollWasFumble() roll}}
+          {{#specialrule}}
+            <tr class="crit">
+              <td colspan="2">{{ specialrule }}</td>
+            </tr>
+          {{/specialrule}}
         </tfoot>
       </table>
     </div>

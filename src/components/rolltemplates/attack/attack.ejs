@@ -42,6 +42,11 @@
           <td>Subtract {{ critroll }} from roll</td>
         </tr>
         {{/rollWasFumble() roll}}
+        {{#specialrule}}
+        <tr class="crit">
+          <td colspan="2">{{ specialrule }}</td>
+        </tr>
+        {{/specialrule}}
       </tfoot>
     </table>
   </div>
