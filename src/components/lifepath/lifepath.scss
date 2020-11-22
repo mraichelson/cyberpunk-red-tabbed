@@ -2,6 +2,9 @@
   .sheet-lp {
     display: none;
     margin-bottom: 1rem;
+    .sheet-field-wrapper {
+      padding: 0.5rem 0.5rem 0;
+    }
   }
   input[value='Exec'] ~ .sheet-lp-exec,
   input[value='Fixer'] ~ .sheet-lp-fixer,
@@ -35,7 +38,7 @@
   }
   .repcontrol {
     margin-bottom: 1rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
   }
   .sheet-enemy-headers {
     background-color: $offWhite;
