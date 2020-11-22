@@ -338,13 +338,13 @@
         },
         {
           "name": "Streetwise",
-          "field": "skill_bribery",
+          "field": "skill_streetwise",
           "stat": "stat_cool",
           "type": "standard"
         },
         {
           "name": "Trading",
-          "field": "skill_bribery",
+          "field": "skill_trading",
           "stat": "stat_cool",
           "type": "standard"
         },

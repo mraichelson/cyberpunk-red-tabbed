@@ -19,12 +19,6 @@
           </h5>
           <fieldset class="<%= skill.fieldset %>">
             <div class="skill">
-              <input
-                class="skill-value"
-                type="number"
-                value="0"
-                name="attr_skillvalue"
-              />
               <span class="skill-indent-icon">&#8627;</span>
               <button
                 class="button-plain"
@@ -32,16 +26,16 @@
                 value="&{template:skill}{{charactername=@{charactername}}} {{skillname=<%= skill.name.replace(' (x2)', '') %>: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
               ></button>
               <input class="skill-name" type="text" name="attr_skillname" />
+              <input
+                class="skill-value"
+                type="number"
+                value="0"
+                name="attr_skillvalue"
+              />
             </div>
           </fieldset>
           <% } else { %>
           <div class="skill">
-            <input
-              class="skill-value"
-              type="number"
-              value="0"
-              name="attr_<%= skill.field %>"
-            />
             <button
               class="button-plain"
               type="roll"
@@ -56,6 +50,12 @@
                 >)</span
               >
             </button>
+            <input
+              class="skill-value"
+              type="number"
+              value="0"
+              name="attr_<%= skill.field %>"
+            />
           </div>
           <% } %>
         </li>
