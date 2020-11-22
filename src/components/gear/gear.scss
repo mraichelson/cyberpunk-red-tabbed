@@ -2,7 +2,7 @@
   .sheet-gear-meta-wrapper {
     background-color: white;
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0;
     input {
       width: 100%;
     }
@@ -28,7 +28,7 @@
     .repcontainer {
       .repitem {
         background-color: white;
-        padding: 0.5rem;
+        padding: 0.5rem 0.5rem 0;
         &:nth-child(even) {
           background-color: $offWhite;
         }
@@ -42,7 +42,7 @@
   .sheet-gear-cyberdeck {
     .sheet-cyberdeck-wrapper {
       background-color: white;
-      padding: 0.5rem;
+      padding: 0.5rem 0.5rem 0;
     }
     h5 {
       border-top: 0.5rem solid $cpRed;
