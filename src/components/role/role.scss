@@ -24,4 +24,21 @@
   input[value='Tech'] ~ .sheet-role-tech {
     display: block;
   }
+  .sheet-role-ability {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  button.sheet-role-button {
+    font-size: 1.3rem !important;
+  }
+  .sheet-subdivider {
+    border-top: 0.5rem solid $cpRed;
+    margin: 0 -1rem;
+    padding: 1rem 1rem 0;
+    & > div.sheet-columns:nth-child(even) {
+      background-color: $offWhite;
+      margin: 0 -1rem -1rem;
+      padding: 1rem 1rem 0;
+    }
+  }
 }

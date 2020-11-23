@@ -272,29 +272,38 @@
           <input type="hidden" name="attr_role" />
           <div class="role-pane role-exec">
             <h4 class="clipped-corner">Exec</h4>
-            Teamwork
-            <input type="number" name="attr_role_exec" />
+            <div class="role-ability">
+              Teamwork
+              <input type="number" name="attr_role_exec" />
+            </div>
           </div>
           <div class="role-pane role-fixer">
             <h4 class="clipped-corner">Fixer</h4>
-            Operator
-            <input type="number" name="attr_role_fixer" />
+            <div class="role-ability">
+              Operator
+              <input type="number" name="attr_role_fixer" />
+            </div>
           </div>
           <div class="role-pane role-lawman">
             <h4 class="clipped-corner">Lawman</h4>
-            Backup
-            <input type="number" name="attr_role_lawman" />
+            <div class="role-ability">
+              Backup
+              <input type="number" name="attr_role_lawman" />
+            </div>
           </div>
           <div class="role-pane role-media">
             <h4 class="clipped-corner">Media</h4>
-            Credibility
-            <input type="number" name="attr_role_media" />
+            <div class="role-ability">
+              Credibility
+              <input type="number" name="attr_role_media" />
+            </div>
           </div>
           <div class="role-pane role-medtech">
             <h4 class="clipped-corner">Medtech</h4>
-            Medicine
-            <input type="number" name="attr_role_medtech" />
-            <hr />
+            <div class="role-ability">
+              Medicine
+              <input type="number" name="attr_role_medtech" />
+            </div>
             <div class="columns">
               <div class="column">
                 Surgery<input type="number" name="attr_role_medtech_surgery" />
@@ -309,28 +318,28 @@
           </div>
           <div class="role-pane role-netrunner">
             <h4 class="clipped-corner">Netrunner</h4>
-            <div>
-              <button type="roll">Interface</button>
+            <div class="role-ability">
+              <button class="role-button" type="roll">Interface</button>
               <input type="number" name="attr_role_netrunner" />
             </div>
           </div>
           <div class="role-pane role-nomad">
             <h4 class="clipped-corner">Nomad</h4>
-            <div>
-              <button type="roll">Moto</button>
+            <div class="role-ability">
+              <button class="role-button" type="roll">Moto</button>
               <input type="number" name="attr_role_nomad" />
             </div>
           </div>
           <div class="role-pane role-rockerboy">
             <h4 class="clipped-corner">Rockerboy</h4>
-            <div>
-              <button type="roll">Charismatic Impact</button>
+            <div class="role-ability">
+              <button class="role-button" type="roll">Charismatic Impact</button>
               <input type="number" name="attr_role_rocker" />
             </div>
           </div>
           <div class="role-pane role-solo">
             <h4 class="clipped-corner">Solo</h4>
-            <div>
+            <div class="role-ability">
               Combat Awareness
               <input type="number" name="attr_role_solo" />
             </div>
@@ -357,70 +366,86 @@
           </div>
           <div class="role-pane role-tech">
             <h4 class="clipped-corner">Tech</h4>
-            <div>
-              <button type="roll">Maker</button>
+            <div class="role-ability">
+              Maker
               <input type="number" name="attr_role_tech" />
             </div>
-            <div class="columns">
-              <div class="column">
-                <button type="roll">Field Expertise</button>
-                <input type="number" name="attr_role_tech_field" />
-                <select name="attr_role_tech_field_skill">
-                  <option value="skill_airevehicletech">Air Vehicle Tech</option>
-                  <option value="skill_basictech">Basic Tech</option>
-                  <option value="skill_cybertech">Cybertech</option>
-                  <option value="skill_electronicssecurity">
-                    Electronics/Security Tech
-                  </option>
-                  <option value="skill_landvehicletech">Land Vehicle Tech</option>
-                  <option value="skill_seavehicletech">Sea Vehicle Tech</option>
-                  <option value="skill_weaponstech">Weaponstech</option>
-                </select>
+            <div class="subdivider">
+              <div class="columns">
+                <div class="column">
+                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Field Expertise}} {{skillvalue=@{role_tech_field}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_field} + @{role_tech_field_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                    Field Expertise
+                  </button>
+                  <input type="number" name="attr_role_tech_field" />
+                  <br />
+                  <select name="attr_role_tech_field_skill">
+                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                    <option value="@{skill_basictech}">Basic Tech</option>
+                    <option value="@{skill_cybertech}">Cybertech</option>
+                    <option value="@{skill_electronicssecurity}">
+                      Electronics/Security Tech
+                    </option>
+                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
+                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                    <option value="@{skill_weaponstech}">Weaponstech</option>
+                  </select>
+                </div>
+                <div class="column">
+                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Upgrade Expertise}} {{skillvalue=@{role_tech_upgrade}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_upgrade} + @{role_tech_upgrade_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                    Upgrade Expertise
+                  </button>
+                  <input type="number" name="attr_role_tech_upgrade" />
+                  <br />
+                  <select name="attr_role_tech_upgrade_skill">
+                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                    <option value="@{skill_basictech}">Basic Tech</option>
+                    <option value="@{skill_cybertech}">Cybertech</option>
+                    <option value="@{skill_electronicssecurity}">
+                      Electronics/Security Tech
+                    </option>
+                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
+                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                    <option value="@{skill_weaponstech}">Weaponstech</option>
+                  </select>
+                </div>
               </div>
-              <div class="column">
-                <button type="roll">Upgrade Expertise</button>
-                <input type="number" name="attr_role_tech_upgrade" />
-                <select name="attr_role_tech_upgrade_skill">
-                  <option value="skill_airevehicletech">Air Vehicle Tech</option>
-                  <option value="skill_basictech">Basic Tech</option>
-                  <option value="skill_cybertech">Cybertech</option>
-                  <option value="skill_electronicssecurity">
-                    Electronics/Security Tech
-                  </option>
-                  <option value="skill_landvehicletech">Land Vehicle Tech</option>
-                  <option value="skill_seavehicletech">Sea Vehicle Tech</option>
-                  <option value="skill_weaponstech">Weaponstech</option>
-                </select>
-              </div>
-              <div class="column">
-                <button type="roll">Fabrication Expertise</button>
-                <input type="number" name="attr_role_tech_fabrication" />
-                <select name="attr_role_tech_fabrication_skill">
-                  <option value="skill_airevehicletech">Air Vehicle Tech</option>
-                  <option value="skill_basictech">Basic Tech</option>
-                  <option value="skill_cybertech">Cybertech</option>
-                  <option value="skill_electronicssecurity">
-                    Electronics/Security Tech
-                  </option>
-                  <option value="skill_landvehicletech">Land Vehicle Tech</option>
-                  <option value="skill_seavehicletech">Sea Vehicle Tech</option>
-                  <option value="skill_weaponstech">Weaponstech</option>
-                </select>
-              </div>
-              <div class="column">
-                <button type="roll">Invention Expertise</button>
-                <input type="number" name="attr_role_tech_invention" />
-                <select name="attr_role_tech_invention_skill">
-                  <option value="skill_airevehicletech">Air Vehicle Tech</option>
-                  <option value="skill_basictech">Basic Tech</option>
-                  <option value="skill_cybertech">Cybertech</option>
-                  <option value="skill_electronicssecurity">
-                    Electronics/Security Tech
-                  </option>
-                  <option value="skill_landvehicletech">Land Vehicle Tech</option>
-                  <option value="skill_seavehicletech">Sea Vehicle Tech</option>
-                  <option value="skill_weaponstech">Weaponstech</option>
-                </select>
+              <div class="columns">
+                <div class="column">
+                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Fabrication Expertise}} {{skillvalue=@{role_tech_fabrication}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_fabrication} + @{role_tech_fabrication_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                    Fabrication Expertise
+                  </button>
+                  <input type="number" name="attr_role_tech_fabrication" />
+                  <br />
+                  <select name="attr_role_tech_fabrication_skill">
+                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                    <option value="@{skill_basictech}">Basic Tech</option>
+                    <option value="@{skill_cybertech}">Cybertech</option>
+                    <option value="@{skill_electronicssecurity}">
+                      Electronics/Security Tech
+                    </option>
+                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
+                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                    <option value="@{skill_weaponstech}">Weaponstech</option>
+                  </select>
+                </div>
+                <div class="column">
+                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Invention Expertise}} {{skillvalue=@{role_tech_invention}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_invention} + @{role_tech_invention_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                    Invention Expertise
+                  </button>
+                  <input type="number" name="attr_role_tech_invention" />
+                  <br />
+                  <select name="attr_role_tech_invention_skill">
+                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                    <option value="@{skill_basictech}">Basic Tech</option>
+                    <option value="@{skill_cybertech}">Cybertech</option>
+                    <option value="@{skill_electronicssecurity}">
+                      Electronics/Security Tech
+                    </option>
+                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
+                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                    <option value="@{skill_weaponstech}">Weaponstech</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
