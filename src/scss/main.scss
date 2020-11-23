@@ -61,8 +61,12 @@
       background: $text;
       border: none;
       border-radius: 0.25rem;
-      padding: 0.25rem 0.5rem;
-      font-size: 1em !important;
+      padding: 0 0.5rem;
+      font-size: 9px !important;
+      margin-left: 0.5rem;
+      text-transform: uppercase;
+      top: -2px;
+      position: relative;
     }
   }
   select {

@@ -181,7 +181,10 @@
         </div>
         <div class="column">
           <div class="section-luck">
-            <h4 class="clipped-corner">Luck</h4>
+            <h4 class="clipped-corner">
+              Luck
+              <button type="action" name="act_resetluck">Reset</button>
+            </h4>
             <div class="field-wrapper center">
               <input type="number" name="attr_luck" />
               of <span name="attr_luck_max"></span>
@@ -198,6 +201,12 @@
     });
   }
   on('change:stat_luck', function() {
+    updateLuck();
+  });
+  /**
+   * Reset luck pool button
+   */
+  on('clicked:resetluck', function () {
     updateLuck();
   });
 </script>
