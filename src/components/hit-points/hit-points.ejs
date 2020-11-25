@@ -1,17 +1,24 @@
 <div class="section-hit-points">
-  <h4 class="clipped-corner">Hit Points</h4>
+  <input type="hidden" name="attr_deathsavehack" />
+  <h4 class="clipped-corner">
+    <!-- hidden fields for controlling the display of conditional elements. -->
+    <input class="seriously-wounded" type="hidden" name="attr_damageserious" />
+    <input class="death-save" type="hidden" name="attr_damagemortal" />
+    <span class="seriously-wounded">!</span>
+    Hit Points
+    <button class="reset-hp" type="action" name="act_resethp">Reset</button>
+    <button
+      class="death-save button-plain"
+      type="roll"
+      value="&{template:deathsave}{{charactername=@{charactername}}}{{target=@{deathsave}}}{{roll=[[1d10cs<@{deathsavehack}cf10]]}}"
+    >
+      Death Save (<span name="attr_deathsave"></span>)
+    </button>
+  </h4>
   <div class="field-wrapper center">
     <input type="number" name="attr_hp" />
     of <span name="attr_hp_max"></span>
   </div>
-  <!-- 
-    <div class="hit-points-meta">
-      <span class="hit-points-meta-value" name="attr_seriouslywounded"></span>
-      <button class="death-save" type="roll">
-        Death Save (<span name="attr_deathsave"></span>)
-      </button>
-    </div>
-  -->
 </div>
 <script type="text/worker">
   function updateHitPoints() {
@@ -20,12 +27,13 @@
       var will = Number(values.stat_will);
       var maxHp = ((Math.ceil((body + will) / 2)) * 5) + 10;
       var halfHp = Math.floor(maxHp / 2);
-      var deathSave = Math.floor(body);
+      var deathSave = body;
       setAttrs({
         hp: maxHp,
         hp_max: maxHp,
         seriouslywounded: halfHp,
-        deathsave: deathSave
+        deathsave: deathSave,
+        deathsavehack: deathSave -  1
       });
     });
   }
@@ -56,5 +64,11 @@
   }
   on('change:hp', function() {
     updateHpModifiers();
+  });
+  /**
+   * Unified button to reset HP
+   */
+  on('clicked:resethp', function() {
+    updateHitPoints();
   });
 </script>

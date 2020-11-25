@@ -2,7 +2,7 @@
   <div class="columns">
     <% attributes.forEach(function(attribute) { %>
     <div class="column clipped-corner">
-      <span class="accent-font"><%= attribute.name %></span>
+      <strong class="accent-font"><%= attribute.name %></strong>
       <input type="number" name="attr_<%= attribute.field %>" />
     </div>
     <% }) %>

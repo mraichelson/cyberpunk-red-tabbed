@@ -2,4 +2,50 @@
   .sheet-hit-points-meta-value {
     font-weight: bold;
   }
+  span.sheet-seriously-wounded {
+    display: none;
+    font-size: 1rem;
+    background-color: $cpRed;
+    color: #fff;
+    border-radius: 1rem;
+    width: 1.3rem;
+    text-align: center;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    margin-right: 0.5rem;
+    padding: 0.25rem;
+    position: relative;
+    top: -2px;
+  }
+  input.sheet-seriously-wounded[value='on'] {
+    & ~ span.sheet-seriously-wounded {
+      display: inline-block;
+    }
+  }
+  button.sheet-death-save {
+    display: none;
+    background: $text !important;
+    border: none !important;
+    border-radius: 0.25rem !important;
+    color: #fff;
+    padding: 0 0.5rem !important;
+    font-size: 9px !important;
+    margin-left: 0.5rem !important;
+    text-transform: uppercase !important;
+    top: -2px !important;
+    position: relative !important;
+    text-shadow: none;
+    &:before {
+      display: none;
+    }
+  }
+  input.sheet-death-save[value='on'] {
+    & ~ span.sheet-seriously-wounded,
+    & ~ button.sheet-reset-hp {
+      display: none !important;
+    }
+    & ~ button.sheet-death-save {
+      display: inline-block;
+    }
+  }
 }

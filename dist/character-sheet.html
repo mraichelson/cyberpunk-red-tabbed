@@ -65,52 +65,52 @@
           <div class="columns">
 
             <div class="column clipped-corner">
-              <span class="accent-font">INT</span>
+              <strong class="accent-font">INT</strong>
               <input type="number" name="attr_stat_int" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">REF</span>
+              <strong class="accent-font">REF</strong>
               <input type="number" name="attr_stat_ref" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">DEX</span>
+              <strong class="accent-font">DEX</strong>
               <input type="number" name="attr_stat_dex" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">TECH</span>
+              <strong class="accent-font">TECH</strong>
               <input type="number" name="attr_stat_tech" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">COOL</span>
+              <strong class="accent-font">COOL</strong>
               <input type="number" name="attr_stat_cool" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">WILL</span>
+              <strong class="accent-font">WILL</strong>
               <input type="number" name="attr_stat_will" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">LUCK</span>
+              <strong class="accent-font">LUCK</strong>
               <input type="number" name="attr_stat_luck" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">MOVE</span>
+              <strong class="accent-font">MOVE</strong>
               <input type="number" name="attr_stat_move" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">BODY</span>
+              <strong class="accent-font">BODY</strong>
               <input type="number" name="attr_stat_body" />
             </div>
 
             <div class="column clipped-corner">
-              <span class="accent-font">EMP</span>
+              <strong class="accent-font">EMP</strong>
               <input type="number" name="attr_stat_emp" />
             </div>
 
@@ -214,19 +214,22 @@
         </div>
         <div class="column">
           <div class="section-hit-points">
-            <h4 class="clipped-corner">Hit Points</h4>
+            <input type="hidden" name="attr_deathsavehack" />
+            <h4 class="clipped-corner">
+              <!-- hidden fields for controlling the display of conditional elements. -->
+              <input class="seriously-wounded" type="hidden" name="attr_damageserious" />
+              <input class="death-save" type="hidden" name="attr_damagemortal" />
+              <span class="seriously-wounded">!</span>
+              Hit Points
+              <button class="reset-hp" type="action" name="act_resethp">Reset</button>
+              <button class="death-save button-plain" type="roll" value="&{template:deathsave}{{charactername=@{charactername}}}{{target=@{deathsave}}}{{roll=[[1d10cs<@{deathsavehack}cf10]]}}">
+                Death Save (<span name="attr_deathsave"></span>)
+              </button>
+            </h4>
             <div class="field-wrapper center">
               <input type="number" name="attr_hp" />
               of <span name="attr_hp_max"></span>
             </div>
-            <!-- 
-    <div class="hit-points-meta">
-      <span class="hit-points-meta-value" name="attr_seriouslywounded"></span>
-      <button class="death-save" type="roll">
-        Death Save (<span name="attr_deathsave"></span>)
-      </button>
-    </div>
-  -->
           </div>
           <script type="text/worker">
             function updateHitPoints() {
@@ -235,12 +238,13 @@
       var will = Number(values.stat_will);
       var maxHp = ((Math.ceil((body + will) / 2)) * 5) + 10;
       var halfHp = Math.floor(maxHp / 2);
-      var deathSave = Math.floor(body);
+      var deathSave = body;
       setAttrs({
         hp: maxHp,
         hp_max: maxHp,
         seriouslywounded: halfHp,
-        deathsave: deathSave
+        deathsave: deathSave,
+        deathsavehack: deathSave -  1
       });
     });
   }
@@ -271,6 +275,12 @@
   }
   on('change:hp', function() {
     updateHpModifiers();
+  });
+  /**
+   * Unified button to reset HP
+   */
+  on('clicked:resethp', function() {
+    updateHitPoints();
   });
 </script>
 
@@ -3093,6 +3103,31 @@
               <td>Subtract {{ critroll }} from roll</td>
             </tr>
           {{/rollWasFumble() roll}}
+        </tfoot>
+      </table>
+    </div>
+  </rolltemplate>
+
+  <!-- death saves -->
+  <!-- Roll template: Death Save -->
+  <rolltemplate class="sheet-rolltemplate-deathsave">
+    <div class="cpredroll">
+      <h4>{{ charactername }}</h4>
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Target</th>
+            <td>Below {{ target }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Roll</th>
+            <td>{{ roll }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">See full rules for Death Saves on p.188.</td>
+          </tr>
         </tfoot>
       </table>
     </div>

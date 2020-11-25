@@ -37,6 +37,7 @@
 @import '../components/rolltemplates/attack/attack';
 @import '../components/rolltemplates/basic/basic';
 @import '../components/rolltemplates/damage/damage';
+@import '../components/rolltemplates/death-save/death-save';
 @import '../components/rolltemplates/skill/skill';
 
 .charsheet {
@@ -58,15 +59,16 @@
     text-align: center;
     text-transform: uppercase;
     button {
-      background: $text;
-      border: none;
-      border-radius: 0.25rem;
-      padding: 0 0.5rem;
+      background: $text !important;
+      border: none !important;
+      border-radius: 0.25rem !important;
+      padding: 0 0.5rem !important;
       font-size: 9px !important;
-      margin-left: 0.5rem;
-      text-transform: uppercase;
-      top: -2px;
-      position: relative;
+      margin-left: 0.5rem !important;
+      text-transform: uppercase !important;
+      top: -2px !important;
+      position: relative !important;
+      text-shadow: none;
     }
   }
   select {
