@@ -70,6 +70,16 @@
       position: relative !important;
       text-shadow: none;
     }
+    input[type='number'] {
+      font-size: 1.2rem;
+      margin-left: 0.5rem;
+      height: 1.5rem;
+      position: relative;
+      top: -2px;
+    }
+  }
+  button[type='roll'] {
+    margin: 0 !important;
   }
   select {
     max-width: 100%;

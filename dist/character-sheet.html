@@ -386,84 +386,122 @@
           <div class="role-pane role-tech">
             <h4 class="clipped-corner">Tech</h4>
             <div class="role-ability">
-              Maker
+              Tech role ability: Maker
               <input type="number" name="attr_role_tech" />
+              <br />
+              <small>See full rules on p.147-149</small>
             </div>
             <div class="subdivider">
               <div class="columns">
                 <div class="column">
-                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Field Expertise}} {{skillvalue=@{role_tech_field}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_field} + @{role_tech_field_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
-                    Field Expertise
-                  </button>
-                  <input type="number" name="attr_role_tech_field" />
-                  <br />
-                  <select name="attr_role_tech_field_skill">
-                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
-                    <option value="@{skill_basictech}">Basic Tech</option>
-                    <option value="@{skill_cybertech}">Cybertech</option>
-                    <option value="@{skill_electronicssecurity}">
-                      Electronics/Security Tech
-                    </option>
-                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
-                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
-                    <option value="@{skill_weaponstech}">Weaponstech</option>
-                  </select>
+                  <div class="columns">
+                    <div class="column">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Field Expertise}} {{skillvalue=@{role_tech_field}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_field} + @{role_tech_field_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                        Field Expertise
+                      </button>
+                    </div>
+                    <div class="column">
+                      <input type="number" name="attr_role_tech_field" />
+                    </div>
+                  </div>
+                  <div>
+                    <select name="attr_role_tech_field_skill">
+                      <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                      <option value="@{skill_basictech}">Basic Tech</option>
+                      <option value="@{skill_cybertech}">Cybertech</option>
+                      <option value="@{skill_electronicssecurity}">
+                        Electronics/Security Tech
+                      </option>
+                      <option value="@{skill_landvehicletech}">
+                        Land Vehicle Tech
+                      </option>
+                      <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                      <option value="@{skill_weaponstech}">Weaponstech</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="column">
-                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Upgrade Expertise}} {{skillvalue=@{role_tech_upgrade}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_upgrade} + @{role_tech_upgrade_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
-                    Upgrade Expertise
-                  </button>
-                  <input type="number" name="attr_role_tech_upgrade" />
-                  <br />
-                  <select name="attr_role_tech_upgrade_skill">
-                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
-                    <option value="@{skill_basictech}">Basic Tech</option>
-                    <option value="@{skill_cybertech}">Cybertech</option>
-                    <option value="@{skill_electronicssecurity}">
-                      Electronics/Security Tech
-                    </option>
-                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
-                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
-                    <option value="@{skill_weaponstech}">Weaponstech</option>
-                  </select>
+                  <div class="columns">
+                    <div class="column">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Upgrade Expertise}} {{skillvalue=@{role_tech_upgrade}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_upgrade} + @{role_tech_upgrade_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                        Upgrade Expertise
+                      </button>
+                    </div>
+                    <div class="column">
+                      <input type="number" name="attr_role_tech_upgrade" />
+                    </div>
+                  </div>
+                  <div>
+                    <select name="attr_role_tech_upgrade_skill">
+                      <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                      <option value="@{skill_basictech}">Basic Tech</option>
+                      <option value="@{skill_cybertech}">Cybertech</option>
+                      <option value="@{skill_electronicssecurity}">
+                        Electronics/Security Tech
+                      </option>
+                      <option value="@{skill_landvehicletech}">
+                        Land Vehicle Tech
+                      </option>
+                      <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                      <option value="@{skill_weaponstech}">Weaponstech</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="columns">
                 <div class="column">
-                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Fabrication Expertise}} {{skillvalue=@{role_tech_fabrication}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_fabrication} + @{role_tech_fabrication_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
-                    Fabrication Expertise
-                  </button>
-                  <input type="number" name="attr_role_tech_fabrication" />
-                  <br />
-                  <select name="attr_role_tech_fabrication_skill">
-                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
-                    <option value="@{skill_basictech}">Basic Tech</option>
-                    <option value="@{skill_cybertech}">Cybertech</option>
-                    <option value="@{skill_electronicssecurity}">
-                      Electronics/Security Tech
-                    </option>
-                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
-                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
-                    <option value="@{skill_weaponstech}">Weaponstech</option>
-                  </select>
+                  <div class="columns">
+                    <div class="column">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Fabrication Expertise}} {{skillvalue=@{role_tech_fabrication}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_fabrication} + @{role_tech_fabrication_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                        Fabrication Expertise
+                      </button>
+                    </div>
+                    <div class="column">
+                      <input type="number" name="attr_role_tech_fabrication" />
+                    </div>
+                  </div>
+                  <div>
+                    <select name="attr_role_tech_fabrication_skill">
+                      <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                      <option value="@{skill_basictech}">Basic Tech</option>
+                      <option value="@{skill_cybertech}">Cybertech</option>
+                      <option value="@{skill_electronicssecurity}">
+                        Electronics/Security Tech
+                      </option>
+                      <option value="@{skill_landvehicletech}">
+                        Land Vehicle Tech
+                      </option>
+                      <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                      <option value="@{skill_weaponstech}">Weaponstech</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="column">
-                  <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Invention Expertise}} {{skillvalue=@{role_tech_invention}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_invention} + @{role_tech_invention_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
-                    Invention Expertise
-                  </button>
-                  <input type="number" name="attr_role_tech_invention" />
-                  <br />
-                  <select name="attr_role_tech_invention_skill">
-                    <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
-                    <option value="@{skill_basictech}">Basic Tech</option>
-                    <option value="@{skill_cybertech}">Cybertech</option>
-                    <option value="@{skill_electronicssecurity}">
-                      Electronics/Security Tech
-                    </option>
-                    <option value="@{skill_landvehicletech}">Land Vehicle Tech</option>
-                    <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
-                    <option value="@{skill_weaponstech}">Weaponstech</option>
-                  </select>
+                  <div class="columns">
+                    <div class="column">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Invention Expertise}} {{skillvalue=@{role_tech_invention}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_invention} + @{role_tech_invention_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                        Invention Expertise
+                      </button>
+                    </div>
+                    <div class="column">
+                      <input type="number" name="attr_role_tech_invention" />
+                    </div>
+                  </div>
+                  <div>
+                    <select name="attr_role_tech_invention_skill">
+                      <option value="@{skill_airevehicletech}">Air Vehicle Tech</option>
+                      <option value="@{skill_basictech}">Basic Tech</option>
+                      <option value="@{skill_cybertech}">Cybertech</option>
+                      <option value="@{skill_electronicssecurity}">
+                        Electronics/Security Tech
+                      </option>
+                      <option value="@{skill_landvehicletech}">
+                        Land Vehicle Tech
+                      </option>
+                      <option value="@{skill_seavehicletech}">Sea Vehicle Tech</option>
+                      <option value="@{skill_weaponstech}">Weaponstech</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
@@ -475,10 +513,26 @@
         <div class="columns">
           <div class="column">
             <div class="section-ip">
-              <h4 class="clipped-corner">Improvement Points</h4>
+              <h4 class="clipped-corner">
+                Improvement Points
+                <input type="number" name="attr_ip" value="0" />
+              </h4>
               <div class="field-wrapper center">
-                <input type="number" name="attr_ip" value="0" /> of
-                <input type="number" name="attr_ip_max" value="0" />
+                <div style="min-height: 28px">
+                  Show IP log? <input type="checkbox" value="0" class="show-next-div" />
+                  <div style="text-align: left">
+                    <fieldset class="repeating_ip">
+                      <div class="columns">
+                        <div class="column column-3">
+                          <input type="text" name="attr_ipsource" placeholder="Notes..." />
+                        </div>
+                        <div class="column">
+                          <input type="number" name="attr_ipnumber" />
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
               </div>
             </div>
 

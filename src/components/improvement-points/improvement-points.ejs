@@ -1,7 +1,23 @@
 <div class="section-ip">
-  <h4 class="clipped-corner">Improvement Points</h4>
+  <h4 class="clipped-corner">
+    Improvement Points
+    <input type="number" name="attr_ip" value="0" />
+  </h4>
   <div class="field-wrapper center">
-    <input type="number" name="attr_ip" value="0" /> of
-    <input type="number" name="attr_ip_max" value="0" />
+    <div style="min-height: 28px">
+      Show IP log? <input type="checkbox" value="0" class="show-next-div" />
+      <div style="text-align: left">
+        <fieldset class="repeating_ip">
+          <div class="columns">
+            <div class="column column-3">
+              <input type="text" name="attr_ipsource" placeholder="Notes..." />
+            </div>
+            <div class="column">
+              <input type="number" name="attr_ipnumber" />
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
   </div>
 </div>

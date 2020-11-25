@@ -1,3 +1,16 @@
 .sheet-section-ip {
   margin-bottom: 1rem;
+  .repcontainer {
+    padding-top: 0.5rem;
+    .repitem {
+      margin: 0 -1rem;
+      padding: 0.5rem 1rem;
+      &:nth-child(odd) {
+        background-color: $offWhite;
+      }
+    }
+  }
+  .repcontrol {
+    padding-top: 0.5rem;
+  }
 }
