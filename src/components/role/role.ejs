@@ -10,8 +10,42 @@
   <div class="role-pane role-fixer">
     <h4 class="clipped-corner">Fixer</h4>
     <div class="role-ability">
-      Operator
+      Fixer role ability: Operator
       <input type="number" name="attr_role_fixer" />
+      <div class="rulebook-reference">See full rules on p.159-161</div>
+    </div>
+    <div class="subdivider">
+      <div class="columns">
+        <div class="column column-4">
+          <div class="fixer-grease">
+            <h5>GREASE</h5>
+            <fieldset class="repeating_fixergrease">
+              <input
+                type="text"
+                name="attr_fixergrease"
+                placeholder="Group or culture"
+              />
+            </fieldset>
+          </div>
+        </div>
+        <div class="column column-4">
+          <div class="fixer-contacts">
+            <h5>CONTACTS</h5>
+            <fieldset class="repeating_fixercontacts">
+              <textarea name="attr_fixercontact"></textarea>
+            </fieldset>
+          </div>
+        </div>
+        <div class="column column-2 center">
+          <button
+            type="roll"
+            class="role-button"
+            value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Fixer}} {{abilityname=Haggle}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_fixer} + @{stat_cool} + @{skill_trading} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Haggle
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="role-pane role-lawman">
@@ -31,39 +65,66 @@
   <div class="role-pane role-medtech">
     <h4 class="clipped-corner">Medtech</h4>
     <div class="role-ability">
-      Medicine
+      Medtech role ability: Medicine
       <input type="number" name="attr_role_medtech" />
+      <div class="rulebook-reference">See full rules on p.149-150</div>
     </div>
-    <div class="columns">
-      <div class="column">
-        Surgery<input type="number" name="attr_role_medtech_surgery" />
-      </div>
-      <div class="column">
-        Pharmaceuticals<input
-          type="number"
-          name="attr_role_medtech_pharmaceuticals"
-        />
-      </div>
-      <div class="column">
-        Cryosystem Operation<input
-          type="number"
-          name="attr_role_medtech_cryosystem"
-        />
+    <div class="subdivider">
+      <div class="columns">
+        <div class="column center">
+          <button
+            type="roll"
+            class="role-button"
+            value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Surgery}} {{skillvalue=@{role_medtech_surgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_surgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Surgery
+          </button>
+          <input type="number" name="attr_role_medtech_surgery" />
+        </div>
+        <div class="column center">
+          <button
+            type="roll"
+            class="role-button"
+            value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Pharmaceuticals}} {{skillvalue=@{role_medtech_pharmaceuticals}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_pharmaceuticals} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Pharmaceuticals
+          </button>
+          <input type="number" name="attr_role_medtech_pharmaceuticals" />
+        </div>
+        <div class="column center">
+          <button
+            type="roll"
+            class="role-button"
+            value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Cryosystems}} {{skillvalue=@{role_medtech_cryosystem}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_cryosystem} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Cryosystem Operation
+          </button>
+          <input type="number" name="attr_role_medtech_cryosystem" />
+        </div>
       </div>
     </div>
   </div>
   <div class="role-pane role-netrunner">
     <h4 class="clipped-corner">Netrunner</h4>
     <div class="role-ability">
-      <button class="role-button" type="roll">Interface</button>
+      Netrunner role ability:
+      <button
+        class="role-button"
+        type="roll"
+        value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Netrunner}} {{abilityname=Interface}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_netrunner} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+      >
+        Interface
+      </button>
       <input type="number" name="attr_role_netrunner" />
+      <div class="rulebook-reference">See full rules on p.147</div>
     </div>
   </div>
   <div class="role-pane role-nomad">
     <h4 class="clipped-corner">Nomad</h4>
     <div class="role-ability">
-      <button class="role-button" type="roll">Moto</button>
+      Nomad role ability: Moto
       <input type="number" name="attr_role_nomad" />
+      <div class="rulebook-reference">See full rules on p.161-165</div>
     </div>
   </div>
   <div class="role-pane role-rockerboy">
@@ -84,42 +145,36 @@
   <div class="role-pane role-solo">
     <h4 class="clipped-corner">Solo</h4>
     <div class="role-ability">
-      Combat Awareness
+      Solo role ability: Combat Awareness
       <input type="number" name="attr_role_solo" />
+      <div class="rulebook-reference">See full rules on p.146</div>
     </div>
-    <div class="columns">
-      <div class="column">
-        Damage Deflection<input
-          type="number"
-          name="attr_role_solo_damagedeflection"
-        />
-      </div>
-      <div class="column">
-        Fumble Recovery<input
-          type="number"
-          name="attr_role_solo_fumblerecovery"
-        />
-      </div>
-      <div class="column">
-        Initiative Reaction<input
-          type="number"
-          name="attr_role_solo_initiativereaction"
-        />
-      </div>
-      <div class="column">
-        Precision Attack<input
-          type="number"
-          name="attr_role_solo_precisionattack"
-        />
-      </div>
-      <div class="column">
-        Spot Weakness<input type="number" name="attr_role_solo_spotweakness" />
-      </div>
-      <div class="column">
-        Threat Detection<input
-          type="number"
-          name="attr_role_solo_threatdetection"
-        />
+    <div class="subdivider">
+      <div class="columns">
+        <div class="column center">
+          Damage Deflection
+          <input type="number" name="attr_role_solo_damagedeflection" />
+        </div>
+        <div class="column center">
+          Fumble Recovery
+          <input type="number" name="attr_role_solo_fumblerecovery" />
+        </div>
+        <div class="column center">
+          Initiative Reaction
+          <input type="number" name="attr_role_solo_initiativereaction" />
+        </div>
+        <div class="column center">
+          Precision Attack
+          <input type="number" name="attr_role_solo_precisionattack" />
+        </div>
+        <div class="column center">
+          Spot Weakness
+          <input type="number" name="attr_role_solo_spotweakness" />
+        </div>
+        <div class="column center">
+          Threat Detection
+          <input type="number" name="attr_role_solo_threatdetection" />
+        </div>
       </div>
     </div>
   </div>

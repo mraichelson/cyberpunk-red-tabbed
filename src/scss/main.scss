@@ -56,6 +56,7 @@
     background-color: black;
     border-bottom: 0.5rem solid $cpRed;
     color: white;
+    min-height: 20px;
     padding: 0.5rem;
     text-align: center;
     text-transform: uppercase;
@@ -63,6 +64,7 @@
       background: $text !important;
       border: none !important;
       border-radius: 0.25rem !important;
+      bottom: -2px !important;
       padding: 0 0.5rem !important;
       font-size: 9px !important;
       margin-left: 0.5rem !important;

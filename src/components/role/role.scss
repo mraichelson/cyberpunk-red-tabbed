@@ -46,4 +46,22 @@
       padding: 1rem 1rem 0;
     }
   }
+  .sheet-role-fixer {
+    input[type='text'],
+    textarea {
+      margin-bottom: 0 !important;
+      width: 100%;
+    }
+    .repcontainer {
+      .repitem {
+        padding: 0.5rem;
+        &:nth-child(odd) {
+          background-color: $offWhite;
+        }
+      }
+    }
+    .repcontrol {
+      padding-top: 0.5rem;
+    }
+  }
 }
