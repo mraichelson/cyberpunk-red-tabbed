@@ -69,8 +69,16 @@
   <div class="role-pane role-rockerboy">
     <h4 class="clipped-corner">Rockerboy</h4>
     <div class="role-ability">
-      <button class="role-button" type="roll">Charismatic Impact</button>
+      Rockerboy role ability:
+      <button
+        class="role-button"
+        type="roll"
+        value="&{template:roleability} {{charactername=@{charactername}}} {{rolename=Rockerboy}} {{abilityname=Charismatic Impact}} {{roll=[[1d10 + @{role_rocker} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+      >
+        Charismatic Impact
+      </button>
       <input type="number" name="attr_role_rocker" />
+      <div class="rulebook-reference">See full rules on p.144-145</div>
     </div>
   </div>
   <div class="role-pane role-solo">
@@ -120,14 +128,13 @@
     <div class="role-ability">
       Tech role ability: Maker
       <input type="number" name="attr_role_tech" />
-      <br />
-      <small>See full rules on p.147-149</small>
+      <div class="rulebook-reference">See full rules on p.147-149</div>
     </div>
     <div class="subdivider">
       <div class="columns">
         <div class="column">
           <div class="columns">
-            <div class="column">
+            <div class="column column-3">
               <button
                 class="role-button"
                 type="roll"
@@ -158,7 +165,7 @@
         </div>
         <div class="column">
           <div class="columns">
-            <div class="column">
+            <div class="column column-3">
               <button
                 class="role-button"
                 type="roll"
@@ -191,7 +198,7 @@
       <div class="columns">
         <div class="column">
           <div class="columns">
-            <div class="column">
+            <div class="column column-3">
               <button
                 class="role-button"
                 type="roll"
@@ -222,7 +229,7 @@
         </div>
         <div class="column">
           <div class="columns">
-            <div class="column">
+            <div class="column column-3">
               <button
                 class="role-button"
                 type="roll"
