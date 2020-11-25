@@ -54,7 +54,22 @@
     }
     .repcontainer {
       .repitem {
+        margin: 0 -0.5rem;
         padding: 0.5rem;
+        &:nth-child(odd) {
+          background-color: $offWhite;
+        }
+      }
+    }
+    .repcontrol {
+      padding-top: 0.5rem;
+    }
+  }
+  .sheet-role-exec {
+    .repcontainer {
+      .repitem {
+        margin: 0 -1rem;
+        padding: 0.5rem 1rem 0;
         &:nth-child(odd) {
           background-color: $offWhite;
         }

@@ -292,8 +292,31 @@
           <div class="role-pane role-exec">
             <h4 class="clipped-corner">Exec</h4>
             <div class="role-ability">
-              Teamwork
+              Exec role ability: Teamwork
               <input type="number" name="attr_role_exec" />
+              <div class="rulebook-reference">See full rules on p.153-157</div>
+            </div>
+            <div class="subdivider">
+              <h5>TEAM MEMBERS</h5>
+              <fieldset class="repeating_teammembers">
+                <div class="columns">
+                  <div class="column column-2">
+                    <input type="text" name="attr_execteamname" style="width: 100%" />
+                  </div>
+                  <div class="column column-2">
+                    <select name="attr_execteamrole" style="width: 100%">
+                      <option value="Bodyguard">Bodyguard</option>
+                      <option value="Covert Operative">Covert Operative</option>
+                      <option value="Driver">Driver</option>
+                      <option value="Netrunner">Netrunner</option>
+                      <option value="Technician">Technician</option>
+                    </select>
+                  </div>
+                  <div class="column">
+                    Loyalty <input type="number" name="attr_execteamloyalty" />
+                  </div>
+                </div>
+              </fieldset>
             </div>
           </div>
           <div class="role-pane role-fixer">
@@ -332,15 +355,29 @@
           <div class="role-pane role-lawman">
             <h4 class="clipped-corner">Lawman</h4>
             <div class="role-ability">
-              Backup
+              Lawman role ability: Backup
               <input type="number" name="attr_role_lawman" />
+              <div class="rulebook-reference">See full rules on p.158-159</div>
+            </div>
+            <div class="subdivider">
+              <div class="columns">
+                <div class="column">Call for backup</div>
+                <div class="column">backup arrival time</div>
+                <div class="column column-5">Backup...ugh</div>
+              </div>
             </div>
           </div>
           <div class="role-pane role-media">
             <h4 class="clipped-corner">Media</h4>
             <div class="role-ability">
-              Credibility
+              Media role ability: Credibility
               <input type="number" name="attr_role_media" />
+              <div style="padding-top: 1rem">
+                <button type="roll" class="role-button" value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Media}} {{abilityname=Rumors (Passive)}} {{roll=[[1d10 + @{role_media}]]}} {{critroll=[[1d10]]}}">
+                  Rumors (Passive)
+                </button>
+              </div>
+              <div class="rulebook-reference">See full rules on p.151-153</div>
             </div>
           </div>
           <div class="role-pane role-medtech">
@@ -2382,7 +2419,7 @@
               </div>
               <div class="actions">
                 <input class="autofiretoggle" type="hidden" name="attr_weaponautofire" />
-                <button class="autofirebutton" type="roll" name="roll_autofire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
+                <button class="autofirebutton" type="roll" name="roll_autofire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{specialrule=See full Autofire rules on p.173}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
                   Autofire
                 </button>
                 <input class="suppfiretoggle" type="hidden" name="attr_weaponsuppress" />
