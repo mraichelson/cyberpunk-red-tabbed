@@ -30,6 +30,9 @@
   }
   button.sheet-role-button {
     font-size: 1.3rem !important;
+    &:before {
+      margin-right: 0.5rem;
+    }
   }
   .sheet-rulebook-reference {
     padding: 1rem 0 0;
