@@ -1950,22 +1950,6 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Forgery}} {{skillname=Forgery}} {{skillvalue=@{skill_forgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_forgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
-                    Forgery
-                    <span class="skill-meta"
-                >(tech
-                <span
-                  name="attr_stat_tech"
-                ></span>)</span>
-                  </button>
-                  <input class="skill-value" type="number" value="0" name="attr_skill_forgery" />
-                </div>
-
-              </li>
-
-              <li>
-
-                <div class="skill">
                   <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=First Aid}} {{skillname=First Aid}} {{skillvalue=@{skill_firstaid}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_firstaid} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     First Aid
                     <span class="skill-meta"
@@ -1975,6 +1959,22 @@
                 ></span>)</span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_firstaid" />
+                </div>
+
+              </li>
+
+              <li>
+
+                <div class="skill">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Forgery}} {{skillname=Forgery}} {{skillvalue=@{skill_forgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_forgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                    Forgery
+                    <span class="skill-meta"
+                >(tech
+                <span
+                  name="attr_stat_tech"
+                ></span>)</span>
+                  </button>
+                  <input class="skill-value" type="number" value="0" name="attr_skill_forgery" />
                 </div>
 
               </li>

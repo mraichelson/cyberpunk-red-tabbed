@@ -390,14 +390,14 @@
           "type": "standard"
         },
         {
-          "name": "Forgery",
-          "field": "skill_forgery",
+          "name": "First Aid",
+          "field": "skill_firstaid",
           "stat": "stat_tech",
           "type": "standard"
         },
         {
-          "name": "First Aid",
-          "field": "skill_firstaid",
+          "name": "Forgery",
+          "field": "skill_forgery",
           "stat": "stat_tech",
           "type": "standard"
         },
