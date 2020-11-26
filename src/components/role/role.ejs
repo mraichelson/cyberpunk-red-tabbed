@@ -82,10 +82,22 @@
       <div class="columns">
         <div class="column center">
           <div style="margin-bottom: 1rem">
-            <button class="role-button" type="roll">Call backup</button>
+            <button
+              class="role-button"
+              type="roll"
+              value="&{template:minimal}{{charactername=@{charactername}}}{{label=Backup}}{{message=Roll must be less than or equal to Backup score (@{role_lawman}).}}{{roll=[[1d10cs<@{role_lawman}cf15]]}}"
+            >
+              Call backup
+            </button>
           </div>
           <div>
-            <button class="role-button" type="roll">Arrival time</button>
+            <button
+              class="role-button"
+              type="roll"
+              value="&{template:minimal}{{charactername=@{charactername}}}{{label=Backup arrival time}}{{message=Check p.158 for special outcome on a roll of 6.}}{{roll=[[1d6cs6cf0]]}}"
+            >
+              Arrival time
+            </button>
           </div>
         </div>
         <div class="column column-4">
@@ -94,7 +106,13 @@
             <div class="lawman-backup">
               <div class="columns">
                 <div class="column column-2">
-                  <button class="role-button" type="roll">Combat Number</button>
+                  <button
+                    class="role-button"
+                    type="roll"
+                    value="&{template:attack}{{charactername=@{charactername}}}{{weapon=Backup}}{{roll=[[1d10+@{role_lawmanbackupcn}]]}}{{critroll=[[1d10]]}}"
+                  >
+                    Combat Number
+                  </button>
                   <input type="number" name="attr_role_lawmanbackupcn" />
                 </div>
                 <div class="column column-2">
@@ -110,7 +128,7 @@
               </div>
               <div class="columns">
                 <div class="column column-2">
-                  <button class="role-button" type="roll">Move/Body</button>
+                  Move/Body
                   <input type="number" name="attr_role_lawmanbackupbody" />
                 </div>
                 <div class="column column-4">

@@ -38,6 +38,7 @@
 @import '../components/rolltemplates/basic/basic';
 @import '../components/rolltemplates/damage/damage';
 @import '../components/rolltemplates/death-save/death-save';
+@import '../components/rolltemplates/minimal/minimal';
 @import '../components/rolltemplates/role-ability/role-ability';
 @import '../components/rolltemplates/skill/skill';
 
@@ -82,6 +83,7 @@
     }
   }
   button[type='roll'] {
+    font-size: 1.3rem !important;
     margin: 0 !important;
   }
   select {
