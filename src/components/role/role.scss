@@ -79,4 +79,27 @@
       padding-top: 0.5rem;
     }
   }
+  .sheet-role-lawman {
+    // .sheet-label {
+    //   line-height: 26px;
+    //   min-height: 26px;
+    //   margin-bottom: 0.5rem;
+    // }
+    .sheet-columns {
+      margin-bottom: 0.5rem;
+      // .sheet-column {}
+    }
+    .repcontainer {
+      .repitem {
+        margin: 0 -1rem;
+        padding: 0.5rem 1rem;
+        &:nth-child(odd) {
+          background-color: $offWhite;
+        }
+      }
+    }
+    .repcontrol {
+      padding-top: 0.5rem;
+    }
+  }
 }

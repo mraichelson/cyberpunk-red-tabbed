@@ -80,9 +80,49 @@
     </div>
     <div class="subdivider">
       <div class="columns">
-        <div class="column">Call for backup</div>
-        <div class="column">backup arrival time</div>
-        <div class="column column-5">Backup...ugh</div>
+        <div class="column">
+          <button class="role-button" type="roll">Call backup</button>
+        </div>
+        <div class="column">
+          <button class="role-button" type="roll">Arrival time</button>
+        </div>
+        <div class="column column-5">
+          <h5>BACKUP</h5>
+          <fieldset class="repeating_backup">
+            <div class="lawman-backup">
+              <div class="columns">
+                <div class="column column-2">
+                  <button class="role-button" type="roll">Combat Number</button>
+                  <input type="number" name="attr_role_lawmanbackupcn" />
+                </div>
+                <div class="column column-2">
+                  Armor SP
+                  <input type="number" name="attr_role_lawmanbackupsp" />
+                </div>
+                <div class="column column-2">
+                  HP
+                  <input type="number" name="attr_role_lawmanbackuphp" />
+                  of
+                  <input type="number" name="attr_role_lawmanbackuphp_max" />
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column column-2">
+                  <button class="role-button" type="roll">Move/Body</button>
+                  <input type="number" name="attr_role_lawmanbackupbody" />
+                </div>
+                <div class="column column-4">
+                  <input
+                    type="text"
+                    name="attr_role_lawmanbackupdesc"
+                    style="width: 100%"
+                    placeholder="Description"
+                  />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       </div>
     </div>
   </div>
