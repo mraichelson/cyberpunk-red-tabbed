@@ -1,6 +1,6 @@
 # Cyberpunk Red Tabbed
 
-A character sheet for use on Roll20.
+A character sheet for [Cyberpunk Red](https://rtalsoriangames.com/cyberpunk/) by [R. Talsorian Games](https://rtalsoriangames.com/) for use on Roll20.
 
 ## About
 
