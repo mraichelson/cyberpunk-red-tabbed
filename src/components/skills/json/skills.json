@@ -8,6 +8,7 @@
           "field": "skill_concealrevealobject",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -15,6 +16,7 @@
           "field": "skill_concentration",
           "stat": "stat_will",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -22,6 +24,7 @@
           "field": "skill_lipreading",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -29,6 +32,7 @@
           "field": "skill_perception",
           "stat": "stat_int",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -36,6 +40,7 @@
           "field": "skill_tracking",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         }
       ]
@@ -48,6 +53,7 @@
           "field": "skill_athletics",
           "stat": "stat_dex",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -55,6 +61,7 @@
           "field": "skill_contrortionist",
           "stat": "stat_dex",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -62,6 +69,7 @@
           "field": "skill_dance",
           "stat": "stat_dex",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -69,6 +77,7 @@
           "field": "skill_endurance",
           "stat": "stat_will",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -76,6 +85,7 @@
           "field": "skill_resisttorturedrugs",
           "stat": "stat_will",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -83,6 +93,7 @@
           "field": "skill_stealth",
           "stat": "stat_dex",
           "type": "standard",
+          "required": true,
           "moto": false
         }
       ]
@@ -95,6 +106,7 @@
           "field": "skill_landvehicle",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": true
         },
         {
@@ -102,6 +114,7 @@
           "field": "skill_airvehicle",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": true
         },
         {
@@ -109,6 +122,7 @@
           "field": "skill_seavehicle",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": true
         },
         {
@@ -116,6 +130,7 @@
           "field": "skill_riding",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": false
         }
       ]
@@ -128,6 +143,7 @@
           "field": "skill_accounting",
           "stat": "stat_int",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -135,6 +151,7 @@
           "field": "skill_animalhandling",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -142,6 +159,7 @@
           "field": "skill_bureaucracy",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -149,6 +167,7 @@
           "field": "skill_business",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -156,6 +175,7 @@
           "field": "skill_composition",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -163,6 +183,7 @@
           "field": "skill_criminology",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -170,6 +191,7 @@
           "field": "skill_cryptography",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -177,6 +199,7 @@
           "field": "skill_deduction",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -184,6 +207,7 @@
           "field": "skill_education",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -191,6 +215,7 @@
           "field": "skill_gamble",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -198,6 +223,7 @@
           "field": "skill_librarysearch",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -205,6 +231,7 @@
           "field": "skill_tactics",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -212,6 +239,7 @@
           "field": "skill_wildernesssurvival",
           "stat": "stat_int",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -219,6 +247,7 @@
           "field": "skill_language",
           "stat": "stat_int",
           "type": "multiple",
+          "required": true,
           "moto": false,
           "fieldset": "repeating_languages",
           "label": "languagename"
@@ -228,6 +257,7 @@
           "field": "skill_localexpert",
           "stat": "stat_int",
           "type": "multiple",
+          "required": true,
           "moto": false,
           "fieldset": "repeating_localexperts",
           "label": "localexpertname"
@@ -237,6 +267,7 @@
           "field": "skill_science",
           "stat": "stat_int",
           "type": "multiple",
+          "required": false,
           "moto": false,
           "fieldset": "repeating_sciences",
           "label": "sciencename"
@@ -251,6 +282,7 @@
           "field": "skill_brawling",
           "stat": "stat_dex",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -258,6 +290,7 @@
           "field": "skill_evasion",
           "stat": "stat_dex",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -265,6 +298,7 @@
           "field": "skill_meleeweapon",
           "stat": "stat_dex",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -272,6 +306,7 @@
           "field": "skill_martialarts",
           "stat": "stat_dex",
           "type": "multiple",
+          "required": false,
           "moto": false,
           "fieldset": "repeating_martialarts",
           "label": "martialartname"
@@ -286,6 +321,7 @@
           "field": "skill_acting",
           "stat": "stat_cool",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -293,6 +329,7 @@
           "field": "skill_playinstrument",
           "stat": "stat_tech",
           "type": "multiple",
+          "required": false,
           "moto": false,
           "fieldset": "repeating_playinstrument",
           "label": "playinstrumentname"
@@ -307,6 +344,7 @@
           "field": "skill_archery",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -314,6 +352,7 @@
           "field": "skill_autofire",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -321,6 +360,7 @@
           "field": "skill_handgun",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -328,6 +368,7 @@
           "field": "skill_heavyweapons",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -335,6 +376,7 @@
           "field": "skill_shoulderarms",
           "stat": "stat_ref",
           "type": "standard",
+          "required": false,
           "moto": false
         }
       ]
@@ -347,6 +389,7 @@
           "field": "skill_bribery",
           "stat": "stat_cool",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -354,6 +397,7 @@
           "field": "skill_conversation",
           "stat": "stat_emp",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -361,6 +405,7 @@
           "field": "skill_humanperception",
           "stat": "stat_emp",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -368,6 +413,7 @@
           "field": "skill_interrogation",
           "stat": "stat_cool",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -375,6 +421,7 @@
           "field": "skill_personalgrooming",
           "stat": "stat_cool",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -382,6 +429,7 @@
           "field": "skill_persuasion",
           "stat": "stat_cool",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -389,6 +437,7 @@
           "field": "skill_streetwise",
           "stat": "stat_cool",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -396,6 +445,7 @@
           "field": "skill_trading",
           "stat": "stat_cool",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -403,6 +453,7 @@
           "field": "skill_wardrobestyle",
           "stat": "stat_cool",
           "type": "standard",
+          "required": false,
           "moto": false
         }
       ]
@@ -415,6 +466,7 @@
           "field": "skill_airevehicletech",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": true
         },
         {
@@ -422,6 +474,7 @@
           "field": "skill_basictech",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -429,6 +482,7 @@
           "field": "skill_cybertech",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -436,6 +490,7 @@
           "field": "skill_demolitions",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -443,6 +498,7 @@
           "field": "skill_electronicssecurity",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -450,6 +506,7 @@
           "field": "skill_firstaid",
           "stat": "stat_tech",
           "type": "standard",
+          "required": true,
           "moto": false
         },
         {
@@ -457,6 +514,7 @@
           "field": "skill_forgery",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -464,6 +522,7 @@
           "field": "skill_landvehicletech",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": true
         },
         {
@@ -471,6 +530,7 @@
           "field": "skill_paintdrawsculpt",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -478,6 +538,7 @@
           "field": "skill_paramedic",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -485,6 +546,7 @@
           "field": "skill_photographyfilm",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -492,6 +554,7 @@
           "field": "skill_picklock",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -499,6 +562,7 @@
           "field": "skill_pickpocket",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         },
         {
@@ -506,6 +570,7 @@
           "field": "skill_seavehicletech",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": true
         },
         {
@@ -513,6 +578,7 @@
           "field": "skill_weaponstech",
           "stat": "stat_tech",
           "type": "standard",
+          "required": false,
           "moto": false
         }
       ]

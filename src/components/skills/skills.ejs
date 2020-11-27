@@ -8,7 +8,7 @@
         <li>
           <% if (skill.type === 'multiple') { %>
           <h5 class="accent-font">
-            <%= skill.name %>
+            <%= skill.name %><% if (skill.required) { %>*<% }%>
             <span class="skill-meta"
               >(<%= skill.stat.replace('stat_', '') %>
               <span
@@ -41,7 +41,9 @@
               type="roll"
               value="&{template:skill}{{charactername=@{character_name}}} {{header=<%= skill.name %>}} {{skillname=<%= skill.name.replace(' (x2)', '') %>}} {{skillvalue=@{<%= skill.field %>}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{<%= skill.field %>} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}<% if (skill.moto) { %> + @{role_nomad}<%} %> + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
             >
-              <%= skill.name %>
+              <% if (skill.required) { %><strong><%= skill.name %>*</strong><% }
+              else { %><%= skill.name %><% } %>
+
               <span class="skill-meta"
                 >(<%= skill.stat.replace('stat_', '') %>
                 <span
@@ -69,5 +71,8 @@
       </ul>
     </div>
     <% }) %>
+  </div>
+  <div class="center" style="color: #fff; font-size: 1.2rem">
+    * These skills are required
   </div>
 </div>
