@@ -1,5 +1,16 @@
+<!--
+  Greetings source-viewers. If you're interested in making a change to
+  this character sheet please DO NOT DO IT as a pull request against
+  the main Roll20 Character sheet repository. This sheet is built using
+  a webpack toolkit and the actual (pre-compilation) source code lives
+  in the respository available here...
+
+    https://github.com/mraichelson/XXX
+
+  ...any pull requests should be made against that repository and then
+  can be passed on to Roll20.
+-->
 <div class="cyberpunk-red">
-  <!-- Character sheet parts... -->
   <div class="tabbed">
     <!-- tab controls -->
     <input type="radio" name="selecttab" value="1" class="tab tab1" checked />
@@ -14,8 +25,6 @@
     <span class="tab accent-font">Cyberware</span>
     <input type="radio" name="selecttab" value="6" class="tab tab6" />
     <span class="tab accent-font">Lifepath</span>
-    <!-- <input type="radio" name="selecttab" value="7" class="tab tab7" />
-    <span class="tab accent-font">Settings</span> -->
 
     <div class="tab-content tab1">
       <div>
@@ -84,9 +93,6 @@
     <div class="tab-content tab6">
       <%= require('../components/lifepath/lifepath.ejs')() %>
     </div>
-    <!-- <div class="tab-content tab7">
-      <%= require('../components/settings/settings.ejs')() %>
-    </div> -->
   </div>
 
   <!-- Roll templates... -->

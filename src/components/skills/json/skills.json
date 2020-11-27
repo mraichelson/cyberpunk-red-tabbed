@@ -463,7 +463,7 @@
       "skills": [
         {
           "name": "Air Vehicle Tech",
-          "field": "skill_airevehicletech",
+          "field": "skill_airvehicletech",
           "stat": "stat_tech",
           "type": "standard",
           "required": false,

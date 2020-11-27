@@ -1,6 +1,12 @@
 <div class="section-reputation">
   <h4 class="clipped-corner">Reputation</h4>
   <div class="field-wrapper center">
-    <input type="text" name="attr_reputation" />
+    <input type="number" name="attr_reputation" value="0" />
+    <button
+      type="roll"
+      value="&{template:minimal}{{charactername=@{character_name}}}{{label=Facedown}}{{message=See full rules on p.194}}{{roll=[[1d10 + @{stat_cool} + @{reputation}]]}}"
+    >
+      Facedown
+    </button>
   </div>
 </div>
