@@ -23,7 +23,7 @@
               <button
                 class="button-plain"
                 type="roll"
-                value="&{template:skill}{{charactername=@{character_name}}} {{skillname=<%= skill.name.replace(' (x2)', '') %>: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+                value="&{template:skill}{{charactername=@{character_name}}} {{skillname=<%= skill.name.replace(' (x2)', '') %>: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}<% if (skill.stat ==='stat_ref' || skill.stat === 'stat_dex' || skill.stat === 'stat_move'){ %> + @{armor_penalty}<%} %> + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
               ></button>
               <input class="skill-name" type="text" name="attr_skillname" />
               <input
@@ -39,7 +39,7 @@
             <button
               class="button-plain"
               type="roll"
-              value="&{template:skill}{{charactername=@{character_name}}} {{header=<%= skill.name %>}} {{skillname=<%= skill.name.replace(' (x2)', '') %>}} {{skillvalue=@{<%= skill.field %>}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{<%= skill.field %>} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}<% if (skill.moto) { %> + @{role_nomad}<%} %> + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+              value="&{template:skill}{{charactername=@{character_name}}} {{header=<%= skill.name %>}} {{skillname=<%= skill.name.replace(' (x2)', '') %>}} {{skillvalue=@{<%= skill.field %>}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{<%= skill.field %>} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}<% if (skill.moto) { %> + @{role_nomad}<%} %><% if (skill.stat ==='stat_ref' || skill.stat === 'stat_dex' || skill.stat === 'stat_move'){ %> + @{armor_penalty}<%} %> + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
             >
               <% if (skill.required) { %><strong><%= skill.name %>*</strong><% }
               else { %><%= skill.name %><% } %>

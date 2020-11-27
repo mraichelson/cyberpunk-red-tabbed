@@ -246,6 +246,84 @@
       <input type="number" name="attr_role_nomad" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.161-165</div>
     </div>
+    <div class="subdivider">
+      <div class="columns" style="padding-bottom: 1rem">
+        <div class="column">
+          <button
+            type="roll"
+            value="&{template:skill}{{charactername=@{character_name}}} {{header=Drive Land Vehicle}} {{skillname=Drive Land Vehicle}} {{skillvalue=@{skill_landvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicle} + @{stat_ref} + @{role_nomad} + @{armor_penalty} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Drive Land Vehicle <span name="attr_skill_landvehicle"></span>
+            <span style="font-size: 1rem"
+              >(REF <span name="attr_stat_ref"></span> + MOTO
+              <span name="attr_role_nomad"></span>)</span
+            >
+          </button>
+        </div>
+        <div class="column">
+          <button
+            type="roll"
+            value="&{template:skill}{{charactername=@{character_name}}} {{header=Pilot Air Vehicle}} {{skillname=Pilot Air Vehicle}} {{skillvalue=@{skill_airvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicle} + @{stat_ref} + @{role_nomad} + @{armor_penalty} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Pilot Air Vehicle <span name="attr_skill_airvehicle"></span>
+            <span style="font-size: 1rem"
+              >(REF <span name="attr_stat_ref"></span> + MOTO
+              <span name="attr_role_nomad"></span>)</span
+            >
+          </button>
+        </div>
+        <div class="column">
+          <button
+            type="roll"
+            value="&{template:skill}{{charactername=@{character_name}}} {{header=Pilot Sea Vehicle}} {{skillname=Pilot Sea Vehicle}} {{skillvalue=@{skill_seavehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicle} + @{stat_ref} + @{role_nomad} + @{armor_penalty} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Pilot Sea Vehicle <span name="attr_skill_seavehicle"></span>
+            <span style="font-size: 1rem"
+              >(REF <span name="attr_stat_ref"></span> + MOTO
+              <span name="attr_role_nomad"></span>)</span
+            >
+          </button>
+        </div>
+      </div>
+      <div class="columns" style="padding-bottom: 1rem">
+        <div class="column">
+          <button
+            type="roll"
+            value="&{template:skill}{{charactername=@{character_name}}} {{header=Air Vehicle Tech}} {{skillname=Air Vehicle Tech}} {{skillvalue=@{skill_airvehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Air Vehicle Tech <span name="attr_skill_airvehicletech"></span>
+            <span style="font-size: 1rem"
+              >(TECH <span name="attr_stat_tech"></span> + MOTO
+              <span name="attr_role_nomad"></span>)</span
+            >
+          </button>
+        </div>
+        <div class="column">
+          <button
+            type="roll"
+            value="&{template:skill}{{charactername=@{character_name}}} {{header=Land Vehicle Tech}} {{skillname=Land Vehicle Tech}} {{skillvalue=@{skill_landvehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Land Vehicle Tech <span name="attr_skill_landvehicletech"></span>
+            <span style="font-size: 1rem"
+              >(TECH <span name="attr_stat_tech"></span> + MOTO
+              <span name="attr_role_nomad"></span>)</span
+            >
+          </button>
+        </div>
+        <div class="column">
+          <button
+            type="roll"
+            value="&{template:skill}{{charactername=@{character_name}}} {{header=Sea Vehicle Tech}} {{skillname=Sea Vehicle Tech}} {{skillvalue=@{skill_seavehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Sea Vehicle Tech <span name="attr_skill_seavehicletech"></span>
+            <span style="font-size: 1rem"
+              >(TECH <span name="attr_stat_tech"></span> + MOTO
+              <span name="attr_role_nomad"></span>)</span
+            >
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="role-pane role-rockerboy">
     <h4 class="clipped-corner">Rockerboy</h4>
