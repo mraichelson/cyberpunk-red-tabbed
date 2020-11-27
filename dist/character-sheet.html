@@ -222,7 +222,7 @@
               <span class="seriously-wounded">!</span>
               Hit Points
               <button class="reset-hp" type="action" name="act_resethp">Reset</button>
-              <button class="death-save button-plain" type="roll" value="&{template:deathsave}{{charactername=@{charactername}}}{{target=@{deathsave}}}{{roll=[[1d10cs<@{deathsavehack}cf10]]}}">
+              <button class="death-save button-plain" type="roll" value="&{template:deathsave}{{charactername=@{character_name}}}{{target=@{deathsave}}}{{roll=[[1d10cs<@{deathsavehack}cf10]]}}">
                 Death Save (<span name="attr_deathsave"></span>)
               </button>
             </h4>
@@ -345,7 +345,7 @@
                   </div>
                 </div>
                 <div class="column column-2 center">
-                  <button type="roll" class="role-button" value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Fixer}} {{abilityname=Haggle}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_fixer} + @{stat_cool} + @{skill_trading} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button type="roll" class="role-button" value="&{template:roleability}{{charactername=@{character_name}}} {{rolename=Fixer}} {{abilityname=Haggle}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_fixer} + @{stat_cool} + @{skill_trading} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Haggle
                   </button>
                 </div>
@@ -363,12 +363,12 @@
               <div class="columns">
                 <div class="column center">
                   <div style="margin-bottom: 1rem">
-                    <button class="role-button" type="roll" value="&{template:minimal}{{charactername=@{charactername}}}{{label=Backup}}{{message=Roll must be less than or equal to Backup score (@{role_lawman}).}}{{roll=[[1d10cs<@{role_lawman}cf15]]}}">
+                    <button class="role-button" type="roll" value="&{template:minimal}{{charactername=@{character_name}}}{{label=Backup}}{{message=Roll must be less than or equal to Backup score (@{role_lawman}).}}{{roll=[[1d10cs<@{role_lawman}cf15]]}}">
                       Call backup
                     </button>
                   </div>
                   <div>
-                    <button class="role-button" type="roll" value="&{template:minimal}{{charactername=@{charactername}}}{{label=Backup arrival time}}{{message=Check p.158 for special outcome on a roll of 6.}}{{roll=[[1d6cs6cf0]]}}">
+                    <button class="role-button" type="roll" value="&{template:minimal}{{charactername=@{character_name}}}{{label=Backup arrival time}}{{message=Check p.158 for special outcome on a roll of 6.}}{{roll=[[1d6cs6cf0]]}}">
                       Arrival time
                     </button>
                   </div>
@@ -379,7 +379,7 @@
                     <div class="lawman-backup">
                       <div class="columns">
                         <div class="column column-2">
-                          <button class="role-button" type="roll" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=Backup}}{{roll=[[1d10+@{role_lawmanbackupcn}]]}}{{critroll=[[1d10]]}}">
+                          <button class="role-button" type="roll" value="&{template:attack}{{charactername=@{character_name}}}{{weapon=Backup}}{{roll=[[1d10+@{role_lawmanbackupcn}]]}}{{critroll=[[1d10]]}}">
                             Combat Number
                           </button>
                           <input type="number" name="attr_role_lawmanbackupcn" />
@@ -416,7 +416,7 @@
               Media role ability: Credibility
               <input type="number" name="attr_role_media" value="0" min="0" />
               <div style="padding-top: 1rem">
-                <button type="roll" class="role-button" value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Media}} {{abilityname=Rumors (Passive)}} {{roll=[[1d10 + @{role_media}]]}} {{critroll=[[1d10]]}}">
+                <button type="roll" class="role-button" value="&{template:roleability}{{charactername=@{character_name}}} {{rolename=Media}} {{abilityname=Rumors (Passive)}} {{roll=[[1d10 + @{role_media}]]}} {{critroll=[[1d10]]}}">
                   Rumors (Passive)
                 </button>
               </div>
@@ -437,19 +437,19 @@
             <div class="subdivider">
               <div class="columns">
                 <div class="column center">
-                  <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Surgery}} {{skillvalue=@{role_medtech_surgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_surgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Medicine: Surgery}} {{skillvalue=@{role_medtech_surgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_surgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Surgery
                   </button>
                   <input type="number" name="attr_role_medtech_surgery" value="0" min="0" />
                 </div>
                 <div class="column center">
-                  <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Pharmaceuticals}} {{skillvalue=@{role_medtech_pharmaceuticals}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_pharmaceuticals} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Medicine: Pharmaceuticals}} {{skillvalue=@{role_medtech_pharmaceuticals}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_pharmaceuticals} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pharmaceuticals
                   </button>
                   <input type="number" name="attr_role_medtech_pharmaceuticals" value="0" min="0" />
                 </div>
                 <div class="column center">
-                  <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Cryosystems}} {{skillvalue=@{role_medtech_cryosystem}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_cryosystem} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Medicine: Cryosystems}} {{skillvalue=@{role_medtech_cryosystem}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_cryosystem} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Cryosystem Operation
                   </button>
                   <input type="number" name="attr_role_medtech_cryosystem" value="0" min="0" />
@@ -461,7 +461,7 @@
             <h4 class="clipped-corner">Netrunner</h4>
             <div class="role-ability">
               Netrunner role ability:
-              <button class="role-button" type="roll" value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Netrunner}} {{abilityname=Interface}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_netrunner} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+              <button class="role-button" type="roll" value="&{template:roleability}{{charactername=@{character_name}}} {{rolename=Netrunner}} {{abilityname=Interface}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_netrunner} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                 Interface
               </button>
               <input type="number" name="attr_role_netrunner" value="0" min="0" />
@@ -480,7 +480,7 @@
             <h4 class="clipped-corner">Rockerboy</h4>
             <div class="role-ability">
               Rockerboy role ability:
-              <button class="role-button" type="roll" value="&{template:roleability} {{charactername=@{charactername}}} {{rolename=Rockerboy}} {{abilityname=Charismatic Impact}} {{roll=[[1d10 + @{role_rocker} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+              <button class="role-button" type="roll" value="&{template:roleability} {{charactername=@{character_name}}} {{rolename=Rockerboy}} {{abilityname=Charismatic Impact}} {{roll=[[1d10 + @{role_rocker} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                 Charismatic Impact
               </button>
               <input type="number" name="attr_role_rocker" value="0" min="0" />
@@ -535,7 +535,7 @@
                 <div class="column">
                   <div class="columns">
                     <div class="column column-3">
-                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Field Expertise}} {{skillvalue=@{role_tech_field}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_field} + @{role_tech_field_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Field Expertise}} {{skillvalue=@{role_tech_field}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_field} + @{role_tech_field_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                         Field Expertise
                       </button>
                     </div>
@@ -562,7 +562,7 @@
                 <div class="column">
                   <div class="columns">
                     <div class="column column-3">
-                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Upgrade Expertise}} {{skillvalue=@{role_tech_upgrade}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_upgrade} + @{role_tech_upgrade_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Upgrade Expertise}} {{skillvalue=@{role_tech_upgrade}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_upgrade} + @{role_tech_upgrade_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                         Upgrade Expertise
                       </button>
                     </div>
@@ -591,7 +591,7 @@
                 <div class="column">
                   <div class="columns">
                     <div class="column column-3">
-                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Fabrication Expertise}} {{skillvalue=@{role_tech_fabrication}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_fabrication} + @{role_tech_fabrication_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Fabrication Expertise}} {{skillvalue=@{role_tech_fabrication}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_fabrication} + @{role_tech_fabrication_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                         Fabrication Expertise
                       </button>
                     </div>
@@ -618,7 +618,7 @@
                 <div class="column">
                   <div class="columns">
                     <div class="column column-3">
-                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Invention Expertise}} {{skillvalue=@{role_tech_invention}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_invention} + @{role_tech_invention_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                      <button class="role-button" type="roll" value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Invention Expertise}} {{skillvalue=@{role_tech_invention}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_invention} + @{role_tech_invention_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                         Invention Expertise
                       </button>
                     </div>
@@ -694,7 +694,7 @@
           <div class="dice-roller-pane">
             <div class="columns">
               <div class="column">
-                <button type="roll" name="roll_1d10" value="&{template:basic}{{charactername=@{charactername}}}{{dice=1d10}}{{roll=[[1d10]]}}">
+                <button type="roll" name="roll_1d10" value="&{template:basic}{{charactername=@{character_name}}}{{dice=1d10}}{{roll=[[1d10]]}}">
                   Roll 1d10
                 </button>
               </div>
@@ -711,12 +711,12 @@
                   <option value="9">9</option>
                   <option value="10">10</option>
                 </select>
-                <button type="roll" name="roll_d6" value="&{template:basic}{{charactername=@{charactername}}}{{dice=@{rollnd6}d6}}{{roll=[[@{rollnd6}d6]]}}">
+                <button type="roll" name="roll_d6" value="&{template:basic}{{charactername=@{character_name}}}{{dice=@{rollnd6}d6}}{{roll=[[@{rollnd6}d6]]}}">
                   Roll <span name="attr_rollnd6"></span>d6
                 </button>
               </div>
               <div class="column">
-                <button type="roll" name="roll_1d100" value="&{template:basic}{{charactername=@{charactername}}}{{dice=1d100}}{{roll=[[1d100]]}}">
+                <button type="roll" name="roll_1d100" value="&{template:basic}{{charactername=@{character_name}}}{{dice=1d100}}{{roll=[[1d100]]}}">
                   Roll 1d100
                 </button>
               </div>
@@ -977,7 +977,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Conceal/Reveal Object}} {{skillname=Conceal/Reveal Object}} {{skillvalue=@{skill_concealrevealobject}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_concealrevealobject} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Conceal/Reveal Object}} {{skillname=Conceal/Reveal Object}} {{skillvalue=@{skill_concealrevealobject}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_concealrevealobject} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Conceal/Reveal Object
                     <span class="skill-meta"
                 >(int
@@ -994,7 +994,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Concentration}} {{skillname=Concentration}} {{skillvalue=@{skill_concentration}}} {{statname=will}} {{statvalue=@{stat_will}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_concentration} + @{stat_will} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Concentration}} {{skillname=Concentration}} {{skillvalue=@{skill_concentration}}} {{statname=will}} {{statvalue=@{stat_will}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_concentration} + @{stat_will} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Concentration
                     <span class="skill-meta"
                 >(will
@@ -1011,7 +1011,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Lip Reading}} {{skillname=Lip Reading}} {{skillvalue=@{skill_lipreading}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_lipreading} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Lip Reading}} {{skillname=Lip Reading}} {{skillvalue=@{skill_lipreading}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_lipreading} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Lip Reading
                     <span class="skill-meta"
                 >(int
@@ -1028,7 +1028,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Perception}} {{skillname=Perception}} {{skillvalue=@{skill_perception}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_perception} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Perception}} {{skillname=Perception}} {{skillvalue=@{skill_perception}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_perception} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Perception
                     <span class="skill-meta"
                 >(int
@@ -1045,7 +1045,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Tracking}} {{skillname=Tracking}} {{skillvalue=@{skill_tracking}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_tracking} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Tracking}} {{skillname=Tracking}} {{skillvalue=@{skill_tracking}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_tracking} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Tracking
                     <span class="skill-meta"
                 >(int
@@ -1069,7 +1069,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Athletics}} {{skillname=Athletics}} {{skillvalue=@{skill_athletics}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_athletics} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Athletics}} {{skillname=Athletics}} {{skillvalue=@{skill_athletics}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_athletics} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Athletics
                     <span class="skill-meta"
                 >(dex
@@ -1086,7 +1086,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Contrortionist}} {{skillname=Contrortionist}} {{skillvalue=@{skill_contrortionist}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_contrortionist} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Contrortionist}} {{skillname=Contrortionist}} {{skillvalue=@{skill_contrortionist}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_contrortionist} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Contrortionist
                     <span class="skill-meta"
                 >(dex
@@ -1103,7 +1103,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Dance}} {{skillname=Dance}} {{skillvalue=@{skill_dance}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_dance} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Dance}} {{skillname=Dance}} {{skillvalue=@{skill_dance}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_dance} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Dance
                     <span class="skill-meta"
                 >(dex
@@ -1120,7 +1120,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Endurance}} {{skillname=Endurance}} {{skillvalue=@{skill_endurance}}} {{statname=will}} {{statvalue=@{stat_will}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_endurance} + @{stat_will} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Endurance}} {{skillname=Endurance}} {{skillvalue=@{skill_endurance}}} {{statname=will}} {{statvalue=@{stat_will}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_endurance} + @{stat_will} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Endurance
                     <span class="skill-meta"
                 >(will
@@ -1137,7 +1137,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Resist Torture/Drugs}} {{skillname=Resist Torture/Drugs}} {{skillvalue=@{skill_resisttorturedrugs}}} {{statname=will}} {{statvalue=@{stat_will}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_resisttorturedrugs} + @{stat_will} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Resist Torture/Drugs}} {{skillname=Resist Torture/Drugs}} {{skillvalue=@{skill_resisttorturedrugs}}} {{statname=will}} {{statvalue=@{stat_will}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_resisttorturedrugs} + @{stat_will} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Resist Torture/Drugs
                     <span class="skill-meta"
                 >(will
@@ -1154,7 +1154,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Stealth}} {{skillname=Stealth}} {{skillvalue=@{skill_stealth}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_stealth} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Stealth}} {{skillname=Stealth}} {{skillvalue=@{skill_stealth}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_stealth} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Stealth
                     <span class="skill-meta"
                 >(dex
@@ -1178,7 +1178,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Drive Land Vehicle}} {{skillname=Drive Land Vehicle}} {{skillvalue=@{skill_landvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Drive Land Vehicle}} {{skillname=Drive Land Vehicle}} {{skillvalue=@{skill_landvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Drive Land Vehicle
                     <span class="skill-meta"
                 >(ref
@@ -1196,7 +1196,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Air Vehicle (x2)}} {{skillname=Pilot Air Vehicle}} {{skillvalue=@{skill_airvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Pilot Air Vehicle (x2)}} {{skillname=Pilot Air Vehicle}} {{skillvalue=@{skill_airvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pilot Air Vehicle (x2)
                     <span class="skill-meta"
                 >(ref
@@ -1214,7 +1214,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Sea Vehicle}} {{skillname=Pilot Sea Vehicle}} {{skillvalue=@{skill_seavehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Pilot Sea Vehicle}} {{skillname=Pilot Sea Vehicle}} {{skillvalue=@{skill_seavehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pilot Sea Vehicle
                     <span class="skill-meta"
                 >(ref
@@ -1232,7 +1232,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Riding}} {{skillname=Riding}} {{skillvalue=@{skill_riding}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_riding} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Riding}} {{skillname=Riding}} {{skillvalue=@{skill_riding}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_riding} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Riding
                     <span class="skill-meta"
                 >(ref
@@ -1256,7 +1256,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Accounting}} {{skillname=Accounting}} {{skillvalue=@{skill_accounting}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_accounting} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Accounting}} {{skillname=Accounting}} {{skillvalue=@{skill_accounting}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_accounting} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Accounting
                     <span class="skill-meta"
                 >(int
@@ -1273,7 +1273,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Animal Handling}} {{skillname=Animal Handling}} {{skillvalue=@{skill_animalhandling}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_animalhandling} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Animal Handling}} {{skillname=Animal Handling}} {{skillvalue=@{skill_animalhandling}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_animalhandling} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Animal Handling
                     <span class="skill-meta"
                 >(int
@@ -1290,7 +1290,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Bureaucracy}} {{skillname=Bureaucracy}} {{skillvalue=@{skill_bureaucracy}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_bureaucracy} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Bureaucracy}} {{skillname=Bureaucracy}} {{skillvalue=@{skill_bureaucracy}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_bureaucracy} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Bureaucracy
                     <span class="skill-meta"
                 >(int
@@ -1307,7 +1307,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Business}} {{skillname=Business}} {{skillvalue=@{skill_business}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_business} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Business}} {{skillname=Business}} {{skillvalue=@{skill_business}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_business} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Business
                     <span class="skill-meta"
                 >(int
@@ -1324,7 +1324,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Composition}} {{skillname=Composition}} {{skillvalue=@{skill_composition}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_composition} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Composition}} {{skillname=Composition}} {{skillvalue=@{skill_composition}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_composition} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Composition
                     <span class="skill-meta"
                 >(int
@@ -1341,7 +1341,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Criminology}} {{skillname=Criminology}} {{skillvalue=@{skill_criminology}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_criminology} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Criminology}} {{skillname=Criminology}} {{skillvalue=@{skill_criminology}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_criminology} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Criminology
                     <span class="skill-meta"
                 >(int
@@ -1358,7 +1358,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Cryptography}} {{skillname=Cryptography}} {{skillvalue=@{skill_cryptography}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_cryptography} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Cryptography}} {{skillname=Cryptography}} {{skillvalue=@{skill_cryptography}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_cryptography} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Cryptography
                     <span class="skill-meta"
                 >(int
@@ -1375,7 +1375,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Deduction}} {{skillname=Deduction}} {{skillvalue=@{skill_deduction}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_deduction} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Deduction}} {{skillname=Deduction}} {{skillvalue=@{skill_deduction}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_deduction} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Deduction
                     <span class="skill-meta"
                 >(int
@@ -1392,7 +1392,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Education}} {{skillname=Education}} {{skillvalue=@{skill_education}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_education} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Education}} {{skillname=Education}} {{skillvalue=@{skill_education}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_education} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Education
                     <span class="skill-meta"
                 >(int
@@ -1409,7 +1409,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Gamble}} {{skillname=Gamble}} {{skillvalue=@{skill_gamble}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_gamble} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Gamble}} {{skillname=Gamble}} {{skillvalue=@{skill_gamble}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_gamble} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Gamble
                     <span class="skill-meta"
                 >(int
@@ -1426,7 +1426,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Library Search}} {{skillname=Library Search}} {{skillvalue=@{skill_librarysearch}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_librarysearch} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Library Search}} {{skillname=Library Search}} {{skillvalue=@{skill_librarysearch}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_librarysearch} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Library Search
                     <span class="skill-meta"
                 >(int
@@ -1443,7 +1443,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Tactics}} {{skillname=Tactics}} {{skillvalue=@{skill_tactics}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_tactics} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Tactics}} {{skillname=Tactics}} {{skillvalue=@{skill_tactics}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_tactics} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Tactics
                     <span class="skill-meta"
                 >(int
@@ -1460,7 +1460,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Wilderness Survival}} {{skillname=Wilderness Survival}} {{skillvalue=@{skill_wildernesssurvival}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_wildernesssurvival} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Wilderness Survival}} {{skillname=Wilderness Survival}} {{skillvalue=@{skill_wildernesssurvival}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_wildernesssurvival} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Wilderness Survival
                     <span class="skill-meta"
                 >(int
@@ -1487,7 +1487,7 @@
                 <fieldset class="repeating_languages">
                   <div class="skill">
                     <span class="skill-indent-icon">&#8627;</span>
-                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Languages: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
+                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Languages: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
                     <input class="skill-name" type="text" name="attr_skillname" />
                     <input class="skill-value" type="number" value="0" name="attr_skillvalue" />
                   </div>
@@ -1508,7 +1508,7 @@
                 <fieldset class="repeating_localexperts">
                   <div class="skill">
                     <span class="skill-indent-icon">&#8627;</span>
-                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Local Expert: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
+                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Local Expert: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
                     <input class="skill-name" type="text" name="attr_skillname" />
                     <input class="skill-value" type="number" value="0" name="attr_skillvalue" />
                   </div>
@@ -1529,7 +1529,7 @@
                 <fieldset class="repeating_sciences">
                   <div class="skill">
                     <span class="skill-indent-icon">&#8627;</span>
-                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Science: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
+                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Science: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=int}} {{statvalue=@{stat_int}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_int} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
                     <input class="skill-name" type="text" name="attr_skillname" />
                     <input class="skill-value" type="number" value="0" name="attr_skillvalue" />
                   </div>
@@ -1547,7 +1547,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Brawling}} {{skillname=Brawling}} {{skillvalue=@{skill_brawling}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_brawling} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Brawling}} {{skillname=Brawling}} {{skillvalue=@{skill_brawling}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_brawling} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Brawling
                     <span class="skill-meta"
                 >(dex
@@ -1564,7 +1564,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Evasion}} {{skillname=Evasion}} {{skillvalue=@{skill_evasion}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_evasion} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Evasion}} {{skillname=Evasion}} {{skillvalue=@{skill_evasion}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_evasion} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Evasion
                     <span class="skill-meta"
                 >(dex
@@ -1581,7 +1581,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Melee Weapon}} {{skillname=Melee Weapon}} {{skillvalue=@{skill_meleeweapon}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_meleeweapon} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Melee Weapon}} {{skillname=Melee Weapon}} {{skillvalue=@{skill_meleeweapon}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_meleeweapon} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Melee Weapon
                     <span class="skill-meta"
                 >(dex
@@ -1608,7 +1608,7 @@
                 <fieldset class="repeating_martialarts">
                   <div class="skill">
                     <span class="skill-indent-icon">&#8627;</span>
-                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Martial Arts: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
+                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Martial Arts: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=dex}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_dex} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
                     <input class="skill-name" type="text" name="attr_skillname" />
                     <input class="skill-value" type="number" value="0" name="attr_skillvalue" />
                   </div>
@@ -1626,7 +1626,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Acting}} {{skillname=Acting}} {{skillvalue=@{skill_acting}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_acting} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Acting}} {{skillname=Acting}} {{skillvalue=@{skill_acting}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_acting} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Acting
                     <span class="skill-meta"
                 >(cool
@@ -1653,7 +1653,7 @@
                 <fieldset class="repeating_playinstrument">
                   <div class="skill">
                     <span class="skill-indent-icon">&#8627;</span>
-                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Play Instrument: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
+                    <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Play Instrument: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"></button>
                     <input class="skill-name" type="text" name="attr_skillname" />
                     <input class="skill-value" type="number" value="0" name="attr_skillvalue" />
                   </div>
@@ -1671,7 +1671,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Archery}} {{skillname=Archery}} {{skillvalue=@{skill_archery}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_archery} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Archery}} {{skillname=Archery}} {{skillvalue=@{skill_archery}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_archery} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Archery
                     <span class="skill-meta"
                 >(ref
@@ -1688,7 +1688,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Autofire (x2)}} {{skillname=Autofire}} {{skillvalue=@{skill_autofire}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_autofire} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Autofire (x2)}} {{skillname=Autofire}} {{skillvalue=@{skill_autofire}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_autofire} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Autofire (x2)
                     <span class="skill-meta"
                 >(ref
@@ -1705,7 +1705,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Handgun}} {{skillname=Handgun}} {{skillvalue=@{skill_handgun}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_handgun} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Handgun}} {{skillname=Handgun}} {{skillvalue=@{skill_handgun}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_handgun} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Handgun
                     <span class="skill-meta"
                 >(ref
@@ -1722,7 +1722,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Heavy Weapons}} {{skillname=Heavy Weapons}} {{skillvalue=@{skill_heavyweapons}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_heavyweapons} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Heavy Weapons}} {{skillname=Heavy Weapons}} {{skillvalue=@{skill_heavyweapons}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_heavyweapons} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Heavy Weapons
                     <span class="skill-meta"
                 >(ref
@@ -1739,7 +1739,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Shoulder Arms}} {{skillname=Shoulder Arms}} {{skillvalue=@{skill_shoulderarms}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_shoulderarms} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Shoulder Arms}} {{skillname=Shoulder Arms}} {{skillvalue=@{skill_shoulderarms}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_shoulderarms} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Shoulder Arms
                     <span class="skill-meta"
                 >(ref
@@ -1763,7 +1763,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Bribery}} {{skillname=Bribery}} {{skillvalue=@{skill_bribery}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_bribery} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Bribery}} {{skillname=Bribery}} {{skillvalue=@{skill_bribery}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_bribery} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Bribery
                     <span class="skill-meta"
                 >(cool
@@ -1780,7 +1780,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Conversation}} {{skillname=Conversation}} {{skillvalue=@{skill_conversation}}} {{statname=emp}} {{statvalue=@{empathy}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_conversation} + @{empathy} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Conversation}} {{skillname=Conversation}} {{skillvalue=@{skill_conversation}}} {{statname=emp}} {{statvalue=@{empathy}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_conversation} + @{empathy} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Conversation
                     <span class="skill-meta"
                 >(emp
@@ -1797,7 +1797,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Human Perception}} {{skillname=Human Perception}} {{skillvalue=@{skill_humanperception}}} {{statname=emp}} {{statvalue=@{empathy}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_humanperception} + @{empathy} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Human Perception}} {{skillname=Human Perception}} {{skillvalue=@{skill_humanperception}}} {{statname=emp}} {{statvalue=@{empathy}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_humanperception} + @{empathy} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Human Perception
                     <span class="skill-meta"
                 >(emp
@@ -1814,7 +1814,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Interrogation}} {{skillname=Interrogation}} {{skillvalue=@{skill_interrogation}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_interrogation} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Interrogation}} {{skillname=Interrogation}} {{skillvalue=@{skill_interrogation}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_interrogation} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Interrogation
                     <span class="skill-meta"
                 >(cool
@@ -1831,7 +1831,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Personal Grooming}} {{skillname=Personal Grooming}} {{skillvalue=@{skill_personalgrooming}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_personalgrooming} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Personal Grooming}} {{skillname=Personal Grooming}} {{skillvalue=@{skill_personalgrooming}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_personalgrooming} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Personal Grooming
                     <span class="skill-meta"
                 >(cool
@@ -1848,7 +1848,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Persuasion}} {{skillname=Persuasion}} {{skillvalue=@{skill_persuasion}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_persuasion} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Persuasion}} {{skillname=Persuasion}} {{skillvalue=@{skill_persuasion}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_persuasion} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Persuasion
                     <span class="skill-meta"
                 >(cool
@@ -1865,7 +1865,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Streetwise}} {{skillname=Streetwise}} {{skillvalue=@{skill_streetwise}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_streetwise} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Streetwise}} {{skillname=Streetwise}} {{skillvalue=@{skill_streetwise}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_streetwise} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Streetwise
                     <span class="skill-meta"
                 >(cool
@@ -1882,7 +1882,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Trading}} {{skillname=Trading}} {{skillvalue=@{skill_trading}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_trading} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Trading}} {{skillname=Trading}} {{skillvalue=@{skill_trading}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_trading} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Trading
                     <span class="skill-meta"
                 >(cool
@@ -1899,7 +1899,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Wardrobe & Style}} {{skillname=Wardrobe & Style}} {{skillvalue=@{skill_wardrobestyle}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_wardrobestyle} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Wardrobe & Style}} {{skillname=Wardrobe & Style}} {{skillvalue=@{skill_wardrobestyle}}} {{statname=cool}} {{statvalue=@{stat_cool}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_wardrobestyle} + @{stat_cool} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Wardrobe & Style
                     <span class="skill-meta"
                 >(cool
@@ -1923,7 +1923,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Air Vehicle Tech}} {{skillname=Air Vehicle Tech}} {{skillvalue=@{skill_airevehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airevehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Air Vehicle Tech}} {{skillname=Air Vehicle Tech}} {{skillvalue=@{skill_airevehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airevehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Air Vehicle Tech
                     <span class="skill-meta"
                 >(tech
@@ -1941,7 +1941,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Basic Tech}} {{skillname=Basic Tech}} {{skillvalue=@{skill_basictech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_basictech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Basic Tech}} {{skillname=Basic Tech}} {{skillvalue=@{skill_basictech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_basictech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Basic Tech
                     <span class="skill-meta"
                 >(tech
@@ -1958,7 +1958,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Cybertech}} {{skillname=Cybertech}} {{skillvalue=@{skill_cybertech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_cybertech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Cybertech}} {{skillname=Cybertech}} {{skillvalue=@{skill_cybertech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_cybertech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Cybertech
                     <span class="skill-meta"
                 >(tech
@@ -1975,7 +1975,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Demolitions (x2)}} {{skillname=Demolitions}} {{skillvalue=@{skill_demolitions}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_demolitions} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Demolitions (x2)}} {{skillname=Demolitions}} {{skillvalue=@{skill_demolitions}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_demolitions} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Demolitions (x2)
                     <span class="skill-meta"
                 >(tech
@@ -1992,7 +1992,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Electronics/Security Tech (x2)}} {{skillname=Electronics/Security Tech}} {{skillvalue=@{skill_electronicssecurity}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_electronicssecurity} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Electronics/Security Tech (x2)}} {{skillname=Electronics/Security Tech}} {{skillvalue=@{skill_electronicssecurity}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_electronicssecurity} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Electronics/Security Tech (x2)
                     <span class="skill-meta"
                 >(tech
@@ -2009,7 +2009,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=First Aid}} {{skillname=First Aid}} {{skillvalue=@{skill_firstaid}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_firstaid} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=First Aid}} {{skillname=First Aid}} {{skillvalue=@{skill_firstaid}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_firstaid} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     First Aid
                     <span class="skill-meta"
                 >(tech
@@ -2026,7 +2026,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Forgery}} {{skillname=Forgery}} {{skillvalue=@{skill_forgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_forgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Forgery}} {{skillname=Forgery}} {{skillvalue=@{skill_forgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_forgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Forgery
                     <span class="skill-meta"
                 >(tech
@@ -2043,7 +2043,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Land Vehicle Tech}} {{skillname=Land Vehicle Tech}} {{skillvalue=@{skill_landvehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Land Vehicle Tech}} {{skillname=Land Vehicle Tech}} {{skillvalue=@{skill_landvehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Land Vehicle Tech
                     <span class="skill-meta"
                 >(tech
@@ -2061,7 +2061,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Paint/Draw/Sculpt}} {{skillname=Paint/Draw/Sculpt}} {{skillvalue=@{skill_paintdrawsculpt}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_paintdrawsculpt} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Paint/Draw/Sculpt}} {{skillname=Paint/Draw/Sculpt}} {{skillvalue=@{skill_paintdrawsculpt}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_paintdrawsculpt} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Paint/Draw/Sculpt
                     <span class="skill-meta"
                 >(tech
@@ -2078,7 +2078,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Paramedic (x2)}} {{skillname=Paramedic}} {{skillvalue=@{skill_paramedic}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_paramedic} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Paramedic (x2)}} {{skillname=Paramedic}} {{skillvalue=@{skill_paramedic}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_paramedic} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Paramedic (x2)
                     <span class="skill-meta"
                 >(tech
@@ -2095,7 +2095,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Photography/Film}} {{skillname=Photography/Film}} {{skillvalue=@{skill_photographyfilm}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_photographyfilm} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Photography/Film}} {{skillname=Photography/Film}} {{skillvalue=@{skill_photographyfilm}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_photographyfilm} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Photography/Film
                     <span class="skill-meta"
                 >(tech
@@ -2112,7 +2112,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pick Lock}} {{skillname=Pick Lock}} {{skillvalue=@{skill_picklock}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_picklock} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Pick Lock}} {{skillname=Pick Lock}} {{skillvalue=@{skill_picklock}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_picklock} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pick Lock
                     <span class="skill-meta"
                 >(tech
@@ -2129,7 +2129,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pick Pocket}} {{skillname=Pick Pocket}} {{skillvalue=@{skill_pickpocket}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_pickpocket} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Pick Pocket}} {{skillname=Pick Pocket}} {{skillvalue=@{skill_pickpocket}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_pickpocket} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pick Pocket
                     <span class="skill-meta"
                 >(tech
@@ -2146,7 +2146,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Sea Vehicle Tech}} {{skillname=Sea Vehicle Tech}} {{skillvalue=@{skill_seavehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Sea Vehicle Tech}} {{skillname=Sea Vehicle Tech}} {{skillvalue=@{skill_seavehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Sea Vehicle Tech
                     <span class="skill-meta"
                 >(tech
@@ -2164,7 +2164,7 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Weaponstech}} {{skillname=Weaponstech}} {{skillvalue=@{skill_weaponstech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_weaponstech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{character_name}}} {{header=Weaponstech}} {{skillname=Weaponstech}} {{skillvalue=@{skill_weaponstech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_weaponstech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Weaponstech
                     <span class="skill-meta"
                 >(tech
@@ -2533,17 +2533,17 @@
               </div>
               <div class="actions">
                 <input class="autofiretoggle" type="hidden" name="attr_weaponautofire" />
-                <button class="autofirebutton" type="roll" name="roll_autofire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Autofire)}}{{specialrule=See full Autofire rules on p.173}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
+                <button class="autofirebutton" type="roll" name="roll_autofire" value="&{template:attack}{{charactername=@{character_name}}}{{weapon=@{weaponname} (Autofire)}}{{specialrule=See full Autofire rules on p.173}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
                   Autofire
                 </button>
                 <input class="suppfiretoggle" type="hidden" name="attr_weaponsuppress" />
-                <button class="suppfirebutton" type="roll" name="roll_suppfire" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname} (Suppressing Fire)}}{{specialrule=Opponents need to make a Concentration check. (See p.174)}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
+                <button class="suppfirebutton" type="roll" name="roll_suppfire" value="&{template:attack}{{charactername=@{character_name}}}{{weapon=@{weaponname} (Suppressing Fire)}}{{specialrule=Opponents need to make a Concentration check. (See p.174)}}{{roll=[[1d10+@{skill_autofire}+@{stat_ref}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
                   Suppressing Fire
                 </button>
-                <button type="roll" name="roll_attack" value="&{template:attack}{{charactername=@{charactername}}}{{weapon=@{weaponname}}}{{roll=[[1d10+@{weaponskill}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
+                <button type="roll" name="roll_attack" value="&{template:attack}{{charactername=@{character_name}}}{{weapon=@{weaponname}}}{{roll=[[1d10+@{weaponskill}+@{weaponmodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}">
                   Attack
                 </button>
-                <button type="roll" name="roll_damage" value="&{template:damage}{{charactername=@{charactername}}}{{weaponname=@{weaponname}}}{{weapondamage=@{weapondamage}d6+@{weapondamagemod}}}{{roll=[[@{weapondamage}d6s+@{weapondamagemod}]]}}">
+                <button type="roll" name="roll_damage" value="&{template:damage}{{charactername=@{character_name}}}{{weaponname=@{weaponname}}}{{weapondamage=@{weapondamage}d6+@{weapondamagemod}}}{{roll=[[@{weapondamage}d6s+@{weapondamagemod}]]}}">
                   Damage
                 </button>
               </div>
@@ -3378,7 +3378,12 @@
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="2">See full rules for Death Saves on p.188.</td>
+            <td colspan="2">
+              <strong
+              >Add 1 to the roll for each Death Save made after the initial
+              save.</strong>
+              <br />See full rules for Death Saves on p.188.
+            </td>
           </tr>
         </tfoot>
       </table>

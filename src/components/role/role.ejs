@@ -63,7 +63,7 @@
           <button
             type="roll"
             class="role-button"
-            value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Fixer}} {{abilityname=Haggle}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_fixer} + @{stat_cool} + @{skill_trading} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+            value="&{template:roleability}{{charactername=@{character_name}}} {{rolename=Fixer}} {{abilityname=Haggle}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_fixer} + @{stat_cool} + @{skill_trading} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
           >
             Haggle
           </button>
@@ -85,7 +85,7 @@
             <button
               class="role-button"
               type="roll"
-              value="&{template:minimal}{{charactername=@{charactername}}}{{label=Backup}}{{message=Roll must be less than or equal to Backup score (@{role_lawman}).}}{{roll=[[1d10cs<@{role_lawman}cf15]]}}"
+              value="&{template:minimal}{{charactername=@{character_name}}}{{label=Backup}}{{message=Roll must be less than or equal to Backup score (@{role_lawman}).}}{{roll=[[1d10cs<@{role_lawman}cf15]]}}"
             >
               Call backup
             </button>
@@ -94,7 +94,7 @@
             <button
               class="role-button"
               type="roll"
-              value="&{template:minimal}{{charactername=@{charactername}}}{{label=Backup arrival time}}{{message=Check p.158 for special outcome on a roll of 6.}}{{roll=[[1d6cs6cf0]]}}"
+              value="&{template:minimal}{{charactername=@{character_name}}}{{label=Backup arrival time}}{{message=Check p.158 for special outcome on a roll of 6.}}{{roll=[[1d6cs6cf0]]}}"
             >
               Arrival time
             </button>
@@ -109,7 +109,7 @@
                   <button
                     class="role-button"
                     type="roll"
-                    value="&{template:attack}{{charactername=@{charactername}}}{{weapon=Backup}}{{roll=[[1d10+@{role_lawmanbackupcn}]]}}{{critroll=[[1d10]]}}"
+                    value="&{template:attack}{{charactername=@{character_name}}}{{weapon=Backup}}{{roll=[[1d10+@{role_lawmanbackupcn}]]}}{{critroll=[[1d10]]}}"
                   >
                     Combat Number
                   </button>
@@ -155,7 +155,7 @@
         <button
           type="roll"
           class="role-button"
-          value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Media}} {{abilityname=Rumors (Passive)}} {{roll=[[1d10 + @{role_media}]]}} {{critroll=[[1d10]]}}"
+          value="&{template:roleability}{{charactername=@{character_name}}} {{rolename=Media}} {{abilityname=Rumors (Passive)}} {{roll=[[1d10 + @{role_media}]]}} {{critroll=[[1d10]]}}"
         >
           Rumors (Passive)
         </button>
@@ -180,7 +180,7 @@
           <button
             type="roll"
             class="role-button"
-            value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Surgery}} {{skillvalue=@{role_medtech_surgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_surgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+            value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Medicine: Surgery}} {{skillvalue=@{role_medtech_surgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_surgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
           >
             Surgery
           </button>
@@ -195,7 +195,7 @@
           <button
             type="roll"
             class="role-button"
-            value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Pharmaceuticals}} {{skillvalue=@{role_medtech_pharmaceuticals}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_pharmaceuticals} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+            value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Medicine: Pharmaceuticals}} {{skillvalue=@{role_medtech_pharmaceuticals}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_pharmaceuticals} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
           >
             Pharmaceuticals
           </button>
@@ -210,7 +210,7 @@
           <button
             type="roll"
             class="role-button"
-            value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Cryosystems}} {{skillvalue=@{role_medtech_cryosystem}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_cryosystem} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+            value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Medicine: Cryosystems}} {{skillvalue=@{role_medtech_cryosystem}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_cryosystem} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
           >
             Cryosystem Operation
           </button>
@@ -231,7 +231,7 @@
       <button
         class="role-button"
         type="roll"
-        value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Netrunner}} {{abilityname=Interface}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_netrunner} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+        value="&{template:roleability}{{charactername=@{character_name}}} {{rolename=Netrunner}} {{abilityname=Interface}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_netrunner} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
       >
         Interface
       </button>
@@ -254,7 +254,7 @@
       <button
         class="role-button"
         type="roll"
-        value="&{template:roleability} {{charactername=@{charactername}}} {{rolename=Rockerboy}} {{abilityname=Charismatic Impact}} {{roll=[[1d10 + @{role_rocker} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+        value="&{template:roleability} {{charactername=@{character_name}}} {{rolename=Rockerboy}} {{abilityname=Charismatic Impact}} {{roll=[[1d10 + @{role_rocker} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
       >
         Charismatic Impact
       </button>
@@ -343,7 +343,7 @@
               <button
                 class="role-button"
                 type="roll"
-                value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Field Expertise}} {{skillvalue=@{role_tech_field}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_field} + @{role_tech_field_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+                value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Field Expertise}} {{skillvalue=@{role_tech_field}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_field} + @{role_tech_field_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
               >
                 Field Expertise
               </button>
@@ -379,7 +379,7 @@
               <button
                 class="role-button"
                 type="roll"
-                value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Upgrade Expertise}} {{skillvalue=@{role_tech_upgrade}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_upgrade} + @{role_tech_upgrade_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+                value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Upgrade Expertise}} {{skillvalue=@{role_tech_upgrade}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_upgrade} + @{role_tech_upgrade_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
               >
                 Upgrade Expertise
               </button>
@@ -417,7 +417,7 @@
               <button
                 class="role-button"
                 type="roll"
-                value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Fabrication Expertise}} {{skillvalue=@{role_tech_fabrication}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_fabrication} + @{role_tech_fabrication_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+                value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Fabrication Expertise}} {{skillvalue=@{role_tech_fabrication}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_fabrication} + @{role_tech_fabrication_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
               >
                 Fabrication Expertise
               </button>
@@ -453,7 +453,7 @@
               <button
                 class="role-button"
                 type="roll"
-                value="&{template:skill} {{charactername=@{charactername}}} {{skillname=Maker: Invention Expertise}} {{skillvalue=@{role_tech_invention}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_invention} + @{role_tech_invention_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+                value="&{template:skill} {{charactername=@{character_name}}} {{skillname=Maker: Invention Expertise}} {{skillvalue=@{role_tech_invention}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_tech_invention} + @{role_tech_invention_skill} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
               >
                 Invention Expertise
               </button>
