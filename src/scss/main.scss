@@ -90,6 +90,23 @@
     font-size: 1.3rem !important;
     margin: 0 !important;
   }
+  .repcontrol {
+    button.btn {
+      font-size: 1rem;
+      line-height: 1rem;
+      margin: 0;
+      padding: 0.5rem;
+      text-transform: uppercase;
+    }
+  }
+  .repitem {
+    .itemcontrol {
+      box-sizing: border-box;
+      margin-top: -0.5rem;
+      margin-left: -1rem;
+      padding: 0.5rem;
+    }
+  }
   select {
     max-width: 100%;
     min-width: 5rem;
