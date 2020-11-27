@@ -30,6 +30,10 @@ div.sheet-skill {
     margin-left: 0.5rem;
     text-transform: uppercase;
   }
+  input.sheet-skill-moto-flag:not([value]) ~ span.sheet-skill-moto-flag,
+  input.sheet-skill-moto-flag[value='0'] ~ span.sheet-skill-moto-flag {
+    display: none;
+  }
   .repcontainer {
     .sheet-skill {
       margin-bottom: 1rem;

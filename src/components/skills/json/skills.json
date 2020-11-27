@@ -7,31 +7,36 @@
           "name": "Conceal/Reveal Object",
           "field": "skill_concealrevealobject",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Concentration",
           "field": "skill_concentration",
           "stat": "stat_will",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Lip Reading",
           "field": "skill_lipreading",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Perception",
           "field": "skill_perception",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Tracking",
           "field": "skill_tracking",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         }
       ]
     },
@@ -42,37 +47,43 @@
           "name": "Athletics",
           "field": "skill_athletics",
           "stat": "stat_dex",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Contrortionist",
           "field": "skill_contrortionist",
           "stat": "stat_dex",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Dance",
           "field": "skill_dance",
           "stat": "stat_dex",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Endurance",
           "field": "skill_endurance",
           "stat": "stat_will",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Resist Torture/Drugs",
           "field": "skill_resisttorturedrugs",
           "stat": "stat_will",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Stealth",
           "field": "skill_stealth",
           "stat": "stat_dex",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         }
       ]
     },
@@ -80,28 +91,32 @@
       "group": "Control",
       "skills": [
         {
-          "name": "Control Land Vehicle",
+          "name": "Drive Land Vehicle",
           "field": "skill_landvehicle",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": true
         },
         {
           "name": "Pilot Air Vehicle (x2)",
           "field": "skill_airvehicle",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": true
         },
         {
           "name": "Pilot Sea Vehicle",
           "field": "skill_seavehicle",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": true
         },
         {
           "name": "Riding",
           "field": "skill_riding",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         }
       ]
     },
@@ -112,85 +127,99 @@
           "name": "Accounting",
           "field": "skill_accounting",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Animal Handling",
           "field": "skill_animalhandling",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Bureaucracy",
           "field": "skill_bureaucracy",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Business",
           "field": "skill_business",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Composition",
           "field": "skill_composition",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Criminology",
           "field": "skill_criminology",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Cryptography",
           "field": "skill_cryptography",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Deduction",
           "field": "skill_deduction",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Education",
           "field": "skill_education",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Gamble",
           "field": "skill_gamble",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Library Search",
           "field": "skill_librarysearch",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Tactics",
           "field": "skill_tactics",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Wilderness Survival",
           "field": "skill_wildernesssurvival",
           "stat": "stat_int",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Languages",
           "field": "skill_language",
           "stat": "stat_int",
           "type": "multiple",
+          "moto": false,
           "fieldset": "repeating_languages",
           "label": "languagename"
         },
@@ -199,6 +228,7 @@
           "field": "skill_localexpert",
           "stat": "stat_int",
           "type": "multiple",
+          "moto": false,
           "fieldset": "repeating_localexperts",
           "label": "localexpertname"
         },
@@ -207,6 +237,7 @@
           "field": "skill_science",
           "stat": "stat_int",
           "type": "multiple",
+          "moto": false,
           "fieldset": "repeating_sciences",
           "label": "sciencename"
         }
@@ -219,25 +250,29 @@
           "name": "Brawling",
           "field": "skill_brawling",
           "stat": "stat_dex",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Evasion",
           "field": "skill_evasion",
           "stat": "stat_dex",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Melee Weapon",
           "field": "skill_meleeweapon",
           "stat": "stat_dex",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Martial Arts (x2)",
           "field": "skill_martialarts",
           "stat": "stat_dex",
           "type": "multiple",
+          "moto": false,
           "fieldset": "repeating_martialarts",
           "label": "martialartname"
         }
@@ -250,13 +285,15 @@
           "name": "Acting",
           "field": "skill_acting",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Play Instrument",
           "field": "skill_playinstrument",
           "stat": "stat_tech",
           "type": "multiple",
+          "moto": false,
           "fieldset": "repeating_playinstrument",
           "label": "playinstrumentname"
         }
@@ -269,31 +306,36 @@
           "name": "Archery",
           "field": "skill_archery",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Autofire (x2)",
           "field": "skill_autofire",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Handgun",
           "field": "skill_handgun",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Heavy Weapons",
           "field": "skill_heavyweapons",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Shoulder Arms",
           "field": "skill_shoulderarms",
           "stat": "stat_ref",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         }
       ]
     },
@@ -304,55 +346,64 @@
           "name": "Bribery",
           "field": "skill_bribery",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Conversation",
           "field": "skill_conversation",
           "stat": "stat_emp",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Human Perception",
           "field": "skill_humanperception",
           "stat": "stat_emp",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Interrogation",
           "field": "skill_interrogation",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Personal Grooming",
           "field": "skill_personalgrooming",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Persuasion",
           "field": "skill_persuasion",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Streetwise",
           "field": "skill_streetwise",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Trading",
           "field": "skill_trading",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Wardrobe & Style",
           "field": "skill_wardrobestyle",
           "stat": "stat_cool",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         }
       ]
     },
@@ -363,91 +414,106 @@
           "name": "Air Vehicle Tech",
           "field": "skill_airevehicletech",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": true
         },
         {
           "name": "Basic Tech",
           "field": "skill_basictech",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Cybertech",
           "field": "skill_cybertech",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Demolitions (x2)",
           "field": "skill_demolitions",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Electronics/Security Tech (x2)",
           "field": "skill_electronicssecurity",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "First Aid",
           "field": "skill_firstaid",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Forgery",
           "field": "skill_forgery",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Land Vehicle Tech",
           "field": "skill_landvehicletech",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": true
         },
         {
           "name": "Paint/Draw/Sculpt",
           "field": "skill_paintdrawsculpt",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Paramedic (x2)",
           "field": "skill_paramedic",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Photography/Film",
           "field": "skill_photographyfilm",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Pick Lock",
           "field": "skill_picklock",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Pick Pocket",
           "field": "skill_pickpocket",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         },
         {
           "name": "Sea Vehicle Tech",
           "field": "skill_seavehicletech",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": true
         },
         {
           "name": "Weaponstech",
           "field": "skill_weaponstech",
           "stat": "stat_tech",
-          "type": "standard"
+          "type": "standard",
+          "moto": false
         }
       ]
     }

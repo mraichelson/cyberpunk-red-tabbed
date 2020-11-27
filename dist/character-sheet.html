@@ -26,7 +26,7 @@
           <div class="columns">
             <div class="column">
               <h4 class="clipped-corner">Handle</h4>
-              <input type="text" name="attr_charactername" />
+              <input type="text" name="attr_character_name" />
             </div>
             <div class="column">
               <h4 class="clipped-corner">Role</h4>
@@ -293,7 +293,7 @@
             <h4 class="clipped-corner">Exec</h4>
             <div class="role-ability">
               Exec role ability: Teamwork
-              <input type="number" name="attr_role_exec" />
+              <input type="number" name="attr_role_exec" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.153-157</div>
             </div>
             <div class="subdivider">
@@ -323,7 +323,7 @@
             <h4 class="clipped-corner">Fixer</h4>
             <div class="role-ability">
               Fixer role ability: Operator
-              <input type="number" name="attr_role_fixer" />
+              <input type="number" name="attr_role_fixer" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.159-161</div>
             </div>
             <div class="subdivider">
@@ -356,7 +356,7 @@
             <h4 class="clipped-corner">Lawman</h4>
             <div class="role-ability">
               Lawman role ability: Backup
-              <input type="number" name="attr_role_lawman" />
+              <input type="number" name="attr_role_lawman" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.158-159</div>
             </div>
             <div class="subdivider">
@@ -414,7 +414,7 @@
             <h4 class="clipped-corner">Media</h4>
             <div class="role-ability">
               Media role ability: Credibility
-              <input type="number" name="attr_role_media" />
+              <input type="number" name="attr_role_media" value="0" min="0" />
               <div style="padding-top: 1rem">
                 <button type="roll" class="role-button" value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Media}} {{abilityname=Rumors (Passive)}} {{roll=[[1d10 + @{role_media}]]}} {{critroll=[[1d10]]}}">
                   Rumors (Passive)
@@ -427,7 +427,7 @@
             <h4 class="clipped-corner">Medtech</h4>
             <div class="role-ability">
               Medtech role ability: Medicine
-              <input type="number" name="attr_role_medtech" />
+              <input type="number" name="attr_role_medtech" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.149-150</div>
             </div>
             <div class="subdivider">
@@ -436,19 +436,19 @@
                   <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Surgery}} {{skillvalue=@{role_medtech_surgery}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_surgery} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Surgery
                   </button>
-                  <input type="number" name="attr_role_medtech_surgery" />
+                  <input type="number" name="attr_role_medtech_surgery" value="0" min="0" />
                 </div>
                 <div class="column center">
                   <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Pharmaceuticals}} {{skillvalue=@{role_medtech_pharmaceuticals}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_pharmaceuticals} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pharmaceuticals
                   </button>
-                  <input type="number" name="attr_role_medtech_pharmaceuticals" />
+                  <input type="number" name="attr_role_medtech_pharmaceuticals" value="0" min="0" />
                 </div>
                 <div class="column center">
                   <button type="roll" class="role-button" value="&{template:skill}{{charactername=@{charactername}}} {{skillname=Medicine: Cryosystems}} {{skillvalue=@{role_medtech_cryosystem}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_medtech_cryosystem} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Cryosystem Operation
                   </button>
-                  <input type="number" name="attr_role_medtech_cryosystem" />
+                  <input type="number" name="attr_role_medtech_cryosystem" value="0" min="0" />
                 </div>
               </div>
             </div>
@@ -460,7 +460,7 @@
               <button class="role-button" type="roll" value="&{template:roleability}{{charactername=@{charactername}}} {{rolename=Netrunner}} {{abilityname=Interface}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{role_netrunner} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                 Interface
               </button>
-              <input type="number" name="attr_role_netrunner" />
+              <input type="number" name="attr_role_netrunner" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.147</div>
             </div>
           </div>
@@ -468,7 +468,7 @@
             <h4 class="clipped-corner">Nomad</h4>
             <div class="role-ability">
               Nomad role ability: Moto
-              <input type="number" name="attr_role_nomad" />
+              <input type="number" name="attr_role_nomad" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.161-165</div>
             </div>
           </div>
@@ -479,7 +479,7 @@
               <button class="role-button" type="roll" value="&{template:roleability} {{charactername=@{charactername}}} {{rolename=Rockerboy}} {{abilityname=Charismatic Impact}} {{roll=[[1d10 + @{role_rocker} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                 Charismatic Impact
               </button>
-              <input type="number" name="attr_role_rocker" />
+              <input type="number" name="attr_role_rocker" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.144-145</div>
             </div>
           </div>
@@ -487,34 +487,34 @@
             <h4 class="clipped-corner">Solo</h4>
             <div class="role-ability">
               Solo role ability: Combat Awareness
-              <input type="number" name="attr_role_solo" />
+              <input type="number" name="attr_role_solo" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.146</div>
             </div>
             <div class="subdivider">
               <div class="columns">
                 <div class="column center">
                   Damage Deflection
-                  <input type="number" name="attr_role_solo_damagedeflection" />
+                  <input type="number" name="attr_role_solo_damagedeflection" value="0" min="0" />
                 </div>
                 <div class="column center">
                   Fumble Recovery
-                  <input type="number" name="attr_role_solo_fumblerecovery" />
+                  <input type="number" name="attr_role_solo_fumblerecovery" value="0" min="0" />
                 </div>
                 <div class="column center">
                   Initiative Reaction
-                  <input type="number" name="attr_role_solo_initiativereaction" />
+                  <input type="number" name="attr_role_solo_initiativereaction" value="0" min="0" />
                 </div>
                 <div class="column center">
                   Precision Attack
-                  <input type="number" name="attr_role_solo_precisionattack" />
+                  <input type="number" name="attr_role_solo_precisionattack" value="0" min="0" />
                 </div>
                 <div class="column center">
                   Spot Weakness
-                  <input type="number" name="attr_role_solo_spotweakness" />
+                  <input type="number" name="attr_role_solo_spotweakness" value="0" min="0" />
                 </div>
                 <div class="column center">
                   Threat Detection
-                  <input type="number" name="attr_role_solo_threatdetection" />
+                  <input type="number" name="attr_role_solo_threatdetection" value="0" min="0" />
                 </div>
               </div>
             </div>
@@ -523,7 +523,7 @@
             <h4 class="clipped-corner">Tech</h4>
             <div class="role-ability">
               Tech role ability: Maker
-              <input type="number" name="attr_role_tech" />
+              <input type="number" name="attr_role_tech" value="0" min="0" />
               <div class="rulebook-reference">See full rules on p.147-149</div>
             </div>
             <div class="subdivider">
@@ -536,7 +536,7 @@
                       </button>
                     </div>
                     <div class="column">
-                      <input type="number" name="attr_role_tech_field" />
+                      <input type="number" name="attr_role_tech_field" value="0" min="0" />
                     </div>
                   </div>
                   <div>
@@ -563,7 +563,7 @@
                       </button>
                     </div>
                     <div class="column">
-                      <input type="number" name="attr_role_tech_upgrade" />
+                      <input type="number" name="attr_role_tech_upgrade" value="0" min="0" />
                     </div>
                   </div>
                   <div>
@@ -592,7 +592,7 @@
                       </button>
                     </div>
                     <div class="column">
-                      <input type="number" name="attr_role_tech_fabrication" />
+                      <input type="number" name="attr_role_tech_fabrication" value="0" min="0" />
                     </div>
                   </div>
                   <div>
@@ -619,7 +619,7 @@
                       </button>
                     </div>
                     <div class="column">
-                      <input type="number" name="attr_role_tech_invention" />
+                      <input type="number" name="attr_role_tech_invention" value="0" min="0" />
                     </div>
                   </div>
                   <div>
@@ -979,7 +979,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_concealrevealobject" />
                 </div>
@@ -995,7 +996,8 @@
                 >(will
                 <span
                   name="attr_stat_will"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_concentration" />
                 </div>
@@ -1011,7 +1013,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_lipreading" />
                 </div>
@@ -1027,7 +1030,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_perception" />
                 </div>
@@ -1043,7 +1047,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_tracking" />
                 </div>
@@ -1066,7 +1071,8 @@
                 >(dex
                 <span
                   name="attr_stat_dex"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_athletics" />
                 </div>
@@ -1082,7 +1088,8 @@
                 >(dex
                 <span
                   name="attr_stat_dex"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_contrortionist" />
                 </div>
@@ -1098,7 +1105,8 @@
                 >(dex
                 <span
                   name="attr_stat_dex"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_dance" />
                 </div>
@@ -1114,7 +1122,8 @@
                 >(will
                 <span
                   name="attr_stat_will"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_endurance" />
                 </div>
@@ -1130,7 +1139,8 @@
                 >(will
                 <span
                   name="attr_stat_will"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_resisttorturedrugs" />
                 </div>
@@ -1146,7 +1156,8 @@
                 >(dex
                 <span
                   name="attr_stat_dex"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_stealth" />
                 </div>
@@ -1163,13 +1174,15 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Control Land Vehicle}} {{skillname=Control Land Vehicle}} {{skillvalue=@{skill_landvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicle} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
-                    Control Land Vehicle
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Drive Land Vehicle}} {{skillname=Drive Land Vehicle}} {{skillvalue=@{skill_landvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                    Drive Land Vehicle
                     <span class="skill-meta"
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span><input class="skill-moto-flag" type="hidden" name="attr_role_nomad" /><span class="skill-moto-flag">
+                  + MOTO <span name="attr_role_nomad"></span></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_landvehicle" />
                 </div>
@@ -1179,13 +1192,15 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Air Vehicle (x2)}} {{skillname=Pilot Air Vehicle}} {{skillvalue=@{skill_airvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicle} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Air Vehicle (x2)}} {{skillname=Pilot Air Vehicle}} {{skillvalue=@{skill_airvehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airvehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pilot Air Vehicle (x2)
                     <span class="skill-meta"
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span><input class="skill-moto-flag" type="hidden" name="attr_role_nomad" /><span class="skill-moto-flag">
+                  + MOTO <span name="attr_role_nomad"></span></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_airvehicle" />
                 </div>
@@ -1195,13 +1210,15 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Sea Vehicle}} {{skillname=Pilot Sea Vehicle}} {{skillvalue=@{skill_seavehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicle} + @{stat_ref} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Pilot Sea Vehicle}} {{skillname=Pilot Sea Vehicle}} {{skillvalue=@{skill_seavehicle}}} {{statname=ref}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicle} + @{stat_ref} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Pilot Sea Vehicle
                     <span class="skill-meta"
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span><input class="skill-moto-flag" type="hidden" name="attr_role_nomad" /><span class="skill-moto-flag">
+                  + MOTO <span name="attr_role_nomad"></span></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_seavehicle" />
                 </div>
@@ -1217,7 +1234,8 @@
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_riding" />
                 </div>
@@ -1240,7 +1258,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_accounting" />
                 </div>
@@ -1256,7 +1275,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_animalhandling" />
                 </div>
@@ -1272,7 +1292,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_bureaucracy" />
                 </div>
@@ -1288,7 +1309,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_business" />
                 </div>
@@ -1304,7 +1326,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_composition" />
                 </div>
@@ -1320,7 +1343,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_criminology" />
                 </div>
@@ -1336,7 +1360,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_cryptography" />
                 </div>
@@ -1352,7 +1377,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_deduction" />
                 </div>
@@ -1368,7 +1394,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_education" />
                 </div>
@@ -1384,7 +1411,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_gamble" />
                 </div>
@@ -1400,7 +1428,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_librarysearch" />
                 </div>
@@ -1416,7 +1445,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_tactics" />
                 </div>
@@ -1432,7 +1462,8 @@
                 >(int
                 <span
                   name="attr_stat_int"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_wildernesssurvival" />
                 </div>
@@ -1518,7 +1549,8 @@
                 >(dex
                 <span
                   name="attr_stat_dex"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_brawling" />
                 </div>
@@ -1534,7 +1566,8 @@
                 >(dex
                 <span
                   name="attr_stat_dex"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_evasion" />
                 </div>
@@ -1550,7 +1583,8 @@
                 >(dex
                 <span
                   name="attr_stat_dex"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_meleeweapon" />
                 </div>
@@ -1594,7 +1628,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_acting" />
                 </div>
@@ -1638,7 +1673,8 @@
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_archery" />
                 </div>
@@ -1654,7 +1690,8 @@
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_autofire" />
                 </div>
@@ -1670,7 +1707,8 @@
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_handgun" />
                 </div>
@@ -1686,7 +1724,8 @@
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_heavyweapons" />
                 </div>
@@ -1702,7 +1741,8 @@
                 >(ref
                 <span
                   name="attr_stat_ref"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_shoulderarms" />
                 </div>
@@ -1725,7 +1765,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_bribery" />
                 </div>
@@ -1741,7 +1782,8 @@
                 >(emp
                 <span
                   name="attr_empathy"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_conversation" />
                 </div>
@@ -1757,7 +1799,8 @@
                 >(emp
                 <span
                   name="attr_empathy"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_humanperception" />
                 </div>
@@ -1773,7 +1816,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_interrogation" />
                 </div>
@@ -1789,7 +1833,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_personalgrooming" />
                 </div>
@@ -1805,7 +1850,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_persuasion" />
                 </div>
@@ -1821,7 +1867,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_streetwise" />
                 </div>
@@ -1837,7 +1884,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_trading" />
                 </div>
@@ -1853,7 +1901,8 @@
                 >(cool
                 <span
                   name="attr_stat_cool"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_wardrobestyle" />
                 </div>
@@ -1870,13 +1919,15 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Air Vehicle Tech}} {{skillname=Air Vehicle Tech}} {{skillvalue=@{skill_airevehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airevehicletech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Air Vehicle Tech}} {{skillname=Air Vehicle Tech}} {{skillvalue=@{skill_airevehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_airevehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Air Vehicle Tech
                     <span class="skill-meta"
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span><input class="skill-moto-flag" type="hidden" name="attr_role_nomad" /><span class="skill-moto-flag">
+                  + MOTO <span name="attr_role_nomad"></span></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_airevehicletech" />
                 </div>
@@ -1892,7 +1943,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_basictech" />
                 </div>
@@ -1908,7 +1960,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_cybertech" />
                 </div>
@@ -1924,7 +1977,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_demolitions" />
                 </div>
@@ -1940,7 +1994,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_electronicssecurity" />
                 </div>
@@ -1956,7 +2011,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_firstaid" />
                 </div>
@@ -1972,7 +2028,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_forgery" />
                 </div>
@@ -1982,13 +2039,15 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Land Vehicle Tech}} {{skillname=Land Vehicle Tech}} {{skillvalue=@{skill_landvehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicletech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Land Vehicle Tech}} {{skillname=Land Vehicle Tech}} {{skillvalue=@{skill_landvehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_landvehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Land Vehicle Tech
                     <span class="skill-meta"
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span><input class="skill-moto-flag" type="hidden" name="attr_role_nomad" /><span class="skill-moto-flag">
+                  + MOTO <span name="attr_role_nomad"></span></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_landvehicletech" />
                 </div>
@@ -2004,7 +2063,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_paintdrawsculpt" />
                 </div>
@@ -2020,7 +2080,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_paramedic" />
                 </div>
@@ -2036,7 +2097,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_photographyfilm" />
                 </div>
@@ -2052,7 +2114,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_picklock" />
                 </div>
@@ -2068,7 +2131,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_pickpocket" />
                 </div>
@@ -2078,13 +2142,15 @@
               <li>
 
                 <div class="skill">
-                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Sea Vehicle Tech}} {{skillname=Sea Vehicle Tech}} {{skillvalue=@{skill_seavehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicletech} + @{stat_tech} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
+                  <button class="button-plain" type="roll" value="&{template:skill}{{charactername=@{charactername}}} {{header=Sea Vehicle Tech}} {{skillname=Sea Vehicle Tech}} {{skillvalue=@{skill_seavehicletech}}} {{statname=tech}} {{statvalue=@{stat_tech}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_seavehicletech} + @{stat_tech} + @{role_nomad} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}">
                     Sea Vehicle Tech
                     <span class="skill-meta"
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span><input class="skill-moto-flag" type="hidden" name="attr_role_nomad" /><span class="skill-moto-flag">
+                  + MOTO <span name="attr_role_nomad"></span></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_seavehicletech" />
                 </div>
@@ -2100,7 +2166,8 @@
                 >(tech
                 <span
                   name="attr_stat_tech"
-                ></span>)</span>
+                ></span>)
+                    </span>
                   </button>
                   <input class="skill-value" type="number" value="0" name="attr_skill_weaponstech" />
                 </div>

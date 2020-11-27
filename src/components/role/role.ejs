@@ -4,7 +4,7 @@
     <h4 class="clipped-corner">Exec</h4>
     <div class="role-ability">
       Exec role ability: Teamwork
-      <input type="number" name="attr_role_exec" />
+      <input type="number" name="attr_role_exec" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.153-157</div>
     </div>
     <div class="subdivider">
@@ -34,7 +34,7 @@
     <h4 class="clipped-corner">Fixer</h4>
     <div class="role-ability">
       Fixer role ability: Operator
-      <input type="number" name="attr_role_fixer" />
+      <input type="number" name="attr_role_fixer" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.159-161</div>
     </div>
     <div class="subdivider">
@@ -75,7 +75,7 @@
     <h4 class="clipped-corner">Lawman</h4>
     <div class="role-ability">
       Lawman role ability: Backup
-      <input type="number" name="attr_role_lawman" />
+      <input type="number" name="attr_role_lawman" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.158-159</div>
     </div>
     <div class="subdivider">
@@ -150,7 +150,7 @@
     <h4 class="clipped-corner">Media</h4>
     <div class="role-ability">
       Media role ability: Credibility
-      <input type="number" name="attr_role_media" />
+      <input type="number" name="attr_role_media" value="0" min="0" />
       <div style="padding-top: 1rem">
         <button
           type="roll"
@@ -167,7 +167,7 @@
     <h4 class="clipped-corner">Medtech</h4>
     <div class="role-ability">
       Medtech role ability: Medicine
-      <input type="number" name="attr_role_medtech" />
+      <input type="number" name="attr_role_medtech" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.149-150</div>
     </div>
     <div class="subdivider">
@@ -180,7 +180,12 @@
           >
             Surgery
           </button>
-          <input type="number" name="attr_role_medtech_surgery" />
+          <input
+            type="number"
+            name="attr_role_medtech_surgery"
+            value="0"
+            min="0"
+          />
         </div>
         <div class="column center">
           <button
@@ -190,7 +195,12 @@
           >
             Pharmaceuticals
           </button>
-          <input type="number" name="attr_role_medtech_pharmaceuticals" />
+          <input
+            type="number"
+            name="attr_role_medtech_pharmaceuticals"
+            value="0"
+            min="0"
+          />
         </div>
         <div class="column center">
           <button
@@ -200,7 +210,12 @@
           >
             Cryosystem Operation
           </button>
-          <input type="number" name="attr_role_medtech_cryosystem" />
+          <input
+            type="number"
+            name="attr_role_medtech_cryosystem"
+            value="0"
+            min="0"
+          />
         </div>
       </div>
     </div>
@@ -216,7 +231,7 @@
       >
         Interface
       </button>
-      <input type="number" name="attr_role_netrunner" />
+      <input type="number" name="attr_role_netrunner" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.147</div>
     </div>
   </div>
@@ -224,7 +239,7 @@
     <h4 class="clipped-corner">Nomad</h4>
     <div class="role-ability">
       Nomad role ability: Moto
-      <input type="number" name="attr_role_nomad" />
+      <input type="number" name="attr_role_nomad" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.161-165</div>
     </div>
   </div>
@@ -239,7 +254,7 @@
       >
         Charismatic Impact
       </button>
-      <input type="number" name="attr_role_rocker" />
+      <input type="number" name="attr_role_rocker" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.144-145</div>
     </div>
   </div>
@@ -247,34 +262,64 @@
     <h4 class="clipped-corner">Solo</h4>
     <div class="role-ability">
       Solo role ability: Combat Awareness
-      <input type="number" name="attr_role_solo" />
+      <input type="number" name="attr_role_solo" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.146</div>
     </div>
     <div class="subdivider">
       <div class="columns">
         <div class="column center">
           Damage Deflection
-          <input type="number" name="attr_role_solo_damagedeflection" />
+          <input
+            type="number"
+            name="attr_role_solo_damagedeflection"
+            value="0"
+            min="0"
+          />
         </div>
         <div class="column center">
           Fumble Recovery
-          <input type="number" name="attr_role_solo_fumblerecovery" />
+          <input
+            type="number"
+            name="attr_role_solo_fumblerecovery"
+            value="0"
+            min="0"
+          />
         </div>
         <div class="column center">
           Initiative Reaction
-          <input type="number" name="attr_role_solo_initiativereaction" />
+          <input
+            type="number"
+            name="attr_role_solo_initiativereaction"
+            value="0"
+            min="0"
+          />
         </div>
         <div class="column center">
           Precision Attack
-          <input type="number" name="attr_role_solo_precisionattack" />
+          <input
+            type="number"
+            name="attr_role_solo_precisionattack"
+            value="0"
+            min="0"
+          />
         </div>
         <div class="column center">
           Spot Weakness
-          <input type="number" name="attr_role_solo_spotweakness" />
+          <input
+            type="number"
+            name="attr_role_solo_spotweakness"
+            value="0"
+            min="0"
+          />
         </div>
         <div class="column center">
           Threat Detection
-          <input type="number" name="attr_role_solo_threatdetection" />
+          <input
+            type="number"
+            name="attr_role_solo_threatdetection"
+            value="0"
+            min="0"
+          />
         </div>
       </div>
     </div>
@@ -283,7 +328,7 @@
     <h4 class="clipped-corner">Tech</h4>
     <div class="role-ability">
       Tech role ability: Maker
-      <input type="number" name="attr_role_tech" />
+      <input type="number" name="attr_role_tech" value="0" min="0" />
       <div class="rulebook-reference">See full rules on p.147-149</div>
     </div>
     <div class="subdivider">
@@ -300,7 +345,12 @@
               </button>
             </div>
             <div class="column">
-              <input type="number" name="attr_role_tech_field" />
+              <input
+                type="number"
+                name="attr_role_tech_field"
+                value="0"
+                min="0"
+              />
             </div>
           </div>
           <div>
@@ -331,7 +381,12 @@
               </button>
             </div>
             <div class="column">
-              <input type="number" name="attr_role_tech_upgrade" />
+              <input
+                type="number"
+                name="attr_role_tech_upgrade"
+                value="0"
+                min="0"
+              />
             </div>
           </div>
           <div>
@@ -364,7 +419,12 @@
               </button>
             </div>
             <div class="column">
-              <input type="number" name="attr_role_tech_fabrication" />
+              <input
+                type="number"
+                name="attr_role_tech_fabrication"
+                value="0"
+                min="0"
+              />
             </div>
           </div>
           <div>
@@ -395,7 +455,12 @@
               </button>
             </div>
             <div class="column">
-              <input type="number" name="attr_role_tech_invention" />
+              <input
+                type="number"
+                name="attr_role_tech_invention"
+                value="0"
+                min="0"
+              />
             </div>
           </div>
           <div>

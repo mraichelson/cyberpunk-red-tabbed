@@ -39,7 +39,7 @@
             <button
               class="button-plain"
               type="roll"
-              value="&{template:skill}{{charactername=@{charactername}}} {{header=<%= skill.name %>}} {{skillname=<%= skill.name.replace(' (x2)', '') %>}} {{skillvalue=@{<%= skill.field %>}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{<%= skill.field %>} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>} + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
+              value="&{template:skill}{{charactername=@{charactername}}} {{header=<%= skill.name %>}} {{skillname=<%= skill.name.replace(' (x2)', '') %>}} {{skillvalue=@{<%= skill.field %>}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{<%= skill.field %>} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}<% if (skill.moto) { %> + @{role_nomad}<%} %> + @{finalmodifier}]]}} {{critroll=[[1d10]]}}"
             >
               <%= skill.name %>
               <span class="skill-meta"
@@ -47,8 +47,14 @@
                 <span
                   name="attr_<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>"
                 ></span
-                >)</span
-              >
+                ><% if (skill.moto) { %><input
+                  class="skill-moto-flag"
+                  type="hidden"
+                  name="attr_role_nomad"
+                /><span class="skill-moto-flag">
+                  + MOTO <span name="attr_role_nomad"></span></span
+                ><% } %>)
+              </span>
             </button>
             <input
               class="skill-value"
