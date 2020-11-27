@@ -26,7 +26,7 @@
       var body = Number(values.stat_body);
       var will = Number(values.stat_will);
       var maxHp = ((Math.ceil((body + will) / 2)) * 5) + 10;
-      var halfHp = Math.floor(maxHp / 2);
+      var halfHp = Math.ceil(maxHp / 2);
       var deathSave = body;
       setAttrs({
         hp: maxHp,
