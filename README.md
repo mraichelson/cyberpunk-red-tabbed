@@ -19,9 +19,17 @@ This project builds the single character sheet and CSS file using Webpack. As su
 
 - Only the HTML and CSS from the `dist` directory (not stored in the repository) need to be submitted to Roll20 for inclusion as a character sheet.
 
+## Credits
+
+- This was assembled with the support of the [High Shelf Gaming podcast](https://highshelfgaming.com/) community, and the particular support of [David/@HighShelfGaming](https://twitter.com/highshelfgaming) and [@Kratrina](https://twitter.com/kratrina).
+- There's still some solid code-DNA in here from other projects that preceded and informed this work...
+  - The [Foundry VTT system tutorial](https://gitlab.com/asacolips-projects/foundry-mods/foundryvtt-system-tutorial) by Asacolips.
+  - The [Cyberpunk Red beta character sheet](https://github.com/Gerdofal/roll20-CyberpunkRED_Gerdofal_BETA) by Gerdofal.
+- Thanks to my long-time friend and technical savior [@longfilename](https://github.com/longfilename) for getting the webpack/EJS side of this organized.
+
 ## Finding Mike
 
 If you need to reach me I can be found...
 
-- On Github as mraichelson
-- On Twitter as @MRaichelson
+- On Github as [@MRaichelson](https://github.com/mraichelson)
+- On Twitter as [@MRaichelson](https://twitter.com/MRaichelson)
