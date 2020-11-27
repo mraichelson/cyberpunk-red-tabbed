@@ -25,6 +25,15 @@
         border-top-color: $cpRed;
       }
     }
+    h5 {
+      border-bottom: 1px solid $cpRed;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: $offWhite;
+    }
   }
   table {
     width: 100%;
