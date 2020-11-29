@@ -60,6 +60,8 @@ $tabColor: $cpRed;
     margin-top: -2px; // This sucks and I hate it. -MR
     padding: 1rem;
     text-align: left;
+    position: relative;
+    z-index: 3;
   }
   input.sheet-tab1:checked ~ div.sheet-tab1,
   input.sheet-tab2:checked ~ div.sheet-tab2,
