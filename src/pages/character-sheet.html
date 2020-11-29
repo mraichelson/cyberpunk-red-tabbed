@@ -98,6 +98,9 @@
     </div>
   </div>
 
+  <!-- The "modifiers" component is included twice but only needs one set of JS -->
+  <%= require('../components/modifiers/modifiers-script.ejs')() %>
+
   <!-- Roll templates... -->
   <!-- attack rolls -->
   <%= require('../components/rolltemplates/attack/attack.ejs')() %>
