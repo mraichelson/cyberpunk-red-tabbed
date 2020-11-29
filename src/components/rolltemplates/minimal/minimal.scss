@@ -46,6 +46,15 @@
     th {
       width: 50%;
     }
+    tbody {
+      tr {
+        &:nth-child(even) {
+          & > * {
+            background-color: $offWhite;
+          }
+        }
+      }
+    }
     tfoot {
       tr:first-child {
         th,
