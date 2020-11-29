@@ -27,6 +27,15 @@ This project builds the single character sheet and CSS file using Webpack. As su
   - The [Cyberpunk Red beta character sheet](https://github.com/Gerdofal/roll20-CyberpunkRED_Gerdofal_BETA) by Gerdofal.
 - Thanks to my long-time friend and technical savior [@longfilename](https://github.com/longfilename) for getting the webpack/EJS side of this organized.
 
+![High Shelf Gaming](https://cyberpunk-red-tabbed.netlify.app/hsg-logo.png =300x)
+
+This sheet was made with the support of the High Shelf Gaming podcast community.
+
+- [Check out the podcast](https://highshelfgaming.com/)
+- [Come watch members of the community play games on Twitch](https://www.twitch.tv/highshelfgaming)
+- [Follow HSG on Twitter](https://twitter.com/highshelfgaming)
+- [Join us on Discord](https://discord.gg/KupFVcw)
+
 ## Finding Mike
 
 If you need to reach me I can be found...
