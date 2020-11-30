@@ -35,6 +35,7 @@ This sheet was made with the support of the High Shelf Gaming podcast community.
 - [Come watch members of the community play games on Twitch](https://www.twitch.tv/highshelfgaming)
 - [Follow HSG on Twitter](https://twitter.com/highshelfgaming)
 - [Join us on Discord](https://discord.gg/KupFVcw)
+- Or, more specifically: [Watch HSG's Cyberpunk Red actual play campaign "Big Asphalt"](https://www.youtube.com/playlist?list=PLW2YGZCblxbeJcxEfl8gWqckBEcJuq6l_)
 
 ## Finding Mike
 
