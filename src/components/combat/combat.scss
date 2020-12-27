@@ -33,7 +33,8 @@
       padding-top: 1rem;
     }
   }
-  .sheet-combat-weapons {
+  .sheet-combat-weapons,
+  .sheet-combat-martialarts {
     .repcontainer {
       & > div {
         background-color: white;
@@ -45,6 +46,28 @@
     .repcontrol {
       margin-bottom: 1rem;
       padding-top: 1rem;
+    }
+  }
+  .sheet-combat-martialarts {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+    .sheet-combat-martialarts-pane {
+      border-top: 1rem solid $cpRed;
+    }
+    .sheet-columns {
+      color: $text;
+      margin: 1rem 0;
+      text-align: left;
+    }
+    .sheet-martialart {
+      padding: 1rem;
+    }
+    .sheet-actions {
+      text-align: right;
+    }
+    .repcontrol {
+      display: none !important;
     }
   }
   .sheet-armor {

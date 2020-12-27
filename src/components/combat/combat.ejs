@@ -160,6 +160,79 @@
       </div>
     </fieldset>
   </div>
+  <div class="combat-martialarts">
+    Show Martial Arts Attacks
+    <input type="checkbox" class="show-next-div" name="attr_showmartialarts" />
+    <div class="combat-martialarts-pane">
+      <h4 class="accent-font">
+        Martial Arts <small>(DEX <span name="attr_stat_dex"></span>)</small>
+      </h4>
+      <fieldset class="repeating_martialarts">
+        <div class="martialart">
+          <div class="columns">
+            <div class="column">
+              <!--
+              Roll20 won't allow us to just read values from the shared 
+              repeating fieldset in roll templates, there needs to be an
+              input field to actually give us a readable value to include.
+              -->
+              <div style="display: none">
+                <input type="text" name="attr_skillname" />
+                <input type="number" name="attr_skillvalue" />
+              </div>
+              <strong><span name="attr_skillname"></span></strong>
+              (Skill <span name="attr_skillvalue"></span>)
+            </div>
+            <div class="column">
+              Hit Modifier
+              <input type="number" name="attr_mamodifier" min="0" />
+            </div>
+            <div class="column">
+              Damage
+              <select class="narrow" name="attr_madamage">
+                <option value="1">1d6</option>
+                <option value="2">2d6</option>
+                <option value="3">3d6</option>
+                <option value="4">4d6</option>
+                <option value="5">5d6</option>
+                <option value="6">6d6</option>
+                <option value="7">7d6</option>
+                <option value="8">8d6</option>
+                <option value="9">9d6</option>
+                <option value="10">10d6</option>
+              </select>
+            </div>
+            <div class="column">
+              Damage Modifier
+              <input type="number" name="attr_madamagemod" />
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">Description</div>
+            <div class="column column-3">
+              <textarea name="attr_martialartsdesc"></textarea>
+            </div>
+          </div>
+          <div class="actions">
+            <button
+              type="roll"
+              name="roll_attack"
+              value="&{template:attack}{{charactername=@{character_name}}}{{weapon=Martial Arts: @{skillname}}}{{roll=[[1d10+@{skillvalue}+@{stat_dex}+@{armor_penalty}+@{mamodifier}+@{finalmodifier}]]}}{{critroll=[[1d10]]}}"
+            >
+              Attack
+            </button>
+            <button
+              type="roll"
+              name="roll_damage"
+              value="&{template:damage}{{charactername=@{character_name}}}{{weaponname=Martial Arts: @{skillname}}}{{weapondamage=@{madamage}d6+@{madamagemod}}}{{roll=[[@{madamage}d6s+@{madamagemod}]]}}"
+            >
+              Damage
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
   <div class="columns">
     <div class="column">
       <div class="armor">
