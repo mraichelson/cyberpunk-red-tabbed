@@ -34,6 +34,10 @@ div.sheet-skill {
   input.sheet-skill-moto-flag[value='0'] ~ span.sheet-skill-moto-flag {
     display: none;
   }
+  input.sheet-skill-solo-flag:not([value]) ~ span.sheet-skill-solo-flag,
+  input.sheet-skill-solo-flag[value='0'] ~ span.sheet-skill-solo-flag {
+    display: none;
+  }
   .repcontainer {
     .sheet-skill {
       margin-bottom: 1rem;
