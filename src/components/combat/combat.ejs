@@ -2,14 +2,27 @@
   <div class="combat-misc">
     <div class="columns">
       <div class="column">
+        <h4>Evasion</h4>
+        <div class="field-wrapper">
+          Modifier
+          <input type="number" value="0" name="attr_evasionmodifier" />
+          <button
+            type="roll"
+            value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Evasion}} {{skillvalue=@{skill_evasion}}} {{statname=REF}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_evasion} + @{stat_ref} + @{armor_penalty} + @{finalmodifier} + @{evasionmodifier}]]}} {{critroll=[[1d10]]}}"
+          >
+            Evasion
+          </button>
+        </div>
+      </div>
+      <div class="column">
         <div class="initiative">
           <h4>Initiative</h4>
-          <div>
+          <div class="field-wrapper">
             Modifier
-            <input type="number" name="attr_initiativemodifier" />
+            <input type="number" value="0" name="attr_initiativemodifier" />
             <button
               type="roll"
-              value="&{template:initiative} {{charactername=@{character_name}}} {{roll=[[1d10+@{selected|stat_ref}+@{initiativemodifier} &{tracker}]]}}"
+              value="&{template:initiative} {{charactername=@{character_name}}} {{roll=[[1d10+@{selected|stat_ref}+@{role_solo_initiativereaction}+@{initiativemodifier} &{tracker}]]}}"
             >
               Initiative
             </button>
