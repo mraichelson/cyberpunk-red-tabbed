@@ -246,6 +246,7 @@
     <div class="role-ability">
       Nomad role ability: Moto
       <input type="number" name="attr_role_nomad" value="0" min="0" />
+      <div>This value is automatically added to all rolls for x, y, z.</div>
       <div class="rulebook-reference">See full rules on p.161-165</div>
     </div>
     <div class="subdivider">
@@ -346,64 +347,118 @@
     <h4 class="clipped-corner">Solo</h4>
     <div class="role-ability">
       Solo role ability: Combat Awareness
-      <input type="number" name="attr_role_solo" value="0" min="0" />
+      <input type="number" name="attr_role_solo" value="0" min="0" /><br />
+      <input
+        type="number"
+        name="attr_role_solo_available"
+        style="display: none"
+      />
+      Available to spend: <span name="attr_role_solo_available"></span>
       <div class="rulebook-reference">See full rules on p.146</div>
     </div>
     <div class="subdivider">
       <div class="columns">
         <div class="column center">
-          Damage Deflection
+          <input type="hidden" name="attr_role_solo_damagedeflection_calc" />
+          Damage Deflection (+<span
+            name="attr_role_solo_damagedeflection_calc"
+          ></span
+          >)<br />
           <input
             type="number"
             name="attr_role_solo_damagedeflection"
             value="0"
             min="0"
           />
+          (x2)
+          <div class="rulebook-reference" style="margin-bottom: 1rem">
+            Reduces the first Damage you suffer in a round by
+            <span name="attr_role_solo_damagedeflection_calc"></span>. (This
+            must be tracked manually.)
+          </div>
         </div>
         <div class="column center">
-          Fumble Recovery
+          <input type="hidden" name="attr_role_solo_fumblerecovery_calc" />
+          Fumble Recovery (+<span
+            name="attr_role_solo_fumblerecovery_calc"
+          ></span
+          >)<br />
           <input
             type="number"
             name="attr_role_solo_fumblerecovery"
             value="0"
             min="0"
           />
+          (x4)
+          <div class="rulebook-reference" style="margin-bottom: 1rem">
+            Ignore critical failures on attacks and treat them as a normal roll
+            of 1.
+          </div>
         </div>
         <div class="column center">
-          Initiative Reaction
+          Initiative Reaction (+<span
+            name="attr_role_solo_initiativereaction"
+          ></span
+          >)<br />
           <input
             type="number"
             name="attr_role_solo_initiativereaction"
             value="0"
             min="0"
           />
+          <div class="rulebook-reference" style="margin-bottom: 1rem">
+            Automatically added when using the Initiative button.
+          </div>
         </div>
+      </div>
+      <div class="columns">
         <div class="column center">
-          Precision Attack
+          <input type="hidden" name="attr_role_solo_precisionattack_calc" />
+          Precision Attack (+<span
+            name="attr_role_solo_precisionattack_calc"
+          ></span
+          >)<br />
           <input
             type="number"
             name="attr_role_solo_precisionattack"
             value="0"
             min="0"
           />
+          (x3)
+          <div class="rulebook-reference" style="margin-bottom: 1rem">
+            Add <span name="attr_role_solo_precisionattack_calc"></span> to
+            attacks. (Automatically included when using attacks in the Combat
+            section of the character sheet.)
+          </div>
         </div>
         <div class="column center">
-          Spot Weakness
+          Spot Weakness (+<span name="attr_role_solo_spotweakness"></span
+          >)<br />
           <input
             type="number"
             name="attr_role_solo_spotweakness"
             value="0"
             min="0"
           />
+          <div class="rulebook-reference" style="margin-bottom: 1rem">
+            Add <span name="attr_role_solo_spotweakness"></span> damage to first
+            successful attack each round. (This must be done manually.)
+          </div>
         </div>
         <div class="column center">
-          Threat Detection
+          Threat Detection (+<span name="attr_role_solo_threatdetection"></span
+          >)<br />
           <input
             type="number"
             name="attr_role_solo_threatdetection"
             value="0"
             min="0"
           />
+          <div class="rulebook-reference" style="margin-bottom: 1rem">
+            Adds <span name="attr_role_solo_threatdetection"></span> to
+            Perception checks. (Automatically included when using the Perception
+            button in the Skills section.)
+          </div>
         </div>
       </div>
     </div>
@@ -567,3 +622,49 @@
     </div>
   </div>
 </div>
+<script type="text/worker">
+  function updateRoleSoloAvailable() {
+    getAttrs(['role_solo', 'role_solo_damagedeflection', 'role_solo_fumblerecovery', 'role_solo_initiativereaction', 'role_solo_precisionattack', 'role_solo_spotweakness', 'role_solo_threatdetection'], function(values){
+      var roleSoloAvailable = Number(values.role_solo)
+      var fields = ['role_solo_damagedeflection', 'role_solo_fumblerecovery', 'role_solo_initiativereaction', 'role_solo_precisionattack', 'role_solo_spotweakness', 'role_solo_threatdetection']
+      for (var i = 0; i<fields.length; i++) {
+        roleSoloAvailable -= Number(values[fields[i]])
+      }
+      setAttrs({
+        role_solo_available: roleSoloAvailable
+      })
+    });
+  }
+  on('change:role_solo change:role_solo_damagedeflection change:role_solo_fumblerecovery change:role_solo_initiativereaction change:role_solo_precisionattack change:role_solo_spotweakness change:role_solo_threatdetection', function() {
+    updateRoleSoloAvailable()
+  });
+  // Calculate the modifiers for SOLO abilities that do not work on
+  // a 1:1 spend basis.
+  // DAMAGE DEFLECTION: 2pts/level
+  on('change:role_solo_damagedeflection', function() {
+    getAttrs(['role_solo_damagedeflection'], function(values){
+      var calc = Math.floor(Number(values.role_solo_damagedeflection) / 2)
+      setAttrs({
+        role_solo_damagedeflection_calc: calc
+      })
+    });
+  });
+  // FUMBLE RECOVERY: 4pts to enable
+  on('change:role_solo_fumblerecovery', function() {
+    getAttrs(['role_solo_fumblerecovery'], function(values){
+      var calc = Math.floor(Number(values.role_solo_fumblerecovery) / 4)
+      setAttrs({
+        role_solo_fumblerecovery_calc: calc
+      })
+    });
+  });
+  // PRECISION ATTACK: 3pts/level
+  on('change:role_solo_precisionattack', function() {
+    getAttrs(['role_solo_precisionattack'], function(values){
+      var calc = Math.floor(Number(values.role_solo_precisionattack) / 3)
+      setAttrs({
+        role_solo_precisionattack_calc: calc
+      })
+    });
+  });
+</script>
