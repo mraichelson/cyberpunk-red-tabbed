@@ -2,7 +2,15 @@
   <div class="columns">
     <% attributes.forEach(function(attribute) { %>
     <div class="column clipped-corner">
-      <strong class="accent-font"><%= attribute.name %></strong>
+      <strong class="accent-font">
+        <button
+          class="button-plain"
+          type="roll"
+          value="&{template:minimal}{{charactername=@{character_name}}}{{label=<%= attribute.name %>}}{{roll=[[1d10 + @{<%= attribute.name === 'EMP' ? 'empathy' : attribute.field %>} + @{finalmodifier}]]}}<% if (attribute.name === 'EMP') { %>{{message=Roll made using Effective Empathy score.}}<% } %>"
+        >
+          <%= attribute.name %>
+        </button>
+      </strong>
       <input type="number" name="attr_<%= attribute.field %>" />
     </div>
     <% }) %>

@@ -1,5 +1,10 @@
 .sheet-section-attributes {
   margin-bottom: 1rem;
+  button {
+    &:before {
+      display: none;
+    }
+  }
   .sheet-column {
     background-color: white;
     border: 0.5rem solid $cpRed;
