@@ -69,7 +69,7 @@
             <input
               class="skill-value"
               type="number"
-              value="0"
+              value="<% if (skill.required) { %>2<% } else { %>0<% } %>"
               name="attr_<%= skill.field %>"
             />
           </div>
