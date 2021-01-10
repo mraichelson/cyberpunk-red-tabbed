@@ -8,7 +8,7 @@
           <input type="number" value="0" name="attr_evasionmodifier" />
           <button
             type="roll"
-            value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Evasion}} {{skillvalue=@{skill_evasion}}} {{statname=REF}} {{statvalue=@{stat_ref}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_evasion} + @{stat_ref} + @{armor_penalty} + @{finalmodifier} + @{evasionmodifier}]]}} {{critroll=[[1d10]]}}"
+            value="&{template:skill}{{charactername=@{character_name}}} {{skillname=Evasion}} {{skillvalue=@{skill_evasion}}} {{statname=DEX}} {{statvalue=@{stat_dex}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skill_evasion} + @{stat_dex} + @{armor_penalty} + @{finalmodifier} + @{evasionmodifier}]]}} {{critroll=[[1d10]]}}"
           >
             Evasion
           </button>
